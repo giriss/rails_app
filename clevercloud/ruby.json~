@@ -1,0 +1,6 @@
+{
+	"deploy": {
+		"env": "production",
+		//"rakegoals": "db:migrate"
+	}
+}
