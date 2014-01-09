@@ -1,0 +1,86 @@
+<div id="description_div">
+	<div class="heading">
+		What is wallet?
+	</div>
+	<div>
+		Wallet is a safe-deposit box which allows you to deposit money which will be used during your advertising campaigns. A minimum of $10.00 must be deposited to your wallet before starting an advertising campaign.
+	</div>
+</div>
+
+<div id="wallet_stats_div">
+	<div class="heading">Your wallet statistics</div>
+	<div id="wallet_stats_table_div">
+		<table class='v_table'>
+		    <tr>
+		        <td><div class="bold">Total deposits</div></td>
+		        <td><div class="red">$ <%= @wallet_total %></div></td>
+			</tr>
+			<tr>
+		        <td><div class="bold">Amount used</div></td>
+		        <td><div class="red">$ <%= @wallet_used %></div></td>
+			</tr>
+			<tr>
+		        <td><div class="bold">Amount remaining</div></td>
+		        <td><div class="red">$ <%= @wallet_total - @wallet_used %></div></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<div id="deposit_div">
+	<div class="heading">
+		Deposit money to your wallet now!
+	</div>
+	<div>
+		<marquee class="bold"><span class="red">You will be charged an additional amount as PayPal fees.</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">The deposit amount should be a minimum of $10.00</span></marquee>
+	</div>
+	<% unless flash[:deposit_success].nil? %>
+	<% if flash[:deposit_success] == true %>
+    <div id="success_div" class="green bold">
+		The transactions have been completed successfully.
+    </div>
+	<% end %>
+	<% end %>
+	<div id="deposit_form_div">
+		<%= form_for :deposit, url: deposits_set_express_checkout_paypal_path, html: {id: "deposit_form"} do |f| %>
+			<%= f.label :amount, "Amount(US $):" %>
+			<%= f.text_field :amount, class: :textInput %>
+			<%= f.label :type, "Type:" %>
+			<%= f.select :type, [["PayPal", :paypal], ["Payza", :payza]], {}, {class: "select"} %> <%# remove Payza plz.. %>
+			<%= f.submit :Deposit, class: :button %>
+		<% end %>
+	</div>
+</div>
+
+<div id="transactions_div">
+	<div class="heading">Your PayPal transactions related to ily.io</div>
+	<div id="transactions_list_div">
+		<% if Deposit.where(user_id: session[:user_id]).nil? %>
+			You do not have any transaction related to ily.io
+		<% else %>
+		<table class="table">
+		    <tr>
+		        <td><div class="bold">#</div></td>
+		        <td><div class="bold">Amount Deposited</div></td>
+		        <td><div class="bold">Amount Received</div></td>
+		        <td><div class="bold">Date</div></td>
+		    </tr>
+			<% i = 0 %>
+			<% for deposit in Deposit.where( user_id: session[:user_id] ) %>
+		    <tr>
+		        <td><div><%= i += 1 %></div></td>
+		        <td><div>$ <%= deposit.amount %></div></td>
+		        <td><div>$ <%= deposit.received_amount.round(2) %></div></td>
+		        <td><div><%= deposit.created_at %></div></td>
+		    </tr>
+			<% end %>
+		</table>
+		<% end %>
+	</div>
+	<% if Deposit.where(:user_id => session[:user_id]).count > 10 %>
+	<div id="next_prev_div">
+		<button class="button" data-href="<%= @page_number %>">Previous</button>
+		<button class="button" data-href="<%= @page_number %>">Next</button>
+	</div>
+	<% end %>
+</div>

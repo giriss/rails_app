@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  key: MyString
+  target: MyString
+  views: 1
+  unique_views: 1
+
+two:
+  user_id: 1
+  key: MyString
+  target: MyString
+  views: 1
+  unique_views: 1

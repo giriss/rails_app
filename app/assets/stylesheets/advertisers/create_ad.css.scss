@@ -1,0 +1,29 @@
+#content{
+	#ad_div{
+		padding: 20px;
+		#ad_count_num_div{
+			font-size: 20px;
+			font-weight: 900;
+		}
+		#create_ad_div{
+			#create_ad_form_div{
+				margin: 10px 0 0 0;
+				table{
+					tr{
+						td{
+							div{
+								padding: 5px;
+								input[type=text]{
+									width: 250px;
+								}
+								select{
+									width: 262px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

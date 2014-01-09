@@ -1,0 +1,165 @@
+<header>
+	<div>Ily.io</div>
+	<div>Shorten Urls Make Money Now !</div>
+</header>
+
+<div id="body">
+	<div>
+		<div id="description">
+			<div class="heading center" style="font-size:2em;">What is Ily.io</div>
+			<div>
+				<table id="desc">
+					<tbody>
+						<tr>
+							<td class="heading">For Publishers..!</td>
+							<td class="heading">For Advertisers..!</td>
+						</tr>
+						<tr>
+							<td class="elclassico">
+								Shorten urls make money now ! Share your short links and get paid. Publishers enjnoys an <strong>amazing fixed</strong> rate of <strong>$10.00 per 1000</strong> US views.<br />Thats damn co0l..! <%= link_to "Learn More", welcome_learnMore_path(:publisher) %>
+							</td>
+							<td class="elclassico">
+								Ily.io have developped a <strong>never seen before</strong> advertising technique. Ily.io ensure that over <strong>99%</strong> of visitors will see and <strong>understand</strong> your ad.<br />How is it done..? <%= link_to "Learn More", welcome_learnMore_path(:advertiser) %>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div id="middle">
+			<div>
+				<table class="display">
+					<tr>
+						<td>
+							<span>
+								Login<br />
+								or<br />
+								Register
+							</span>
+						</td>
+						<td>
+							&gt;
+						</td>
+					</tr>
+				</table>
+
+				<table class="nodisplay">
+					<tr>
+						<td>
+							&lt;
+						</td>
+						<td>
+							<span>
+								what is<br />Ily.io<br />??
+							</span>
+						</td>
+					</tr>
+				</table>
+
+			</div>
+		</div>
+
+		<div id="loginRegister">
+			<div class="heading center" style="font-size:2em;">Login or Register</div>
+			<table id="logreg">
+				<tbody>
+					<tr>
+						<td class="heading">Login !</td>
+						<td class="heading">Register !</td>
+					</tr>
+					<tr>
+						<td>
+							<%= form_for :user_login, url: login_users_path, html: { id: "login_form" } do |f| %>
+							<table>
+								<tbody>
+									<tr>
+										<td><span><%= f.label :email %></span></td>
+										<td><span><%= f.email_field :email, class: "textInput" %></span></td>
+									</tr>
+									<tr>
+										<td><span><%= f.label :password %></span></td>
+										<td><span><%= f.password_field :password, class: "textInput" %></span></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td><span><%= f.submit "log in", class: "button" %></span></td>
+									</tr>
+								</tbody>
+							</table>
+							<% end %>
+						</td>
+						<td>
+							<%= form_for :user_register, url: users_path, html: { id: "register_form" } do |f| %>
+							<table>
+								<tbody>
+									<tr>
+										<td><span><%= f.label :full_name, "Full name" %></span></td>
+										<td><span><%= f.text_field :full_name, class: "textInput" %></span></td>
+									</tr>
+									<tr>
+										<td><span><%= f.label :email %></span></td>
+										<td><span><%= f.email_field :email, class: "textInput" %></span></td>
+									</tr>
+									<tr>
+										<td><span><%= f.label :password %></span></td>
+										<td><span><%= f.password_field :password, class: "textInput" %></span></td>
+									</tr>
+									<tr>
+										<td><span><%= f.label :repassword, "Retype password" %></span></td>
+										<td><span><%= f.password_field :repassword, class: "textInput" %></span></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td><span><%= f.submit "sign up", class: "button" %></span></td>
+									</tr>
+								</tbody>
+							</table>
+							<% end %>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+</div>
+<div id="tryit">
+	<div class="heading">Try it out</div>
+	<div>
+		<%= form_for :shrink, url: url_action_shrink_path, html:{ id: "try_it" } do |f| %>
+			<div>
+				<div><%= f.text_field :target, class: "textInput", placeholder: "http://" %></div>
+				<div><%= f.submit "Shrink", class: "button" %></div>
+				<div></div>
+				<div></div>
+			</div>
+		<% end %>
+	</div>
+</div>
+<footer>
+	<div>
+		<div><i>ily.io &copy; <%= Time.now.year %></i>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Made with <span id="heart">&hearts;</span> in Mauritius, Mah&eacute;bourg... :*<span id="jai_sri_krsna">&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;जय श्री कृष्ण</span></div>
+		<hr />
+		<div>
+			<table>
+				<tr>
+					<td><a href="">{ Publisher Rates }</a></td>
+					<td><a href="">{ About us }</a></td>
+				</tr>
+				<tr>
+					<td><a href="">{ Advertiser Rates }</a></td>
+					<td><a href="">{ terms &amp; policies}</a></td>
+				</tr>
+				<tr>
+					<td><%= link_to"{ Publisher:Learn more }", welcome_learnMore_path(:pub) %></td>
+					<td><a href="">{ help }</a></td>
+				</tr>
+				<tr>
+					<td><%= link_to "{ Advertiser:Learn more }", welcome_learnMore_path(:adv) %></td>
+					<td><a href="">{ like us on fb }</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</footer>

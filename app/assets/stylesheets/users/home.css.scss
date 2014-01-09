@@ -1,0 +1,192 @@
+#content{
+	#brief_stats{
+		padding: 10px;
+		font-size: 15px;
+		font-weight: 900;
+		font-family: "Ubuntu";
+		border-bottom: solid 1px rgba(30,100,140,1);
+		margin: auto;
+		background: rgba(30,100,140,.15);
+		//box-shadow: inset 0 0 0px rgba(30,100,140,1);
+		tr{
+			td{
+				width: 195px;
+				div{
+					margin: 0 10px 0 0;
+					font-size: 16px;
+					text-align: center;
+					>div:first-child{
+						border-bottom:dotted 2px rgba(30,100,140,.5);
+					}
+				}
+				&:last-child{
+					div{
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+	#shorten{
+		padding: 10px;
+		>.heading{
+			margin: 0 0 5px 0;
+		}
+		>div:nth-child(2){
+			height: 48px;
+			overflow: hidden;
+			>div#scrollable{
+				position: relative;
+				#shrink_div{
+					#shrink_form{
+						>div{
+							overflow: auto;
+							padding: 10px;
+							#shrink_target{
+								width: 500px;
+								margin: 0 10px 0 0;
+							}
+							#shrink_button{
+								width: 238px;
+								font: 400 16px/1 "Ubuntu" !important;
+								line-height: 1 !important;
+							}
+						}
+					}
+				}
+				#shorten_div{
+					padding: 8px;
+					overflow: auto;
+					#shorten_textarea{
+						padding: 5px;
+						height: 16px;
+						max-height: 16px;
+						float: left;
+						font: 400 16px/1 'Ubuntu';
+					}
+					#try_another_div{
+						padding: 6px 10px;
+						font: 400 16px/1 'Ubuntu';
+						font-weight: bold;
+						cursor: pointer;
+						float: left;
+					}
+				}
+			}
+		}
+	}
+
+	#announcements{
+		overflow: hidden;
+		width: 780px;
+		padding: 10px;
+		border-top: solid 1px rgba(30,100,140,1);
+		border-bottom: solid 1px rgba(30,100,140,1);
+		background: rgba(30,100,140,.15);
+		>marquee{
+			>div{
+				overflow: hidden;
+				>div{
+					&:nth-child(odd){
+						color: rgba(140,30,100,1);
+						//text-shadow: 0 0 5px rgba(140,30,100,1);
+					}
+					&:nth-child(even){
+						color: rgba(50,150,10,1);
+						//text-shadow: 0 0 5px rgba(90,90,140,1);
+					}
+					>span{
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+
+	#links{
+		overflow: hidden;
+		margin: 10px;
+		font-family: "Ubuntu";
+		>div:first-child{
+			margin: 0 0 10px 0;
+		}
+		>div:nth-child(2){
+			overflow: hidden;
+			div.tables{
+				float: left;
+				position: relative;
+			}
+			#slideable{
+				position: relative;
+				left: 0;
+				overflow: auto;
+				#get_started_video{
+					margin: 10px 229px;
+					border: solid 1px rgba(100,100,100,1);
+					/* box-shadow: 0 0 10px 0 rgba(100,100,100,1); */
+				}
+			}
+			tr{
+				&:nth-child(odd){
+					background: rgba(30,100,140,0.2); /* Old browsers */
+					background: -moz-linear-gradient(top,  rgba(30,100,140,0.2) 0%, rgba(30,100,140,0) 30%, rgba(30,100,140,0) 100%); /* FF3.6+ */
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,100,140,0.2)), color-stop(30%,rgba(30,100,140,0)), color-stop(100%,rgba(30,100,140,0))); /* Chrome,Safari4+ */
+					background: -webkit-linear-gradient(top,  rgba(30,100,140,0.2) 0%,rgba(30,100,140,0) 30%,rgba(30,100,140,0) 100%); /* Chrome10+,Safari5.1+ */
+					background: -o-linear-gradient(top,  rgba(30,100,140,0.2) 0%,rgba(30,100,140,0) 30%,rgba(30,100,140,0) 100%); /* Opera 11.10+ */
+					background: -ms-linear-gradient(top,  rgba(30,100,140,0.2) 0%,rgba(30,100,140,0) 30%,rgba(30,100,140,0) 100%); /* IE10+ */
+					background: linear-gradient(to bottom,  rgba(30,100,140,0.2) 0%,rgba(30,100,140,0) 30%,rgba(30,100,140,0) 100%); /* W3C */
+				}
+				&:nth-child(even){
+					background: rgba(30,100,140,0.2); /* Old browsers */
+					background: -moz-linear-gradient(top,  rgba(30,100,140,0.2) 0%, rgba(30,100,140,0) 30%, rgba(30,100,140,0) 100%); /* FF3.6+ */
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,100,140,0.2)), color-stop(30%,rgba(30,100,140,0)), color-stop(100%,rgba(30,100,140,0))); /* Chrome,Safari4+ */
+					background: -webkit-linear-gradient(top,  rgba(30,100,140,0.2) 0%,rgba(30,100,140,0) 30%,rgba(30,100,140,0) 100%); /* Chrome10+,Safari5.1+ */
+					background: -o-linear-gradient(top,  rgba(30,100,140,0.2) 0%,rgba(30,100,140,0) 30%,rgba(30,100,140,0) 100%); /* Opera 11.10+ */
+					background: -ms-linear-gradient(top,  rgba(30,100,140,0.2) 0%,rgba(30,100,140,0) 30%,rgba(30,100,140,0) 100%); /* IE10+ */
+					background: linear-gradient(to bottom,  rgba(30,100,140,0.2) 0%,rgba(30,100,140,0) 30%,rgba(30,100,140,0) 100%); /* W3C */
+				}
+				td{
+					>div{
+						border-bottom: solid 1px rgba(30,100,140,.8);
+						padding: 10px 0;
+						[type=checkbox]{
+							box-shadow: 2px 2px 5px 0 rgba(30,100,140,1);
+						}
+						a{
+							color: rgba(30,100,140,1);
+							font-style: normal;
+							text-decoration: none;
+						}
+						a:hover{
+							color: rgba(80,180,120,1);
+						}
+						a.delete{
+							color: rgba(255,0,0,1);
+							text-decoration: none;
+							font-style: normal;
+							font-weight: 900;
+						}
+					}
+				}
+				&:first-child{
+					td>div{
+						border-top: solid 1px rgba(30,100,140,.8);
+					}
+				}
+				&:last-child{
+					td>div{
+						border-bottom: none;
+					}
+				}
+			}
+		}
+		>#next_prev{
+			button:first-child{
+				margin: 10px;
+			}
+			button:last-child{
+				margin: 10px 0;
+			}
+		}
+	}
+}

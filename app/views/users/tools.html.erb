@@ -1,0 +1,213 @@
+
+<div id="tool_list_div">
+	<div class="tools selected" data-name="ms">Mass shrinker&nbsp;&nbsp;&nbsp;&rarr;</div>
+	<div class="tools" data-name="mls">Multi-links shrinker&nbsp;&nbsp;&nbsp;&rarr;</div>
+	<div class="tools" data-name="b">Bookmarklet&nbsp;&nbsp;&nbsp;&rarr;</div>
+	<div class="tools" data-name="api">API Doc&nbsp;&nbsp;&nbsp;&rarr;</div>
+	<div class="tools" data-name="ga">Google analytics&nbsp;&nbsp;&nbsp;&rarr;</div>
+	<div class="tools" data-name="el">Easy link&nbsp;&nbsp;&nbsp;&rarr;</div>
+	<div class="tools" data-name="wes">Website entry script&nbsp;&nbsp;&nbsp;&rarr;</div>
+</div>
+<div id="tool_div">
+	<div id="ms_div">
+		<div class="tool_title heading">Mass Shrinker</div>
+		<div class="tool_desc">
+			Mass shrinker allows you to shrink up to 25 urls in a single go.<br /><br />
+			[<b class="green">Note:</b> Each url must begin on a new line]
+		</div>
+		<div id="ms_tool_textarea">
+			<textarea></textarea>
+		</div>
+		<div id="ms_shrink"><button class="button">Shrink</button></div>
+	</div>
+	<div class="nodisplay" id="el_div">
+		<div class="tool_title heading">Easy Link</div>
+		<div class="tool_desc">
+			Easy link allows you to access our intersital ad service without the need to actually shrink your url.
+		</div>
+		<div id="el_usage_div">
+			<div><strong class="red">Format</strong></div>
+			<div>
+				http://ily.io/&lt; your user id &gt;<b>+</b>/&lt; the destination url &gt;
+			</div>
+			<div><br />
+				Your user id is <b style="color:red"><%= session[:user_id] %></b><br/>
+				[<b class="green">Note:</b> Do not forget the plus(+) sign after user id]<br />
+				<strong class="red">An example to google.com will be</strong>
+			</div>
+			<div>
+				http://ily.io/<%= session[:user_id] %><b>+</b>/google.com
+				<br />
+				<b>or</b>
+				<br />
+				http://ily.io/<%= session[:user_id] %><b>+</b>/www.google.com
+				<br />
+				<b>or</b>
+				<br />
+				http://ily.io/<%= session[:user_id] %><b>+</b>/http://google.com
+			</div>
+			<div><br />
+				Remember that the destination url should be hidden to the user.<br />
+				<b class="red">Example</b>
+			</div>
+			<div>
+				&lt;a href="http://ily.io/<%= session[:user_id] %><b>+</b>/google.com"&gt;Go to page&lt;/a&gt;
+				<br />
+				<b>see below</b>
+				<br />
+				<a href="/<%= session[:user_id] %>+/google.com">Go to page</a>
+			</div>
+			<div><br />
+				On accessing the link, the url will be instantly changed such that user will not be able to know the destion url.<br />
+				<b class="red">Example</b>
+			</div>
+			<div>
+				http://ily.io/<%= session[:user_id] %><b>+</b>/google.com
+				<br />
+				<b>becomes</b>
+				<br />
+				http://ily.io/+<%= session[:user_id] %>/1d5920f4b44b27a802bd77c4f0536f5a
+			</div>
+			<div><br />
+				<b class="red">** Remember **</b>
+				The use of easy link is not a very reliable way to optimize your revenue since some visitors can bypass the link lock system by viewing the source of the site/blog/forum on which the easy link is shared.
+			</div>
+		</div>
+	</div>
+	<div class="nodisplay" id="b_div">
+		<div class="tool_title heading">Bookmarklet</div>
+		<div class="tool_desc">
+			The bookmarklet tool allows you to shrink the url of the site you are visiting by just a single click on the bookmarklet.<br /><br />
+			<b class="red">How to set up?</b><br />
+			Simply drag and drop the following link to your bookmark bar.
+			<div class="framed"><b><a href="javascript:void(location.href='http://localhost:3000/bookmarklet/'+encodeURIComponent(location.href))">ily.io Bookmarklet</a></b></div>  <!-- CHANGE -> localhost:3000 to ily.io -->
+			<br />
+			<b class="red">How to use?</b><br />
+			Simply click on the "ily.io Bookmarklet" while visiting the page's URL you want to shrink.<br />
+			<br />
+			[<b class="green">Note:</b> You must be logged in order for the bookmarklet to work]
+		</div>
+	</div>
+	<div class="nodisplay" id="api_div">
+		<div class="tool_title heading">API Doc</div>
+		<div class="tool_desc">
+			The API tool allows you to shrink URLs without the need to log in ily.io<br />Simply send a GET or POST request to our server using your API key.<br /><br />
+			<b>Your user id is </b><b style="color:red"><%= session[:user_id] %></b><br /><br />
+			<b>Your API key(64 characters) below</b><br />
+			<div class="framed">
+				<span class="small-font"><%= User.find(session[:user_id]).get_api_key %></span>
+			</div>
+			<br />
+			<b class="heading">ily.io allows 3 ways to send API request.</b><br />
+			<b>Method 1, Direct link</b><br />
+			You can use the API by directly accessing the following URL.<br />
+			[<b class="green">Note:</b> The parameters should be in the same sequence]
+			<div class="small-font framed">
+				http://ily.io/api/user_id/<b>&lt; your ID &gt;</b>/api_key/<b>&lt; your API key &gt;</b>/url/<b>&lt; URL to shrink &gt;</b><br /><br />
+				<b>For example,</b><br />
+				http://ily.io/api/user_id/<%= session[:user_id] %>/api_key/<%= User.find(session[:user_id]).get_api_key %>/url/www.google.com<br />
+				will add www.google.com to your shrink list.
+			</div><br />
+			<b>Method 2, GET request</b><br />
+			Another way is to send a simple GET request to the following URL using <b>user_id</b>, <b>api_key</b> and <b>url</b> as parameters.
+			<div class="framed">
+				http://ily.io/api/get</b><br /><br />
+				<b>Example,</b> GET: {user_id: <%= session[:user_id] %>, api_key: foobar, url: google.com} will result in<br />
+				http://ily.io/api/get?user_id=<%= session[:user_id] %>&amp;api_key=foobar&amp;url=google.com
+			</div><br />
+			<b>Method 3, POST request</b><br />
+			Finally you may also use a POST request to the following URL using <b>user_id</b>, <b>api_key</b> and <b>url</b> as parameters.
+			<div class="framed">
+				http://ily.io/api/post
+			</div><br />
+			<b class="heading">Response</b><br />
+			If the operation has been successfully complete, the shrinked URL will be returned, else if any error occurs, 0 (zero) will be returned.
+		</div>
+	</div>
+	<div class="nodisplay" id="ga_div">
+		<div class="tool_title heading">Google Analytics</div>
+		<div class="tool_desc">
+			No need of introduction, google analytics is one of the most powerfull analytics tool available.<br />You can now use google analytics to get full statistics of your URLs.<br />
+			You simply have to enter your Analytics tracker code in order to monitor your URLs.
+			<div class="framed">
+				<% if UserOtherDetail.find_by(user_id: session[:user_id]).nil? %>
+				<%= form_for :google_analytics, url: add_google_analytics_path do |f| %>
+					<%= f.text_field :tracker_code, class: "textInput" %>
+					<%= f.submit "submit", class: "button" %>
+				<% end %>
+				<b class="green">format: UA-XXXXXXXX-X</b>
+				<% else %>
+				<div id="current_tracker_code_div">
+					You have currently set <b><%= UserOtherDetail.find_by(user_id: session[:user_id]).tracker_code %></b> as your tracker code.<br />
+					<a id="change_tracker_code" href="">Change</a>&nbsp;<b>|</b>&nbsp;
+					<a id="destroy_tracker_code" href="<%= destroy_google_analytics_path %>" data-method="post">Delete</a>
+				</div>
+				<div id="change_tracker_code_div" class="nodisplay">
+					<%= form_for :google_analytics, url: add_google_analytics_path do |f| %>
+						<%= f.text_field :tracker_code, class: "textInput" %>
+						<%= f.submit "submit", class: "button" %>
+						<button id="cancel_tracker_change" class="button">cancel</button>
+					<% end %>
+					<b>format: UA-XXXXXXXX-X</b>
+				</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="nodisplay" id="mls_div">
+		<div class="tool_title heading">Multi-links Shrinker</div>
+		<div class="tool_desc">
+			Multi-links shrinker allows you to shrink up to 25 links in a single go.<br /><br />
+			<b class="red">Links must be in the form</b>
+			<div class="framed">
+				&lt;a href="http://example.com"&gt;Example.com&lt;/a&gt;
+			</div>
+		</div>
+		<div id="mls_tool_textarea">
+			<textarea></textarea>
+		</div>
+		<div id="mls_shrink"><button class="button">Shrink</button></div>
+	</div>
+	<div class="nodisplay" id="wes_div">
+		<div class="tool_title heading">Website entry script(wes)</div>
+		<div class="tool_desc">
+			If you owns a blog or a website and you want to make money as soon a someone access you blog/site, then this tool is a godsent.<br /><br />
+			The website entry script(WES) tool allows you to divert vistors to our intersital ad system and then redirect them back to your blog/site.<br /><br />
+			<div class="heading">How to inegrate WES?</div>
+			You must ensure that your blog/site has jQuery integrated. The wes.js script must be after your jQuery plugin.<br />Moreover, the needed to place another initiation script just before the wes.js one.<br />
+			<b>Example</b>
+			<div class="framed script">
+				&lt;script src="<b>to your jQuery.js</b>"&gt;&lt;/script&gt;<br />
+				&lt;script&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="s_var">var</span> <b>ilyio_user_id</b> = <span class="s_num">2</span>;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="s_var">var</span> <b>ilyio_delay</b> = <span class="s_num">5000</span>;<span class="s_comment">&nbsp;&nbsp;&nbsp;&nbsp;// in mili-seconds</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="s_var">var</span> <b>ilyio_interval</b> = <span class="s_num">5</span>;<span class="s_comment">&nbsp;&nbsp;&nbsp;&nbsp;// in minutes</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="s_var">var</span> <b>ilyio_maximum</b> = <span class="s_num">3</span>;<br />
+				&lt;/script&gt;<br />
+				&lt;script src="http://ily.io/assets/wes.js"&gt;&lt;/script&gt;
+			</div><br />
+			<div class="heading">What is the initiation script?</div>
+			The initiation script allows for the proper execution of the WES.<br />
+			[<b class="green">Note:</b> Preferable to leave it in its default values]<br /><br />
+			<div class="red bold">Parameters</div>
+			<table>
+				<tr>
+					<td><span class="bold blue">ilyio_user_id:</span></td>
+					<td>This parameter is your user id. This parameter should not be changed.</td>
+				</tr>
+				<tr>
+					<td><span class="bold blue">ilyio_delay:</span></td>
+					<td>This parameter allows you to set the time delay(in mili-seconds) after which the visitor will be redirected to the intersital ad.</td>
+				</tr>
+				<tr>
+					<td><span class="bold blue">ilyio_interval:</span></td>
+					<td>This parameter allows you to set the time inverval(in minutes) between two intersital ad redirect for each visitor.</td>
+				</tr>
+				<tr>
+					<td><span class="bold blue">ilyio_maximum:</span></td>
+					<td>This parameter allows you to set the maximum times <b>each</b> visitor will be redirected to the intersital ad.</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

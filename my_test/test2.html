@@ -1,0 +1,23 @@
+
+<script type="text/javascript" src="../app/assets/javascripts/jquery-1.9.0.min.js"></script>
+<!--
+<script type="text/javascript">
+var json = '{"country_name":"UNITED STATES","country_code":"US","city":"Albany, NY","ip":"74.125.45.100"}';
+var obj = $.parseJSON(json);
+alert(obj.country_name)
+</script>
+-->
+<script type="text/javascript">
+	$(function(){
+		$("button").click(function(){
+			var content = $("textarea").val();
+			var line_split = Array.new;
+			line_split = content.split("\n");
+			console.log(line_split)
+		})
+	})
+</script>
+
+<textarea style="width:200px;height:50px"></textarea>
+<br />
+<button>Ok !</button>

@@ -1,0 +1,104 @@
+hr{
+	border-color: rgba(30,100,140,.5);
+	margin: 5px 0;
+}
+
+.nodisplay{
+	display: none;
+}
+
+#content{
+	overflow: auto;
+	#tool_list_div{
+		float: left;
+		width: 209px;
+		min-height: 200px;
+		padding: 20px 0 20px 10px;
+		.tools{
+			text-align: right;
+			font: 900 16px/1 "Ubuntu";
+			padding: 10px;
+			margin: 0 0 5px 0;
+			&:last-child{
+				margin: 0;
+			}
+			&:hover:not(.selected){
+				cursor: pointer;
+				//box-shadow: inset 0 0 10px rgba(30, 100, 140, 0.8);
+				background: rgba(30, 100, 140, 0.25) !important;
+			}
+		}
+	}
+	#tool_div{
+		float: left;
+		width: 540px;
+		min-height: 282px;
+		margin: 10px 20px 10px 0;
+		padding: 10px 0 10px 20px;
+		border-left: solid 1px rgba(30,100,140,1);
+		>div{
+			>div{
+				margin: 0 0 10px 0;
+			}
+			>div:last-child{
+				margin:0;
+			}
+			.tool_desc{
+				font: 400 16px/1.2 "Ubuntu";
+				.heading{
+					font: 900 18px/1 "Ubuntu";
+					color: rgba(50,150,10,1);
+				}
+				>div.framed{
+					overflow: auto;
+					width: 520px;
+					padding: 10px;
+					background: rgba(30,100,140,.25);
+				}
+				.small-font{
+					font: 400 14px/1 'Ubuntu';
+				}
+				table,th, td{
+					border: 1px solid rgba(30,100,140,.5);
+				}
+				table td{
+					padding: 5px;
+				}
+			}
+			#ms_tool_textarea, #mls_tool_textarea{
+				font-size: 0;
+				>textarea{
+					min-height: 200px;
+					min-width: 400px;
+					max-width: 518px;
+					width: 518px;
+					padding: 10px;
+					background: rgba(30,100,140,0);
+					border: solid 1px rgba(30,100,140,1);
+					font: 400 14px/1 "Ubuntu";
+					color: rgba(30,100,140,1);
+					&:focus{
+						outline:none;
+						box-shadow: 0 0 10px 0 rgba(30,100,140,1);
+					}
+				}
+			}
+			#ms_shrink, #mls_shrink{
+				text-align: right;
+			}
+			#el_usage_div{
+				font: 400 16px/1.2 'Ubuntu';
+				>div{
+					margin: 0 0 5px 0;
+					&:last-child{
+						margin:0;
+					}
+					&:nth-child(2),&:nth-child(4),&:nth-child(6),&:nth-child(8){
+						padding: 10px;
+						background: rgba(30,100,140,.25);
+					}
+				}
+			}
+		}
+	}
+}

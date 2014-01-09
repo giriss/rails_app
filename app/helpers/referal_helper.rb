@@ -1,0 +1,2 @@
+module ReferalHelper
+end

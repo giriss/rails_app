@@ -1,0 +1,19 @@
+<% count = 0 %>
+<% @new_urls.each do |page| %>
+	<div id="<% if count == 0 %>first_table<% end %>" class="tables">
+		<table>
+			<% page.each do |url| %>
+				<% count += 1 %>
+				<tr data-urlid="<%= url.id %>">
+					<td width="30px"><div>&nbsp;<input name="url_id" value="<%= url.id %>" type="checkbox" /></div></td>
+					<td width="50px"><div><%= count %>.</div></td>
+					<td width="190px"><div><a target="_blank" href="/<%= url.key %>">http://ily.io/<%= url.key %></a></div></td>
+					<td width="240px"><div><a target="_blank" href="<%= url.target %>"><%= url.target %></a></div></td>
+					<td width="100px"><div><%= url.views %></div></td>
+					<td width="100px"><div>$0.00</div></td>
+					<td width="70px"><div><a class="delete" href="<%= url_action_destroy_path(url.id) %>" data-number="<%= count %>" data-urlid="<%= url.id %>" data-method="post">delete</a></div></td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+<% end %>

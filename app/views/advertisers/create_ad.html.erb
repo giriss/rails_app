@@ -1,0 +1,41 @@
+<div id="ad_div">
+	<div id="ad_count_num_div">
+		<% if Advert.where(:user_id => session[:user_id]).count == 0 %>
+		You currently have no Ad.&nbsp;&nbsp;<button id="create_ad_now_button" class="button">Create add now</button>
+		<% else %>
+		You currently have <%= Advert.where(:user_id => session[:user_id]).count %> Ads.&nbsp;&nbsp;<button id="create_ad_now_button" class="button">Create Ad now</button>
+		<% end %>
+	</div>
+	<div class="nodisplay" id="create_ad_div">
+		<div class="heading">Create Ad now !</div>
+		<div id="create_ad_form_div">
+			<%= form_for :create_ad, url: advertiser_create_ad_post_path do |f| %>
+				<table>
+				    <tr>
+				        <td><div><%= f.label :name, :class => 'label' %></div></td>
+				        <td><div></div></td>
+				        <td><div><%= f.text_field :name, {:class => "textInput"} %></div></td>
+				    </tr>
+				    <tr>
+				        <td><div><%= f.label :type, :class => 'label' %></div></td>
+				        <td><div>(<a href="">What's this</a>)</div></td>
+				        <td><div><%= f.select :type, [["clone from URL", "1"], ["design mode", "2"]], {}, {class: "select"} %></div></td>
+				    </tr>
+				    <tr id="url_tr">
+				        <td><div><%= f.label :url, "URL", :class => 'label' %></div></td>
+				        <td><div></div></td>
+				        <td><div><%= f.text_field :url, {:class => "textInput"} %></div></td>
+				    </tr>
+				    <tr>
+				        <td><div></div></td>
+				        <td><div></div></td>
+				        <td><div><%= f.submit "Create", {class: "button", id: "create_ad_commit"} %>&nbsp;&nbsp;<button id="create_ad_cancel_button" class="button">Cancel</button></div></td>
+				    </tr>
+				</table>
+			<% end %>
+		</div>
+	</div>
+	<% if flash[:success] %>
+	<div class="green_div">Ad created successfully !</div>
+	<% end %>
+</div>
