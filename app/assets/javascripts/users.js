@@ -21,6 +21,7 @@ function adjust_width(){
 		$("#slideable").prev().css({"display": "none"});
 		$("#slideable").parent().parent().next().css({"display": "none"}) // similar to $("#next_prev").css...
 	}
+
 	if($(window).height() > 525+152){
 		$("footer").height(152 + $(window).height()-677);
 	}
