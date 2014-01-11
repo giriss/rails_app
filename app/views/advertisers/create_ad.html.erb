@@ -39,3 +39,41 @@
 	<div class="green_div">Ad created successfully !</div>
 	<% end %>
 </div>
+<div id="ads_list_div">
+    <div class="heading">List of Ads</div>
+    <div id="ads_table_div">
+        <table class="table">
+          <tr>
+            <td>
+              <div><strong>&nbsp;</strong></div>
+            </td>
+            <td>
+              <div><strong>name</strong></div>
+            </td>
+            <td>
+              <div><strong>type</strong></div>
+            </td>
+            <td>
+              <div><strong>URL</strong></div>
+            </td>
+          </tr>
+          <% i = 0%>
+          <% @ads.each do |ad| %>
+          <tr>
+            <td>
+              <div>&nbsp;&nbsp;<%= i+=1 %></div>
+            </td>
+            <td>
+              <div><%= ad.name %></div>
+            </td>
+            <td>
+              <div><%= ad.type == 1 ? "clone from URL" : "design mode" %></div>
+            </td>
+            <td>
+              <div><%= ad.url %>&nbsp;</div>
+            </td>
+          </tr>
+          <% end %>
+        </table>
+    </div>
+</div>

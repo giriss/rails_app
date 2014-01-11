@@ -25,6 +25,7 @@ class AdvertisersController < ApplicationController
 		@action = 'create_ad'
 		@styles = ['create_ad']
 		@scripts = ['create_ad']
+    @ads = Advert.where user_id: session[:user_id]
 	end
 
 	def create_ad_post

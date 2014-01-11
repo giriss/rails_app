@@ -26,4 +26,23 @@
 			}
 		}
 	}
+    #ads_list_div{
+        padding: 20px;
+        #ads_table_div{
+            margin: 10px 0 0 0;
+            table{
+                tr{
+                    td{
+                      &:nth-child(1){width: 50px}
+                      &:nth-child(2){width: 225px}
+                      &:nth-child(3){width: 120px}
+                      &:nth-child(4){width: 365px}
+                      div{
+                          //padding-left: 5px;
+                      }
+                    }
+                }
+            }
+        }
+    }
 }
