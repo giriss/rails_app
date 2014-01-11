@@ -44,6 +44,9 @@ end
 # PostgreSQL
 gem 'pg'
 
+# LESS CSS
+gem 'less'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
