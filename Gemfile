@@ -45,7 +45,8 @@ end
 gem 'pg'
 
 # LESS CSS
-gem 'less'
+gem 'less-rails'
+gem 'less-rails-bootstrap'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
