@@ -1,0 +1,47 @@
+textarea{
+	min-width: 350px;
+	min-height: 75px;
+	background: rgba(255,255,255,0);
+	border: solid 1px rgba(30, 100, 140,.8);
+	line-height: 1;
+	padding: 4px 5px;
+	color: rgba(30, 100, 140,1);
+	&:focus{
+		outline: none;
+		box-shadow: 0 0 10px rgba(30, 100, 140,.8);
+	};
+	&[disabled]{
+		border: solid 1px rgba(100, 100, 100,.8);
+		background: rgba(220,220,220,1);
+	}
+}
+.textInput{
+	width: 350px;
+}
+#content{
+	> div{
+		padding: 20px;
+	}
+	#design_ad_form_div{
+		table{
+			label{
+				font: 400 14px/1 "Ubuntu"; 
+			}
+			tr{
+				td{
+					> div{
+						padding: 5px;
+					}
+					&:nth-child(2){
+						#image_list_div{
+							margin: 5px;
+							padding: 5px;
+							background: rgba(140, 100, 30, 0.3);
+							font: 400 14px/1.2 "Ubuntu";
+						}
+					}
+				}
+			}
+		}
+	}
+}

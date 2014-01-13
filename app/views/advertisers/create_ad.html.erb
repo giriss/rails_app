@@ -39,6 +39,7 @@
 	<div class="green_div">Ad created successfully !</div>
 	<% end %>
 </div>
+<% if Advert.where(:user_id => session[:user_id]).count != 0 %>
 <div id="ads_list_div">
     <div class="heading">List of Ads</div>
     <div id="ads_table_div">
@@ -77,3 +78,4 @@
         </table>
     </div>
 </div>
+<% end %>

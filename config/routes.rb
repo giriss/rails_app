@@ -14,6 +14,8 @@ RailsSite::Application.routes.draw do
 	get "advertiser/campaign", to:"advertisers#campaign"
 	get "advertiser/create_ad", to:"advertisers#create_ad"
 	post "advertiser/create_ad", as:"advertiser_create_ad_post", to:"advertisers#create_ad_post"
+	get "advertiser/create_ad/design/:id", to:"advertisers#design_ad", id: /[0-9]+/, as: "advertiser_design_ad"
+	post "advertiser/create_ad/design/:id", to:"advertisers#design_ad", id: /[0-9]+/, as: "advertiser_design_ad_post"
 	get "advertiser/account",  to:"advertisers#account"
 
 	resources :announcements

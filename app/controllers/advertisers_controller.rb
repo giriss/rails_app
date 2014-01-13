@@ -36,6 +36,17 @@ class AdvertisersController < ApplicationController
 		redirect_to advertiser_create_ad_path
 	end
 
+	def design_ad
+		if request.post?
+			render text: get_design_ad_params
+		else
+			@action = 'design_ad'
+			@styles = ['design_ad']
+			@scripts = ['design_ad']
+			render layout: "no_menu"
+		end
+	end
+
 	def campaign
 		@action = 'campaign'
 		@styles = []
@@ -65,7 +76,12 @@ class AdvertisersController < ApplicationController
 		end
 
 		def get_create_ad_params
-			params.require(:create_ad).permit(:name, :type, :url)
+			params.require(:create_ad).permit :name, :type, :url
+		end
+
+		def get_design_ad_params
+			one_to_six = ["0", "1", "2", "3", "4", "5"]
+			params.require(:design_ad).permit :name, :description, :image => one_to_six
 		end
 
 end

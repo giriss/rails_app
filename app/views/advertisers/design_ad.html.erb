@@ -1,0 +1,76 @@
+<div class="heading">
+	Design your ad
+</div>
+<div id="design_ad_form_div">
+	<%= form_for :design_ad, url: advertiser_design_ad_post_path, html:{id: :design_ad_form} do |f| %>
+		<table>
+			<tr>
+				<td><div><%= f.label :name %></div></td>
+				<td><div><%= f.text_field :name, class: "textInput" %></div></td>
+			</tr>
+			<tr>
+				<td><div><%= f.label :description %></div></td>
+				<td><div><%= f.text_area :description, class: "small" %></div></td>
+				<td>
+					<div class="red smaller ubuntu">maximum of 500 characters</div>
+					<div class="red smaller ubuntu" id="num_remaining"><span>500</span> left</div>
+				</td>
+			</tr>
+			<tr id="image_tr_0">
+				<td><div><%= f.label :image, "Add Image" %></div></td>
+				<td><div><%= f.file_field "image[0]", id: "image_0", "data-num" => 0 %></div></td>
+				<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+			</tr>
+			<tr id="image_tr_1" class="nodisplay">
+				<td><div><%= f.label :image, "Add Image" %></div></td>
+				<td><div><%= f.file_field "image[1]", id: "image_1", "data-num" => 1 %></div></td>
+				<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+			</tr>
+			<tr id="image_tr_2" class="nodisplay">
+				<td><div><%= f.label :image, "Add Image" %></div></td>
+				<td><div><%= f.file_field "image[2]", id: "image_2", "data-num" => 2 %></div></td>
+				<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+			</tr>
+			<tr id="image_tr_3" class="nodisplay">
+				<td><div><%= f.label :image, "Add Image" %></div></td>
+				<td><div><%= f.file_field "image[3]", id: "image_3", "data-num" => 3 %></div></td>
+				<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+			</tr>
+			<tr id="image_tr_4" class="nodisplay">
+				<td><div><%= f.label :image, "Add Image" %></div></td>
+				<td><div><%= f.file_field "image[4]", id: "image_4", "data-num" => 4 %></div></td>
+				<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+			</tr>
+			<tr id="image_tr_5" class="nodisplay">
+				<td><div><%= f.label :image, "Add Image" %></div></td>
+				<td><div><%= f.file_field "image[5]", id: "image_5", "data-num" => 5 %></div></td>
+				<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><div class="nodisplay red" id="image_list_div"></div></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><a class="large ubuntu bold" href="">Add a video instead of images</a></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><%= f.submit "Confirm", class: :button %>&nbsp;&nbsp;<button class="button">Preview</button></td>
+				<td></td>
+			</tr>
+		</table>
+	<% end %>
+</div>

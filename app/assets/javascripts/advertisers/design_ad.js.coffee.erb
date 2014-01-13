@@ -1,0 +1,22 @@
+$ ->
+	$("#design_ad_form input[type=file]").change ->
+		path = $(this).val()
+		num = $(this).attr("data-num")
+		path = path.split("\\")[path.split("\\").length - 1]
+		if path == ""
+		else if num == "5"
+			$("#image_tr_".concat(num)).addClass "nodisplay"
+			$("#image_list_div").append "<div class=\"ubuntu bold smaller\">".concat("6. "+path).concat("</div>")
+		else
+			$("#image_list_div").removeClass("nodisplay")
+			$("#image_tr_".concat(num)).addClass "nodisplay"
+			$("#image_tr_".concat(parseInt(num) + 1)).removeClass "nodisplay"
+			$("#image_list_div").append parseInt(num)+1+". "+path.concat("<br />")
+
+	$("#design_ad_description").keyup ->
+		length = $(this).val().length
+		num_remaining = 500 - length
+		$("#num_remaining > span").html(num_remaining)
+		if num_remaining < 0
+			$(this).val($(this).val().substring(0, 500))
+			$("#num_remaining > span").html(0)

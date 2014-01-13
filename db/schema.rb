@@ -13,15 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20131230094220) do
 
-  create_table "_users_old_20131220", force: true do |t|
-    t.string   "full_name"
-    t.string   "email"
-    t.string   "password"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "type"
-  end
-
   create_table "adverts", force: true do |t|
     t.string   "name"
     t.integer  "type"

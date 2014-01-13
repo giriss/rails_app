@@ -23,10 +23,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="create_ad.js.coffee" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="advertisers_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/advertisers_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="0" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="1494">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_ad.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/advertisers/create_ad.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="80" column="9" selection-start="2833" selection-end="2833" vertical-scroll-proportion="0.0" vertical-offset="1440" max-vertical-offset="1548">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_ad.css.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/advertisers/create_ad.css.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="47" selection-start="641" selection-end="641" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="954">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_ad.js.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/advertisers/create_ad.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="20" selection-start="325" selection-end="325" vertical-scroll-proportion="0.31054977" vertical-offset="0" max-vertical-offset="673">
+            <state line="3" column="0" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="576">
               <folding />
             </state>
           </provider>
@@ -39,19 +66,14 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/app/assets/stylesheets/users.css.less.erb" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/app/assets/stylesheets/intersital/index.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/users.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/advertisers/create_ad.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/advertisers/create_ad.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/advertisers/create_ad.css.scss" />
         <option value="$PROJECT_DIR$/app/controllers/advertisers_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/advertisers/create_ad.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/ily.io.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/ily.io.css.less" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/welcome.css.less" />
@@ -59,6 +81,9 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/users.css.less" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/users.css.less.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/advertiser.js.coffee.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/advertisers/create_ad.js.coffee" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/app/views/advertisers/create_ad.html.erb" />
       </list>
     </option>
   </component>
@@ -110,7 +135,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -125,93 +150,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ilyio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ilyio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ilyio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ilyio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ilyio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ilyio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ilyio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ilyio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ilyio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="advertisers" />
+              <option name="myItemId" value="rails_app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -222,7 +167,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../scala_practise/clevercloud_rails" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Rails.Development: ilyio">
     <configuration default="true" type="RakeRunConfigurationType" factoryName="Rake">
@@ -354,14 +299,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-4" width="1303" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10222905" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10146041" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -369,12 +314,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295129" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -417,16 +362,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/advertisers/create_ad.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="20" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0" vertical-offset="209" max-vertical-offset="589">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/advertisers/create_ad.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="12" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="589">
-          <folding />
-        </state>
+        <state line="3" column="12" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="589" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/advertisers/create_ad.css.scss">
@@ -441,9 +377,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0" vertical-offset="429" max-vertical-offset="1170">
-          <folding />
-        </state>
+        <state line="59" column="0" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0" vertical-offset="429" max-vertical-offset="1170" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/home.html.erb">
@@ -468,9 +402,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0" vertical-offset="429" max-vertical-offset="1170">
-          <folding />
-        </state>
+        <state line="59" column="0" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0" vertical-offset="429" max-vertical-offset="1170" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/home.html.erb">
@@ -495,9 +427,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0" vertical-offset="429" max-vertical-offset="1170">
-          <folding />
-        </state>
+        <state line="59" column="0" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0" vertical-offset="429" max-vertical-offset="1170" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/home.html.erb">
@@ -517,9 +447,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0" vertical-offset="429" max-vertical-offset="1170">
-          <folding />
-        </state>
+        <state line="59" column="0" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0" vertical-offset="429" max-vertical-offset="1170" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/home.html.erb">
@@ -539,9 +467,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0" vertical-offset="429" max-vertical-offset="1170">
-          <folding />
-        </state>
+        <state line="59" column="0" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0" vertical-offset="429" max-vertical-offset="1170" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
@@ -589,11 +515,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2016" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="601" selection-end="601" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="3204" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/intersital.css.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4770" />
@@ -631,29 +552,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="6" selection-start="829" selection-end="829" vertical-scroll-proportion="0.0952381" vertical-offset="565" max-vertical-offset="1273">
-          <folding />
-        </state>
+        <state line="33" column="6" selection-start="829" selection-end="829" vertical-scroll-proportion="0.0952381" vertical-offset="565" max-vertical-offset="1273" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/url_action.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="651" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/users.css.less.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="2" selection-start="401" selection-end="401" vertical-scroll-proportion="0.32098764" vertical-offset="39" max-vertical-offset="5852" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/advertisers/create_ad.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="47" selection-start="641" selection-end="641" vertical-scroll-proportion="0.5015432" vertical-offset="359" max-vertical-offset="1007" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/advertisers_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="25" selection-start="549" selection-end="549" vertical-scroll-proportion="0.53640413" vertical-offset="95" max-vertical-offset="1463" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/advertisers._.js">
@@ -671,14 +575,50 @@
         <state line="1" column="0" selection-start="10" selection-end="10" vertical-scroll-proportion="-0.76" vertical-offset="0" max-vertical-offset="589" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/advertisers/create_ad.html.erb">
+    <entry file="file:///var/lib/gems/1.9.1/gems/activerecord-4.0.2/lib/active_record/querying.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="2021" selection-end="2086" vertical-scroll-proportion="0.22204724" vertical-offset="809" max-vertical-offset="1596" />
+        <state line="8" column="4" selection-start="514" selection-end="514" vertical-scroll-proportion="0.24962853" vertical-offset="0" max-vertical-offset="1428" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="17" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3738" />
+      </provider>
+    </entry>
+    <entry file="file:///var/lib/gems/1.9.1/gems/rack-1.5.2/lib/rack/auth/digest/md5.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="12" selection-start="590" selection-end="590" vertical-scroll-proportion="0.33283803" vertical-offset="133" max-vertical-offset="2835" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="20" selection-start="834" selection-end="834" vertical-scroll-proportion="0.3447251" vertical-offset="293" max-vertical-offset="966" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/advertisers_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="1494">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/advertisers/create_ad.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="20" selection-start="325" selection-end="325" vertical-scroll-proportion="0.31054977" vertical-offset="0" max-vertical-offset="673">
+        <state line="3" column="0" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="672">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/advertisers/create_ad.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="47" selection-start="641" selection-end="641" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="954">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/advertisers/create_ad.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="9" selection-start="2833" selection-end="2833" vertical-scroll-proportion="0.0" vertical-offset="842" max-vertical-offset="1548">
           <folding />
         </state>
       </provider>

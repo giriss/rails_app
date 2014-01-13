@@ -12,6 +12,7 @@ toogle_url = (val) ->
 		$create_ad_commit.val "Create"
 
 
+
 $( document ).ready ->
 
 	$("#create_ad_now_button").click ->

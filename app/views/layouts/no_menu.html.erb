@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= @action.capitalize.split('_').join(' ') %></title>
+		<%= stylesheet_link_tag "ily.io" %>
+	<%= stylesheet_link_tag    "advertisers" %>
+	<% @styles.each do |style| %>
+		<%= stylesheet_link_tag "advertisers/#{style}" %>
+	<% end %>
+	<%= javascript_include_tag "jquery-1.9.0.min" %>
+	<%= javascript_include_tag "apprise-v2" %>
+	<%= stylesheet_link_tag "apprise-v2" %>
+	<%= javascript_include_tag "jquery.zclip" %>
+	<%= javascript_include_tag "advertiser" %>
+	<% @scripts.each do |script| %>
+		<%= javascript_include_tag "advertisers/#{script}" %>
+	<% end %>
+	<%= javascript_tag do %>
+		<% if flash[:alerts].nil? %>
+			window.alert_any = false
+		<% else %>
+			window.alert_any = true
+			window.alert_desc = "<%= j h flash[:alerts] %>"
+		<% end %>
+	<% end %>
+	<link rel="icon" type="image/ico" href="<%= image_path "favicon.ico" %>"/>
+
+	<%= csrf_meta_tags %>
+</head>
+
+<body>
+<header>
+	<img src="<%= image_path("ily.io.png") %>">
+</header>
+<div id="body">
+	<form id="form"></form> <!-- needed to logout -->
+
+	<div id="content">
+		<%= yield %>
+	</div>
+</div>
+
+<aside id="invisibles">
+</aside>
+
+<footer>
+	<div>
+		<div><i>ily.io &copy; <%= Time.now.year %></i>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Made with <span id="heart">&hearts;</span> in Mauritius, Mah&eacute;bourg... :*<span id="jai_sri_krsna">&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;जय श्री कृष्ण</span></div>
+		<hr />
+		<div>
+			<table>
+				<tr>
+					<td><a href="">{ Publisher Rates }</a></td>
+					<td><a href="">{ About us }</a></td>
+				</tr>
+				<tr>
+					<td><a href="">{ Advertiser Rates }</a></td>
+					<td><a href="">{ terms &amp; policies}</a></td>
+				</tr>
+				<tr>
+					<td><%= link_to"{ Publisher:Learn more }", welcome_learnMore_path(:pub) %></td>
+					<td><a href="">{ help }</a></td>
+				</tr>
+				<tr>
+					<td><%= link_to "{ Advertiser:Learn more }", welcome_learnMore_path(:adv) %></td>
+					<td><a href="">{ like us on fb }</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</footer>
+</body>
+</html>

@@ -3,16 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import url(http://fonts.googleapis.com/css?family=Architects+Daughter|Trade+Winds|Ubuntu+Mono|Ubuntu:400,700);
-@red: rgba(150,20,20,1);
-@blue: rgba(30,100,140,1);
-@green: rgba(50,150,20,1);
+$red: rgba(150,20,20,1);
+$blue: rgba(30,100,140,1);
+$green: rgba(50,150,20,1);
 
 *{
 	margin: 0;
 	padding: 0;
 }
 a{
-	color: @green;
+	color: $green;
 	font-style: italic;
 }
 body{
@@ -58,13 +58,13 @@ table, table tr, table td {
 	font-weight: 900 !important;
 }
 .red{
-	color: @red !important;
+	color: $red !important;
 }
 .green{
-	color: @green !important;
+	color: $green !important;
 }
 .blue{
-	color: @blue !important;
+	color: $blue !important;
 }
 .black{
 	color: rgba(0,0,0,.8) !important;
