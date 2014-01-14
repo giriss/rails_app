@@ -146,8 +146,8 @@
 					background: linear-gradient(to bottom,  rgba(30,100,140,0.2) 0%,rgba(30,100,140,0) 30%,rgba(30,100,140,0) 100%); /* W3C */
 				}
 				td{
+					border-bottom: solid 1px rgba(30,100,140,.8);
 					>div{
-						border-bottom: solid 1px rgba(30,100,140,.8);
 						padding: 10px 0;
 						[type=checkbox]{
 							box-shadow: 2px 2px 5px 0 rgba(30,100,140,1);
@@ -169,12 +169,12 @@
 					}
 				}
 				&:first-child{
-					td>div{
+					td{
 						border-top: solid 1px rgba(30,100,140,.8);
 					}
 				}
 				&:last-child{
-					td>div{
+					td{
 						border-bottom: none;
 					}
 				}

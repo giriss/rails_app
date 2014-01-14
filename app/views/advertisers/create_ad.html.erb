@@ -9,7 +9,7 @@
 	<div class="nodisplay" id="create_ad_div">
 		<div class="heading">Create Ad now !</div>
 		<div id="create_ad_form_div">
-			<%= form_for :create_ad, url: advertiser_create_ad_post_path do |f| %>
+			<%= form_for :create_ad, url: advertiser_create_ad_post_path, html:{id: "create_ad_form"} do |f| %>
 				<table>
 				    <tr>
 				        <td><div><%= f.label :name, :class => 'label' %></div></td>
@@ -29,7 +29,7 @@
 				    <tr>
 				        <td><div></div></td>
 				        <td><div></div></td>
-				        <td><div><%= f.submit "Create", {class: "button", id: "create_ad_commit"} %>&nbsp;&nbsp;<button id="create_ad_cancel_button" class="button">Cancel</button></div></td>
+				        <td><div><%= f.submit "Proceed", {class: "button", id: "create_ad_commit"} %>&nbsp;&nbsp;<button id="create_ad_cancel_button" class="button">Cancel</button></div></td>
 				    </tr>
 				</table>
 			<% end %>
@@ -46,7 +46,7 @@
         <table class="table">
           <tr>
             <td>
-              <div><strong>&nbsp;</strong></div>
+              <div><strong>&nbsp;&nbsp;#</strong></div>
             </td>
             <td>
               <div><strong>name</strong></div>

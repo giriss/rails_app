@@ -6,7 +6,7 @@ $ ->
 		if path == ""
 		else if num == "5"
 			$("#image_tr_".concat(num)).addClass "nodisplay"
-			$("#image_list_div").append "<div class=\"ubuntu bold smaller\">".concat("6. "+path).concat("</div>")
+			$("#image_list_div").append "6. "+path
 		else
 			$("#image_list_div").removeClass("nodisplay")
 			$("#image_tr_".concat(num)).addClass "nodisplay"
@@ -20,3 +20,27 @@ $ ->
 		if num_remaining < 0
 			$(this).val($(this).val().substring(0, 500))
 			$("#num_remaining > span").html(0)
+	
+	$("#preview_div_close").click ->
+		$(this).css "display", "none"
+		$("#preview_div").css "display", "none"
+	
+	$("#preview_button").click (event) ->
+		event.preventDefault()
+		$("#preview_div").html "<div><img src=\"<%= image_path "16_.GIF" %>\"><iframe id=\"ad_iframe\" src=\"http://wikipedia.org\"></iframe></div>"
+		$("#preview_div > div").css({"height": $(window).height()-100+"px", "width": $(window).width()-100+"px"})
+		height = $("#preview_div > div").height()
+		width  = $("#preview_div > div").width()
+		margin_up = (height - 28) / 2
+		margin_left = (width - 220) / 2
+		$("#preview_div > div > img").css "margin", margin_up+"px 0 0 "+margin_left+"px"
+		$("#ad_iframe").bind 'load', ->
+			$("#preview_div > div > img").addClass "nodisplay"
+			$("#ad_iframe").css "display", "block"
+		$("#preview_div").css "display", "block"
+		$("#preview_div_close").css "display", "block"
+
+$(window).bind "load", ->
+	$("body").css "visibility", "visible"
+	if $(window).height() > 75+30+$("#body").outerHeight()+20+164
+		$("footer").height $(window).height() - (75+30+$("#body").outerHeight()+20)

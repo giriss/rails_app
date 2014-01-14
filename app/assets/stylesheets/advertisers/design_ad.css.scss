@@ -1,3 +1,6 @@
+body{
+	visibility: hidden;
+}
 textarea{
 	min-width: 350px;
 	min-height: 75px;
@@ -44,4 +47,36 @@ textarea{
 			}
 		}
 	}
+}
+#preview_div{
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: fixed;
+	background: rgba(250,250,250,.7) !important;
+	> div{
+		margin: 50px;
+		box-shadow: 0 0 10px 0 rgba(0,0,0,1);
+		overflow: hidden;
+		background: white;
+		> #ad_iframe{
+			display: none;
+			width: inherit;
+			height: inherit;
+			border: none;
+		}
+		> img{
+			//box-shadow: 0 0 10px 0 rgba(30,100,140,1)
+		}
+	}
+}
+#preview_div_close{
+	position: fixed;
+	right: 70px;
+	top: 10px;
+	color: rgb(240,90,80);
+	text-shadow: 0 0 10px rgb(255,100,90);
+	font-size: 30px;
+	cursor: pointer;
 }
