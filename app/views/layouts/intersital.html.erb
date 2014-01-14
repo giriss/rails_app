@@ -32,19 +32,22 @@
 		<div id="overlay">
 			<header>
 				<div>
-				    <div>
-				        <div>
-				            <img data-url="<%= root_path %>" src="<%= image_path("ily.io.png") %>">
-				        </div>
-				    </div>
-				    <div>
-
-				    </div>
 					<div>
-						<button class="button" id="goto_site">Proceed to site &nbsp;&rightarrow;</button>
+					    <div>
+					        <div>
+					            <img data-url="<%= root_path %>" src="<%= image_path("ily.io.png") %>">
+					        </div>
+					    </div>
+					    <div>
+
+					    </div>
+						<div>
+							<button class="button" id="goto_site">Proceed to site &nbsp;&rightarrow;</button>
+						</div>
 					</div>
 				</div>
 			</header>
+			<div id='vertical_bar_div'></div>
 		    <form id="form" method="post"></form>
 			<div id="body">
 			<%= yield %>

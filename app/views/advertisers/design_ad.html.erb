@@ -7,11 +7,22 @@
 			<tr>
 				<td><div><%= f.label :name %></div></td>
 				<td><div><%= f.text_field :name, class: "textInput" %></div></td>
+				<td>
+					<div class="green smaller ubuntu">will not be seen by visitors</div>
+				</td>
+			</tr>
+			<tr>
+				<td><div><%= f.label :ad_title, "Ad Title" %></div></td>
+				<td><div><%= f.text_field :ad_title, class: "textInput" %></div></td>
+				<td>
+					<div class="green smaller ubuntu">visistors will read this first</div>
+				</td>
 			</tr>
 			<tr>
 				<td><div><%= f.label :description %></div></td>
 				<td><div><%= f.text_area :description, class: "small" %></div></td>
 				<td>
+					<div class="green smaller ubuntu">a description for visitors</div>
 					<div class="red smaller ubuntu">maximum of 500 characters</div>
 					<div class="red smaller ubuntu" id="num_remaining"><span>500</span> left</div>
 				</td>

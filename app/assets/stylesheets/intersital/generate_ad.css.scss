@@ -1,0 +1,254 @@
+@import url(http://fonts.googleapis.com/css?family=Architects+Daughter|Trade+Winds|Ubuntu+Mono|Ubuntu:400,700);
+
+*{
+  margin: 0;
+  padding: 0;
+}
+a{
+  color: rgba(50, 150, 10, 1);
+  font-style: italic;
+}
+body{
+  font: 400 14px/1.2 'Architects Daughter';
+  color: rgba(30, 100, 140, 1);
+  background: image-url("back.jpg");   //Or back2.png
+}
+
+table{
+  border-collapse:collapse;
+}
+
+table, table tr, table td {
+  padding:none;
+  border:none;
+  border-spacing:0;
+  margin: none;
+}
+
+.script{
+  font-family: "Ubuntu Mono";
+  .s_var{
+	color: rgba(150,50,20,1);
+	font-weight: 900;
+  }
+  .s_num{
+	color: rgba(50,150,20,1);
+	font-weight: 900;
+  }
+  .s_comment{
+	color: rgba(100,100,100,1);
+  }
+}
+
+.bold{
+  font-weight: 900 !important;
+}
+.red{
+  color: rgba(150,20,20,1) !important;
+}
+.green{
+  color: rgba(50,150,20,1) !important;
+}
+.blue{
+  color: rgba(30,100,140,1) !important;
+}
+.black{
+	color: rgba(0,0,0,.8) !important;
+}
+.textInput{
+  width: 150px;
+  background: rgba(255,255,255,0);
+  border: solid 1px rgba(30, 100, 140,.8);
+  font: 400 16px/1 "Ubuntu";
+  line-height: 1;
+  padding: 4px 5px;
+  color: rgba(30, 100, 140,1);
+  &:focus{
+	outline: none;
+	box-shadow: 0 0 10px rgba(30, 100, 140,.8);
+  };
+  &[disabled]{
+	border: solid 1px rgba(100, 100, 100,.8);
+	background: rgba(220,220,220,1);
+  }
+}
+.center{
+  text-align: center;
+}
+.left{
+  float: left;
+}
+.ubuntu{
+  font: 400 12px/1 'Ubuntu';
+}
+.button{
+  font: 400 16px/1 'Ubuntu';
+  line-height: 1;
+  background: rgba(60, 130, 180, 1);
+  padding: 5px;
+  color: rgba(255,255,255,1);
+  border: solid 1px rgba(20, 70, 110, 1);
+  cursor: pointer;
+  &:hover{
+	background: rgba(60, 130, 180, .9);
+	box-shadow:0 0 10px 0 rgba(30, 100, 140, 1);
+	-moz-box-shadow:0 0 5px 0 rgba(30, 100, 140, 1);
+  }
+  &:focus{
+	outline: none;
+  }
+  &[disabled]{
+	border: solid 1px rgba(100,100,100,1);
+	background: rgba(180, 180, 180, 1);
+	color: rgba(100,100,100,1);
+	&:hover{
+	  box-shadow: none;
+	}
+  }
+}
+
+.v_table{
+	tr{
+		td{
+			padding: 5px 10px;
+			font: 400 16px/1 'Ubuntu';
+		}
+		td:first-child{
+			border-right: solid 1px rgba(30,100,140,1);
+			div{
+				text-align: right;
+			}
+		}
+	}
+}
+
+.table{
+	tr{
+		&:nth-child(odd){
+			background: rgba(30,100,140,0.2); /* Old browsers */
+			background: -moz-linear-gradient(top,  rgba(30,100,140,0.2) 0%, rgba(30,100,140,0) 30%, rgba(30,100,140,0) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,100,140,0.2)), color-stop(30%,rgba(30,100,140,0)), color-stop(100%,rgba(30,100,140,0))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(30,100,140,0.2) 0%,rgba(30,100,140,0) 30%,rgba(30,100,140,0) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(30,100,140,0.2) 0%,rgba(30,100,140,0) 30%,rgba(30,100,140,0) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(30,100,140,0.2) 0%,rgba(30,100,140,0) 30%,rgba(30,100,140,0) 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(30,100,140,0.2) 0%,rgba(30,100,140,0) 30%,rgba(30,100,140,0) 100%); /* W3C */
+		}
+		&:nth-child(even){
+			background: rgba(30,100,140,0.2); /* Old browsers */
+			background: -moz-linear-gradient(top,  rgba(30,100,140,0.2) 0%, rgba(30,100,140,0) 30%, rgba(30,100,140,0) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,100,140,0.2)), color-stop(30%,rgba(30,100,140,0)), color-stop(100%,rgba(30,100,140,0))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(30,100,140,0.2) 0%,rgba(30,100,140,0) 30%,rgba(30,100,140,0) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(30,100,140,0.2) 0%,rgba(30,100,140,0) 30%,rgba(30,100,140,0) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(30,100,140,0.2) 0%,rgba(30,100,140,0) 30%,rgba(30,100,140,0) 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(30,100,140,0.2) 0%,rgba(30,100,140,0) 30%,rgba(30,100,140,0) 100%); /* W3C */
+		}
+		td{
+			border-bottom: solid 1px rgba(30,100,140,.8);
+			>div{
+				font: 400 14px/1 'Ubuntu';
+				padding: 10px 0;
+			}
+		}
+		&:first-child{
+			td{
+				border-top: solid 1px rgba(30,100,140,.8);
+			}
+		}
+	}
+}
+.smallest{
+	font-size: 10px !important;
+}
+.smaller{
+	font-size: 12px !important;
+}
+.small{
+	font-size: 14px !important;
+}
+.normal_size{
+	font-size: 16px !important;
+}
+.large{
+	font-size: 18px !important;
+}
+.larger{
+	font-size: 20px !important;
+}
+.largest{
+	font-size: 22px !important;
+}
+.select{
+	background: rgba(255,255,255,0);
+	border: solid 1px rgba(30, 100, 140,.8);
+	font: 400 16px/1 "Ubuntu";
+	line-height: 1;
+	padding: 4px 5px;
+	color: rgba(30, 100, 140,1);
+	&:focus{
+		outline: none;
+		box-shadow: 0 0 10px rgba(30, 100, 140,.8);
+	};
+}
+.label{
+	font-family: 'Ubuntu';
+}
+.heading{
+  font-family: "Trade Winds";
+  font-size: 1.5em;
+}
+
+.display{
+  display: block;
+}
+
+.nodisplay{
+  display: none;
+}
+
+.green_div{
+	margin: 10px 0;
+	padding: 5px;
+	font:900 16px/1 'Ubuntu';
+	background: rgba(50,150,20,.3);
+	border: solid 1px rgba(50,150,20,1);
+	color: rgba(50,150,20,1)
+}
+.transparent{
+	opacity: 0;
+}
+
+
+// --------------------------------------------------------------------------------------------------
+
+body{
+	background-image: image-url("old_map.png");
+}
+
+#content{
+	> div{
+		> div{
+			margin: 0 auto;
+			width: 800px;
+			padding: 10px 0;
+			text-align: center;
+		}
+		&:nth-child(even){
+			border-bottom: solid 1px #1e648c;
+			border-top: solid 1px #1e648c;
+			background: rgba(30, 100, 140, 0.15);
+		}
+	}
+	#title_div{
+	}
+	#desc_div{
+	}
+	#slideshow_div{
+		> div{
+			padding: 20px 0 0 0;
+			> #img_div{
+				width: 800px;
+				height: 400px;
+			}
+		}
+	}
+}

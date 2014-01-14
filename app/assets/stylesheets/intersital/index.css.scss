@@ -1,6 +1,10 @@
 body{
 	visibility: hidden;
 }
+#vertical_bar_div{
+	height: 3px;
+	background-image: image-url("verticalbar.png");
+}
 [data-url]{
 	cursor: pointer;
 }

@@ -63,6 +63,7 @@ RailsSite::Application.routes.draw do
 	get  ":user_id/*url", to: "url_action#easy_link", as: "easy_link", constraints:{user_id: /[0-9]+[+]{1}/, url: /((http\:\/|https\:\/|)\w+[.]{1}\w+([.]{1}\w+|)+(\/.+|))|http:\/localhost\:3000\/tests/}, format: false
 	get  ":user_id/:digest_url", to: "url_action#digest_easy_link", as: "digest_easy_link", constraints:{user_id: /[+]{1}[0-9]+/, digest_url: /\w{32}/}, format: false
 
+	get   "intersital/generate/:id", to: "intersital#generate_ad", constraints:{ id: /[0-9]+/ }
     get   ":key", to: "intersital#index", constraints:{ key: /[-~_.0-9A-Za-z]{4}/ }
 
 	# The priority is based upon order of creation: first created -> highest priority.

@@ -24,10 +24,11 @@ $ ->
 	$("#preview_div_close").click ->
 		$(this).css "display", "none"
 		$("#preview_div").css "display", "none"
+		$("#preview_div > div").remove()
 	
 	$("#preview_button").click (event) ->
 		event.preventDefault()
-		$("#preview_div").html "<div><img src=\"<%= image_path "16_.GIF" %>\"><iframe id=\"ad_iframe\" src=\"http://wikipedia.org\"></iframe></div>"
+		$("#preview_div").html "<div><img src=\"<%= image_path "16_.GIF" %>\"><iframe id=\"ad_iframe\" src=\"http://sh.st\"></iframe></div>"
 		$("#preview_div > div").css({"height": $(window).height()-100+"px", "width": $(window).width()-100+"px"})
 		height = $("#preview_div > div").height()
 		width  = $("#preview_div > div").width()
