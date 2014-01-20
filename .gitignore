@@ -11,9 +11,9 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
-/public/images/uploads/*.png
-/public/images/uploads/*.jpg
-/public/images/uploads/*.gif
+#/public/images/uploads/*.png
+#/public/images/uploads/*.jpg
+#/public/images/uploads/*.gif
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
