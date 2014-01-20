@@ -22,8 +22,15 @@
 					</td>
 				</tr>
 				<tr>
+					<td><div><%= f.label :website, "Company Website" %></div></td>
+					<td><div><%= f.text_field :website, value: @preview ? @params[:website] : "",class: "textInput", :placeholder => "http://"  %></div></td>
+					<td>
+						<div class="green smaller ubuntu">your website will be displayed in your ad</div>
+					</td>
+				</tr>
+				<tr>
 					<td><div><%= f.label :description %></div></td>
-					<td><div><%= f.text_area :description, value: @preview ? @params[:description] : "", class: "small" %></div></td>
+					<td><div><%= f.text_area :description, value: @preview ? @params[:description] : "", class: "small"%></div></td>
 					<td>
 						<div class="green smaller ubuntu">a description for visitors</div>
 						<div class="red smaller ubuntu">maximum of 255 characters</div>
@@ -139,6 +146,13 @@
 					<td><div><%= f.text_field :ad_title, value: @preview ? @params[:ad_title] : @ad_det.ad_title, class: "textInput" %></div></td>
 					<td>
 						<div class="green smaller ubuntu">visistors will read this first</div>
+					</td>
+				</tr>
+				<tr>
+					<td><div><%= f.label :website, "Company Website" %></div></td>
+					<td><div><%= f.text_field :website, value: @preview ? @params[:website] : @ad_det.website,class: "textInput", :placeholder => "http://" %></div></td>
+					<td>
+						<div class="green smaller ubuntu">website will be displayed in your ad</div>
 					</td>
 				</tr>
 				<tr>

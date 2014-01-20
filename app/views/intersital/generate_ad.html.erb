@@ -1,6 +1,19 @@
 <div class="heading" id="title_div">
 	<div>
+		<% unless @advert_detail.website.nil? %>
+		<table>
+			<tr>
+				<td>
+					<div><%= @advert_detail.ad_title %></div>
+				</td>
+				<td class="ubuntu normal">
+					<div><%= link_to "Visit website", @advert_detail.website, target: :_blank %></div>
+				</td>
+			</tr>
+		</table>
+		<% else %>
 		<%= @advert_detail.ad_title %>
+		<% end %>
 	</div>
 </div>
 <div class="ubuntu large" id="desc_div">

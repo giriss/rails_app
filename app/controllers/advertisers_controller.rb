@@ -57,6 +57,7 @@ class AdvertisersController < ApplicationController
 				@ad.wrong_option4 = @params[:wrong_option4]
 				@ad.save
 				@ad_det.ad_title = @params[:ad_title]
+				@ad_det.website = @params[:website]
 				@ad_det.description = @params[:description]
 				@imgs_ids = Array.new
 				unless @params[:image].nil?
@@ -146,6 +147,7 @@ class AdvertisersController < ApplicationController
 #			@ad.wrong_option4 = @params[:wrong_option4]
 #			@ad.save
 			@ad_det.ad_title = @params[:ad_title]
+			@ad_det.website = @params[:website]
 			@ad_det.description = @params[:description]
 			@imgs_ids = Array.new
 			unless @params[:image].nil?
@@ -215,7 +217,7 @@ class AdvertisersController < ApplicationController
 
 		def get_design_ad_params
 			one_to_six = ["0", "1", "2", "3", "4", "5"]
-			params.require(:design_ad).permit :advert_id, :name, :ad_title, :description, :question, :right_option, :wrong_option1, :wrong_option2, :wrong_option3, :wrong_option4, :image => one_to_six, :uploaded_image => one_to_six
+			params.require(:design_ad).permit :advert_id, :name, :website, :ad_title, :description, :question, :right_option, :wrong_option1, :wrong_option2, :wrong_option3, :wrong_option4, :image => one_to_six, :uploaded_image => one_to_six
 		end
 
 end

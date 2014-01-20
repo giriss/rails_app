@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140118072156) do
+ActiveRecord::Schema.define(version: 20140120195352) do
 
   create_table "advert_details", force: true do |t|
     t.integer  "advert_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140118072156) do
     t.string   "video"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "website"
   end
 
   create_table "adverts", force: true do |t|
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(version: 20140118072156) do
     t.string   "video"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "website"
   end
 
   create_table "preview_images", force: true do |t|
