@@ -1,3 +1,22 @@
+show_image = (event) ->
+	self = event.currentTarget
+	$("#image_div > div > img:last-child").attr("src", "/images/uploads/"+$(self).attr("data-value"))
+	$("#image_div > div").css({"height": $(window).height()-100+"px", "width": $(window).width()-100+"px"})
+	height = $("#image_div > div").height()
+	width  = $("#image_div > div").width()
+	margin_up = (height - 20) / 2
+	margin_left = (width - 160) / 2
+	$("#image_div > div > img:first-child").css "margin", margin_up+"px 0 0 "+margin_left+"px"
+	$("#image_div > div > img:last-child").bind 'load', ->
+		$("#image_div > div > img:first-child").addClass "nodisplay"
+		$("#image_div > div > img:last-child").css "display", "block"
+		image_height = $("#image_div > div > img:last-child").height()
+		image_width  = $("#image_div > div > img:last-child").width()
+		margin_up = (height - image_height) / 2
+		margin_left = (width - image_width) / 2
+		$("#image_div > div > img:last-child").css "margin", margin_up+"px 0 0 "+margin_left+"px"
+	$("#image_div").css "display", "block"
+	$("#image_div_close").css "display", "block"
 show_preview = ->
 	$("#ad_iframe").attr("src", window.preview_link)
 	$("#preview_div > div").css({"height": $(window).height()-100+"px", "width": $(window).width()-100+"px"})
@@ -25,7 +44,7 @@ adjust_image_upload = ->
 			if $file_input.attr("data-value") != undefined && $file_input.attr("data-value") != ""
 				num = $file_input.attr('data-num')
 				filename = $file_input.attr("data-value")
-				images['_'.concat(num)] = filename
+				images['_'.concat(num)] = "<span class=\"green uploaded_image\" data-value=\""+filename+"\">&rarr;&nbsp;"+filename+"</span>"
 				$($tr).addClass "nodisplay"
 				uploaded_images.push "<input type=\"hidden\" name=\"design_ad[uploaded_image["+num+"]]\" value=\""+filename+"\" />"
 			else
@@ -74,11 +93,15 @@ $ ->
 	$("#preview_div_close").click ->
 		$(this).css "display", "none"
 		$("#preview_div").css "display", "none"
-		$("#preview_div > div").remove()
+
+	$("#image_div_close").click ->
+		$(this).css "display", "none"
+		$("#image_div").css "display", "none"
 	
 	$("#preview_button").click (event) ->
 		event.preventDefault()
 		temp_save()
+	$(".uploaded_image").click (event) -> show_image(event)
 	show_preview() if $("#preview_div").length == 1
 $(window).bind "load", ->
 	if $(window).height() > 75+30+$("#body").outerHeight()+20+164

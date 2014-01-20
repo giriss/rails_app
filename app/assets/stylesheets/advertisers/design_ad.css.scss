@@ -49,6 +49,9 @@ textarea{
 							padding: 5px;
 							background: rgba(140, 100, 30, 0.3);
 							font: 400 14px/1.2 "Ubuntu";
+							.uploaded_image{
+								cursor: pointer;
+							}
 						}
 					}
 				}
@@ -80,6 +83,36 @@ textarea{
 	}
 }
 #preview_div_close{
+	position: fixed;
+	right: 70px;
+	top: 10px;
+	color: rgb(240,90,80);
+	text-shadow: 0 0 10px rgb(255,100,90);
+	font-size: 30px;
+	cursor: pointer;
+}
+#image_div{
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: fixed;
+	background: rgba(250,250,250,.7) !important;
+	> div{
+		margin: 50px;
+		box-shadow: 0 0 10px 0 rgba(0,0,0,1);
+		overflow: hidden;
+		background: white;
+		> img:last-child{
+			display: none;
+			border: solid 1px rgba(30,100,140,.3);
+		}
+		> img:first-child{
+			//box-shadow: 0 0 10px 0 rgba(30,100,140,1)
+		}
+	}
+}
+#image_div_close{
 	position: fixed;
 	right: 70px;
 	top: 10px;
