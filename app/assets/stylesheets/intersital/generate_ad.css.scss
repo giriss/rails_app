@@ -249,6 +249,23 @@ body{
 				width: 800px;
 				height: 400px;
 			}
+			> #goto_div{
+				opacity: 0;
+				padding: 10px 0 0 0;
+				span{
+					width: 20px;
+					height: 20px;
+					display: inline-block;
+					border-radius: 10px;
+					box-shadow: inset 0 0 8px black;
+					background: rgba(100,100,100,1);
+					cursor: pointer;
+					&.current{
+						background: rgba(30,100,160,1) !important;
+						cursor: default;
+					}
+				}
+			}
 		}
 	}
 }

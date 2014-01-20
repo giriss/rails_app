@@ -3,85 +3,261 @@
 </div>
 <div id="design_ad_form_div">
 	<%= form_for :design_ad, url: advertiser_design_ad_post_path, html:{id: :design_ad_form} do |f| %>
-		<table>
-			<tr>
-				<td><div><%= f.label :name %></div></td>
-				<td><div><%= f.text_field :name, class: "textInput" %></div></td>
-				<td>
-					<div class="green smaller ubuntu">will not be seen by visitors</div>
-				</td>
-			</tr>
-			<tr>
-				<td><div><%= f.label :ad_title, "Ad Title" %></div></td>
-				<td><div><%= f.text_field :ad_title, class: "textInput" %></div></td>
-				<td>
-					<div class="green smaller ubuntu">visistors will read this first</div>
-				</td>
-			</tr>
-			<tr>
-				<td><div><%= f.label :description %></div></td>
-				<td><div><%= f.text_area :description, class: "small" %></div></td>
-				<td>
-					<div class="green smaller ubuntu">a description for visitors</div>
-					<div class="red smaller ubuntu">maximum of 500 characters</div>
-					<div class="red smaller ubuntu" id="num_remaining"><span>500</span> left</div>
-				</td>
-			</tr>
-			<tr id="image_tr_0">
-				<td><div><%= f.label :image, "Add Image" %></div></td>
-				<td><div><%= f.file_field "image[0]", id: "image_0", "data-num" => 0 %></div></td>
-				<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
-			</tr>
-			<tr id="image_tr_1" class="nodisplay">
-				<td><div><%= f.label :image, "Add Image" %></div></td>
-				<td><div><%= f.file_field "image[1]", id: "image_1", "data-num" => 1 %></div></td>
-				<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
-			</tr>
-			<tr id="image_tr_2" class="nodisplay">
-				<td><div><%= f.label :image, "Add Image" %></div></td>
-				<td><div><%= f.file_field "image[2]", id: "image_2", "data-num" => 2 %></div></td>
-				<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
-			</tr>
-			<tr id="image_tr_3" class="nodisplay">
-				<td><div><%= f.label :image, "Add Image" %></div></td>
-				<td><div><%= f.file_field "image[3]", id: "image_3", "data-num" => 3 %></div></td>
-				<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
-			</tr>
-			<tr id="image_tr_4" class="nodisplay">
-				<td><div><%= f.label :image, "Add Image" %></div></td>
-				<td><div><%= f.file_field "image[4]", id: "image_4", "data-num" => 4 %></div></td>
-				<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
-			</tr>
-			<tr id="image_tr_5" class="nodisplay">
-				<td><div><%= f.label :image, "Add Image" %></div></td>
-				<td><div><%= f.file_field "image[5]", id: "image_5", "data-num" => 5 %></div></td>
-				<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><div class="nodisplay red" id="image_list_div"></div></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><a class="large ubuntu bold" href="">Add a video instead of images</a></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><%= f.submit "Confirm", class: :button %>&nbsp;&nbsp;<button id="preview_button" class="button">Preview</button></td>
-				<td></td>
-			</tr>
-		</table>
+		<%# if flash[:preview_ad_id].nil? %>
+			<%= f.hidden_field :advert_id, value: @ad.id %>
+			<% if @ad_det.nil? %>
+			<table>
+				<tr>
+					<td><div><%= f.label :name %></div></td>
+					<td><div><%= f.text_field :name, value: @preview ? @params[:name] : @ad.name, class: "textInput" %></div></td>
+					<td>
+						<div class="green smaller ubuntu">will not be seen by visitors</div>
+					</td>
+				</tr>
+				<tr>
+					<td><div><%= f.label :ad_title, "Ad Title" %></div></td>
+					<td><div><%= f.text_field :ad_title, value: @preview ? @params[:ad_title] : "",class: "textInput" %></div></td>
+					<td>
+						<div class="green smaller ubuntu">visistors will read this first</div>
+					</td>
+				</tr>
+				<tr>
+					<td><div><%= f.label :description %></div></td>
+					<td><div><%= f.text_area :description, value: @preview ? @params[:description] : "", class: "small" %></div></td>
+					<td>
+						<div class="green smaller ubuntu">a description for visitors</div>
+						<div class="red smaller ubuntu">maximum of 255 characters</div>
+						<div class="red smaller ubuntu" id="num_remaining"><span>255</span> left</div>
+					</td>
+				</tr>
+				<tr id="image_tr_5" class="nodisplay" data-num="5">
+					<td><div><%= f.label :image, "Add Image" %></div></td>
+					<td><div><%= f.file_field "image[5]", id: "image_5", "data-num" => 5 %></div></td>
+					<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+				</tr>
+				<tr id="image_tr_4" class="nodisplay" data-num="4">
+					<td><div><%= f.label :image, "Add Image" %></div></td>
+					<td><div><%= f.file_field "image[4]", id: "image_4", "data-num" => 4 %></div></td>
+					<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+				</tr>
+				<tr id="image_tr_3" class="nodisplay" data-num="3">
+					<td><div><%= f.label :image, "Add Image" %></div></td>
+					<td><div><%= f.file_field "image[3]", id: "image_3", "data-num" => 3 %></div></td>
+					<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+				</tr>
+				<tr id="image_tr_2" class="nodisplay" data-num="2">
+					<td><div><%= f.label :image, "Add Image" %></div></td>
+					<td><div><%= f.file_field "image[2]", id: "image_2", "data-num" => 2 %></div></td>
+					<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+				</tr>
+				<tr id="image_tr_1" class="nodisplay" data-num="1">
+					<td><div><%= f.label :image, "Add Image" %></div></td>
+					<td><div><%= f.file_field "image[1]", id: "image_1", "data-num" => 1 %></div></td>
+					<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+				</tr>
+				<tr id="image_tr_0" data-num="0">
+					<td><div><%= f.label :image, "Add Image" %></div></td>
+					<td><div><%= f.file_field "image[0]", id: "image_0", "data-num" => 0 %></div></td>
+					<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<div class="red" id="image_list_div">
+						</div>
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><a class="small ubuntu bold" href="">add a video instead of images</a></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td><div><%= f.label :question %></div></td>
+					<td><div><%= f.text_field :question, value: @preview ? @params[:question] : "", class: "textInput" %></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><div><%= f.label :right_option %></div></td>
+					<td><div><%= f.text_field :right_option, class: "textInput" %></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><div><%= f.label :wrong_option1, "Wrong option 1" %></div></td>
+					<td><div><%= f.text_field :wrong_option1, value: @preview ? @params[:wrong_option1] : "", class: "textInput" %></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><div><%= f.label :wrong_option2, "Wrong option 2" %></div></td>
+					<td><div><%= f.text_field :wrong_option2, value: @preview ? @params[:wrong_option2] : "", class: "textInput" %></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><div><%= f.label :wrong_option3, "Wrong option 3" %></div></td>
+					<td><div><%= f.text_field :wrong_option3, value: @preview ? @params[:wrong_option3] : "", class: "textInput" %></div></td>
+					<td><div class="red smaller ubuntu">(optional)</div></td>
+				</tr>
+				<tr>
+					<td><div><%= f.label :wrong_option4, "Wrong option 4" %></div></td>
+					<td><div><%= f.text_field :wrong_option4, value: @preview ? @params[:wrong_option4] : "", class: "textInput" %></div></td>
+					<td><div class="red smaller ubuntu">(optional)</div></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<div>
+							<%= f.submit "Confirm", class: :button %>
+							<button id="preview_button" class="button">Preview</button>
+							<button id="discard_button" class="button">Discard unsaved changes</button>
+						</div>
+					</td>
+					<td></td>
+				</tr>
+			</table>
+			<% else %>
+			<table>
+				<tr>
+					<td><div><%= f.label :name %></div></td>
+					<td><div><%= f.text_field :name, value: @preview ? @params[:name] : @ad.name, class: "textInput" %></div></td>
+					<td>
+						<div class="green smaller ubuntu">will not be seen by visitors</div>
+					</td>
+				</tr>
+				<tr>
+					<td><div><%= f.label :ad_title, "Ad Title" %></div></td>
+					<td><div><%= f.text_field :ad_title, value: @preview ? @params[:ad_title] : @ad_det.ad_title, class: "textInput" %></div></td>
+					<td>
+						<div class="green smaller ubuntu">visistors will read this first</div>
+					</td>
+				</tr>
+				<tr>
+					<td><div><%= f.label :description %></div></td>
+					<td><div><%= f.text_area :description, value: @preview ? @params[:description] : @ad_det.description, class: "small" %></div></td>
+					<td>
+						<div class="green smaller ubuntu">a description for visitors</div>
+						<div class="red smaller ubuntu">maximum of 255 characters</div>
+						<div class="red smaller ubuntu" id="num_remaining"><span>255</span> left</div>
+					</td>
+				</tr>
+				<tr id="image_tr_5" class="nodisplay" data-num="5">
+					<td><div><%= f.label :image, "Add Image" %></div></td>
+					<td><div><%= f.file_field "image[5]", id: "image_5", "data-num" => 5, "data-value" => @images[5] %></div></td>
+					<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+				</tr>
+				<tr id="image_tr_4" class="nodisplay" data-num="4">
+					<td><div><%= f.label :image, "Add Image" %></div></td>
+					<td><div><%= f.file_field "image[4]", id: "image_4", "data-num" => 4, "data-value" => @images[4] %></div></td>
+					<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+				</tr>
+				<tr id="image_tr_3" class="nodisplay" data-num="3">
+					<td><div><%= f.label :image, "Add Image" %></div></td>
+					<td><div><%= f.file_field "image[3]", id: "image_3", "data-num" => 3, "data-value" => @images[3] %></div></td>
+					<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+				</tr>
+				<tr id="image_tr_2" class="nodisplay" data-num="2">
+					<td><div><%= f.label :image, "Add Image" %></div></td>
+					<td><div><%= f.file_field "image[2]", id: "image_2", "data-num" => 2, "data-value" => @images[2] %></div></td>
+					<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+				</tr>
+				<tr id="image_tr_1" class="nodisplay" data-num="1">
+					<td><div><%= f.label :image, "Add Image" %></div></td>
+					<td><div><%= f.file_field "image[1]", id: "image_1", "data-num" => 1, "data-value" => @images[1] %></div></td>
+					<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+				</tr>
+				<tr id="image_tr_0" data-num="0">
+					<td><div><%= f.label :image, "Add Image" %></div></td>
+					<td><div><%= f.file_field "image[0]", id: "image_0", "data-num" => 0, "data-value" => @images[0] %></div></td>
+					<td><div class="red smaller ubuntu">maximum of 6 images</div></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<div class="red" id="image_list_div">
+						<% i = 0 %>
+						<% for image in @images %>
+							<%= "#{image}" %>&nbsp;&nbsp;&nbsp;&nbsp;<span class="remove_img" data-num="<%= i %>">remove</span><br />
+							<% i += 1 %>
+						<% end %>
+						</div>
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><a class="small ubuntu bold" href="">add a video instead of images</a></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td><div><%= f.label :question %></div></td>
+					<td><div><%= f.text_field :question, value: @preview ? @params[:question] : @ad.question, class: "textInput" %></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><div><%= f.label :right_option %></div></td>
+					<td><div><%= f.text_field :right_option, value: @preview ? @params[:right_option] : @ad.right_option, class: "textInput" %></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><div><%= f.label :wrong_option1, "Wrong option 1" %></div></td>
+					<td><div><%= f.text_field :wrong_option1, value: @preview ? @params[:wrong_option1] : @ad.wrong_option1, class: "textInput" %></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><div><%= f.label :wrong_option2, "Wrong option 2" %></div></td>
+					<td><div><%= f.text_field :wrong_option2, value: @preview ? @params[:wrong_option2] : @ad.wrong_option2, class: "textInput" %></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><div><%= f.label :wrong_option3, "Wrong option 3" %></div></td>
+					<td><div><%= f.text_field :wrong_option3, value: @preview ? @params[:wrong_option3] : @ad.wrong_option3, class: "textInput" %></div></td>
+					<td><div class="red smaller ubuntu">(optional)</div></td>
+				</tr>
+				<tr>
+					<td><div><%= f.label :wrong_option4, "Wrong option 4" %></div></td>
+					<td><div><%= f.text_field :wrong_option4, value: @preview ? @params[:wrong_option4] : @ad.wrong_option4, class: "textInput" %></div></td>
+					<td><div class="red smaller ubuntu">(optional)</div></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<div>
+							<%= f.submit "Confirm", class: :button %>
+							<button id="preview_button" class="button">Preview</button>
+							<button id="discard_button" class="button">Discard unsaved changes</button>
+						</div>
+					</td>
+					<td></td>
+				</tr>
+			</table>
+			<% end %>
+		<%# else %>
+		
+			<%#= @ad.name %>
+		
+		<%# end %>
+		<div id="hidden_input_div">
+			
+		</div>
 	<% end %>
 </div>

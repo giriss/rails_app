@@ -1,9 +1,13 @@
+$red: rgba(150,20,20,1);
+$blue: rgba(30,100,140,1);
+$green: rgba(50,150,20,1);
+
 body{
 	visibility: hidden;
 }
 textarea{
-	min-width: 350px;
-	min-height: 75px;
+	min-width: 400px;
+	min-height: 100px;
 	background: rgba(255,255,255,0);
 	border: solid 1px rgba(30, 100, 140,.8);
 	line-height: 1;
@@ -19,7 +23,11 @@ textarea{
 	}
 }
 .textInput{
-	width: 350px;
+	width: 400px;
+}
+.remove_img{
+	cursor: pointer;
+	color: $blue;
 }
 #content{
 	> div{

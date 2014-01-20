@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131230094220) do
+ActiveRecord::Schema.define(version: 20140118072156) do
+
+  create_table "advert_details", force: true do |t|
+    t.integer  "advert_id"
+    t.string   "ad_title"
+    t.string   "description"
+    t.string   "images"
+    t.string   "video"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "adverts", force: true do |t|
     t.string   "name"
@@ -20,6 +30,12 @@ ActiveRecord::Schema.define(version: 20131230094220) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "question"
+    t.string   "right_option"
+    t.string   "wrong_option1"
+    t.string   "wrong_option2"
+    t.string   "wrong_option3"
+    t.string   "wrong_option4"
   end
 
   create_table "announcements", force: true do |t|
@@ -44,6 +60,30 @@ ActiveRecord::Schema.define(version: 20131230094220) do
     t.integer  "user_id"
     t.string   "detail"
     t.string   "controller_action"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "images", force: true do |t|
+    t.integer  "user_id"
+    t.string   "extension"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "preview_advert_details", force: true do |t|
+    t.integer  "advert_id"
+    t.string   "ad_title"
+    t.string   "description"
+    t.string   "images"
+    t.string   "video"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "preview_images", force: true do |t|
+    t.integer  "user_id"
+    t.string   "extension"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

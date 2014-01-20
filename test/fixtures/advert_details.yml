@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  advert_id: 1
+  ad_title: MyString
+  description: MyString
+  images: MyString
+  video: MyString
+
+two:
+  advert_id: 1
+  ad_title: MyString
+  description: MyString
+  images: MyString
+  video: MyString

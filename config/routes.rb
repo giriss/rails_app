@@ -1,5 +1,9 @@
 RailsSite::Application.routes.draw do
 
+  get "test/one"
+  get "test/two"
+  get "test/three"
+  get "test/four"
 	get "intersital/index"
 	namespace :deposits do
 		post "form_submit"
@@ -14,6 +18,7 @@ RailsSite::Application.routes.draw do
 	get "advertiser/campaign", to:"advertisers#campaign"
 	get "advertiser/create_ad", to:"advertisers#create_ad"
 	post "advertiser/create_ad", as:"advertiser_create_ad_post", to:"advertisers#create_ad_post"
+	post "advertiser/create_ad_preview", to:"advertisers#create_ad_preview"
 	get "advertiser/create_ad/design/:id", to:"advertisers#design_ad", id: /[0-9]+/, as: "advertiser_design_ad"
 	post "advertiser/create_ad/design/:id", to:"advertisers#design_ad", id: /[0-9]+/, as: "advertiser_design_ad_post"
 	get "advertiser/account",  to:"advertisers#account"
@@ -63,7 +68,8 @@ RailsSite::Application.routes.draw do
 	get  ":user_id/*url", to: "url_action#easy_link", as: "easy_link", constraints:{user_id: /[0-9]+[+]{1}/, url: /((http\:\/|https\:\/|)\w+[.]{1}\w+([.]{1}\w+|)+(\/.+|))|http:\/localhost\:3000\/tests/}, format: false
 	get  ":user_id/:digest_url", to: "url_action#digest_easy_link", as: "digest_easy_link", constraints:{user_id: /[+]{1}[0-9]+/, digest_url: /\w{32}/}, format: false
 
-	get   "intersital/generate/:id", to: "intersital#generate_ad", constraints:{ id: /[0-9]+/ }
+	get   "intersital/generate/:id", to: "intersital#generate_ad", constraints:{ id: /[0-9]+/ }, as: :generate_intersital
+	get   "intersital/generate/preview/:id", to: "intersital#generate_ad_preview", constraints:{ id: /[0-9]+/ }, as: :generate_intersital_preview
     get   ":key", to: "intersital#index", constraints:{ key: /[-~_.0-9A-Za-z]{4}/ }
 
 	# The priority is based upon order of creation: first created -> highest priority.

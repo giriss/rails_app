@@ -1,24 +1,74 @@
-$ ->
-	$("#design_ad_form input[type=file]").change ->
-		path = $(this).val()
-		num = $(this).attr("data-num")
-		path = path.split("\\")[path.split("\\").length - 1]
-		if path == ""
-		else if num == "5"
-			$("#image_tr_".concat(num)).addClass "nodisplay"
-			$("#image_list_div").append "6. "+path
-		else
-			$("#image_list_div").removeClass("nodisplay")
-			$("#image_tr_".concat(num)).addClass "nodisplay"
-			$("#image_tr_".concat(parseInt(num) + 1)).removeClass "nodisplay"
-			$("#image_list_div").append parseInt(num)+1+". "+path.concat("<br />")
+show_preview = ->
+	$("#ad_iframe").attr("src", window.preview_link)
+	$("#preview_div > div").css({"height": $(window).height()-100+"px", "width": $(window).width()-100+"px"})
+	height = $("#preview_div > div").height()
+	width  = $("#preview_div > div").width()
+	margin_up = (height - 20) / 2
+	margin_left = (width - 160) / 2
+	$("#preview_div > div > img").css "margin", margin_up+"px 0 0 "+margin_left+"px"
+	$("#ad_iframe").bind 'load', ->
+		$("#preview_div > div > img").addClass "nodisplay"
+		$("#ad_iframe").css "display", "block"
+	$("#preview_div").css "display", "block"
+	$("#preview_div_close").css "display", "block"
 
+temp_save = ->
+	$("#design_ad_form").attr("action", "/advertiser/create_ad_preview")
+	$("#design_ad_form").submit()
+
+adjust_image_upload = ->
+	images = {"_0": "", "_1": "","_2": "","_3": "","_4": "", "_5": ""} # or new Object()
+	uploaded_images = []
+	for $tr in $ "#design_ad_form tr[data-num]"
+		$file_input = $($tr).children("td").children("div").children "input[type=file]"
+		if $file_input.val() != "" || ($file_input.attr("data-value") != undefined && $file_input.attr("data-value") != "")
+			if $file_input.attr("data-value") != undefined && $file_input.attr("data-value") != ""
+				num = $file_input.attr('data-num')
+				filename = $file_input.attr("data-value")
+				images['_'.concat(num)] = filename
+				$($tr).addClass "nodisplay"
+				uploaded_images.push "<input type=\"hidden\" name=\"design_ad[uploaded_image["+num+"]]\" value=\""+filename+"\" />"
+			else
+				num = $file_input.attr('data-num')
+				path = $file_input.val()
+				filename = path.split("\\")[path.split("\\").length - 1]
+				images['_'.concat(num)] = filename
+				$($tr).addClass "nodisplay"
+		else
+			$("#design_ad_form tr[data-num]").addClass "nodisplay"
+			$($tr).removeClass "nodisplay"
+	$("#design_ad_form #hidden_input_div").html uploaded_images.join(" ")
+	remove_1 = "&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"remove_img\" data-num=\""
+	remove_2 = "\">remove</span>"
+	images_array = $.map images, (value, index) ->
+		if value != ""
+			[value + remove_1 + index.substring(1, 2) + remove_2]
+	$("#image_list_div").html images_array.join("<br />")
+	$("#image_list_div").addClass("nodisplay") if $("#image_list_div").html() == ""
+	$("#image_list_div").removeClass("nodisplay") if $("#image_list_div").html() != ""
+	$(".remove_img").on "click", (event) -> remove_img(event)
+
+remove_img = (event) ->
+	self = event.currentTarget
+	num = $(self).attr("data-num")
+	$("input[type=file][data-num="+num+"]").val("")
+	$("input[type=file][data-num="+num+"]").removeAttr("data-value")
+	adjust_image_upload()
+
+$ ->
+	$("body").css "visibility", "visible"
+	adjust_image_upload()
+	$("#discard_button").click (event) ->
+		event.preventDefault()
+		location.reload()
+	$("#design_ad_form input[type=file]").change -> adjust_image_upload()
+	$(".remove_img").click (event) -> remove_img(event)
 	$("#design_ad_description").keyup ->
 		length = $(this).val().length
-		num_remaining = 500 - length
+		num_remaining = 255 - length
 		$("#num_remaining > span").html(num_remaining)
 		if num_remaining < 0
-			$(this).val($(this).val().substring(0, 500))
+			$(this).val($(this).val().substring(0, 255))
 			$("#num_remaining > span").html(0)
 	
 	$("#preview_div_close").click ->
@@ -28,20 +78,8 @@ $ ->
 	
 	$("#preview_button").click (event) ->
 		event.preventDefault()
-		$("#preview_div").html "<div><img src=\"<%= image_path "16_.GIF" %>\"><iframe id=\"ad_iframe\" src=\"http://sh.st\"></iframe></div>"
-		$("#preview_div > div").css({"height": $(window).height()-100+"px", "width": $(window).width()-100+"px"})
-		height = $("#preview_div > div").height()
-		width  = $("#preview_div > div").width()
-		margin_up = (height - 28) / 2
-		margin_left = (width - 220) / 2
-		$("#preview_div > div > img").css "margin", margin_up+"px 0 0 "+margin_left+"px"
-		$("#ad_iframe").bind 'load', ->
-			$("#preview_div > div > img").addClass "nodisplay"
-			$("#ad_iframe").css "display", "block"
-		$("#preview_div").css "display", "block"
-		$("#preview_div_close").css "display", "block"
-
+		temp_save()
+	show_preview() if $("#preview_div").length == 1
 $(window).bind "load", ->
-	$("body").css "visibility", "visible"
 	if $(window).height() > 75+30+$("#body").outerHeight()+20+164
 		$("footer").height $(window).height() - (75+30+$("#body").outerHeight()+20)

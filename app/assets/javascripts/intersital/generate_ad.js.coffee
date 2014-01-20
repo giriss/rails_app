@@ -23,11 +23,29 @@ window.count = 0
 toogleImage = ->
 	if window.count == window.num_imgs - 2
 		clearInterval window.hide
+		setTimeout ->
+			$("#goto_div").animate({"opacity": "1"}, 1000)
+		, 1000
 	$($("#img_div > img")[window.count]).animate {"opacity":"0"}, 500, ->
 		$($("#img_div > img")[window.count]).addClass("nodisplay")
+		$($("#img_div > img")[window.count]).removeClass("current")
 		$($("#img_div > img")[window.count + 1]).removeClass("nodisplay")
+		$($("#img_div > img")[window.count + 1]).addClass("current")
 		$($("#img_div > img")[window.count + 1]).animate {"opacity":"1"}, 500
 		window.count = window.count + 1
+
+goto_image = (event) ->
+	self = event.currentTarget
+	num = $(self).attr("data-num")
+	console.log num
+	$("#img_div > img.current").animate {"opacity":"0"}, 1000, ->
+		$("#img_div > img.current").addClass("nodisplay")
+		$("#img_div > img.current").removeClass("current")
+		$($("#img_div > img")[num-1]).removeClass("nodisplay")
+		$($("#img_div > img")[num-1]).addClass("current")
+		$("#goto_div > span.current").removeClass("current")
+		$(self).addClass("current")
+		$($("#img_div > img")[num-1]).animate {"opacity":"1"}, 1000
 
 jQuery ->
 	$imgs = $("#img_div > img")
@@ -37,3 +55,4 @@ jQuery ->
 	$imgs.on 'load', ->
 		adjustImgHeight()
 		adjustImgMargin()
+	$("#goto_div > span").click (event) -> goto_image(event)

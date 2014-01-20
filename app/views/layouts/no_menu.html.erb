@@ -17,10 +17,13 @@
 	<% end %>
 	<%= javascript_tag do %>
 		<% if flash[:alerts].nil? %>
-			window.alert_any = false
+			window.alert_any = false;
 		<% else %>
-			window.alert_any = true
-			window.alert_desc = "<%= j h flash[:alerts] %>"
+			window.alert_any = true;
+			window.alert_desc = "<%= j h flash[:alerts] %>";
+		<% end %>
+		<% unless flash[:preview_ad_id].nil? %>
+			window.preview_link = "<%= generate_intersital_preview_path params[:id] %>";
 		<% end %>
 	<% end %>
 	<link rel="icon" type="image/ico" href="<%= image_path "favicon.ico" %>"/>
@@ -70,11 +73,14 @@
 	</div>
 </footer>
 
+<% unless flash[:preview_ad_id].nil? %>
 <div style="display:none" id="preview_div">
+<div><img src="<%= image_path "16.GIF" %>"><iframe id="ad_iframe"></iframe></div>
 </div>
 <div class="bold ubuntu" style="display:none" id="preview_div_close">
 	close&nbsp;X
 </div>
+<% end %>
 
 </body>
 </html>
