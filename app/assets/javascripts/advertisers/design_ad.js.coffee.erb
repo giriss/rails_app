@@ -1,3 +1,15 @@
+adjust_image_height = ->
+	$image = $("#image_div > div > img:last-child")
+	if $image.height() > 400
+		$image.height(400)
+		width = $image.width()
+		$image.width(800) if width > 800
+		$image.css("height", "auto") if width > 800
+	else if $image.width > 800
+		$image.width(800)
+		height = $image.height()
+		$image.height(400) if height > 400
+		$image.css("width", "auto") if height > 400
 show_image = (event) ->
 	self = event.currentTarget
 	$("#image_div > div > img:last-child").attr("src", "/images/uploads/"+$(self).attr("data-value"))
@@ -8,6 +20,7 @@ show_image = (event) ->
 	margin_left = (width - 160) / 2
 	$("#image_div > div > img:first-child").css "margin", margin_up+"px 0 0 "+margin_left+"px"
 	$("#image_div > div > img:last-child").bind 'load', ->
+		adjust_image_height()
 		$("#image_div > div > img:first-child").addClass "nodisplay"
 		$("#image_div > div > img:last-child").css "display", "block"
 		image_height = $("#image_div > div > img:last-child").height()
@@ -93,10 +106,14 @@ $ ->
 	$("#preview_div_close").click ->
 		$(this).css "display", "none"
 		$("#preview_div").css "display", "none"
+		$("#preview_div").remove()
 
 	$("#image_div_close").click ->
 		$(this).css "display", "none"
 		$("#image_div").css "display", "none"
+		$("#image_div > div > img:last-child").attr("src", "")
+		$("#image_div > div > img:last-child").css("height", "auto")
+		$("#image_div > div > img:last-child").css("width", "auto")
 	
 	$("#preview_button").click (event) ->
 		event.preventDefault()

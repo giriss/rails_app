@@ -57,10 +57,13 @@
             <td>
               <div><strong>URL</strong></div>
             </td>
+            <td>
+              <div>&nbsp;</div>
+            </td>
           </tr>
           <% i = 0%>
           <% @ads.each do |ad| %>
-          <tr>
+          <tr data-url="<%= ad.type == 1 ? "" : advertiser_design_ad_path(ad.id) %>">
             <td>
               <div>&nbsp;&nbsp;<%= i+=1 %></div>
             </td>
@@ -72,6 +75,9 @@
             </td>
             <td>
               <div><%= ad.url %>&nbsp;</div>
+            </td>
+            <td>
+              <div class="delete" data-id="<%= ad.id %>">delete</div>
             </td>
           </tr>
           <% end %>

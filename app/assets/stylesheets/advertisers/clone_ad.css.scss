@@ -1,0 +1,27 @@
+$red: rgba(150,20,20,1);
+$blue: rgba(30,100,140,1);
+$green: rgba(50,150,20,1);
+
+.textInput{
+	width: 400px;
+}
+
+#content{
+	> div{
+		padding: 20px
+	}
+	#design_ad_form_div{
+		table{
+			label{
+				font: 400 14px/1 "Ubuntu"; 
+			}
+			tr{
+				td{
+					> div{
+						padding: 5px;
+					}
+				}
+			}
+		}
+	}
+}

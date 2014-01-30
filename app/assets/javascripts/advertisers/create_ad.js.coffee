@@ -15,7 +15,18 @@ toogle_url = (val) ->
 
 
 $( document ).ready ->
-
+	csrf_token = $("meta[name=csrf-token]").attr "content"
+	csrf_param = $("meta[name=csrf-param]").attr "content"
+	$(".delete").click (event) ->
+		event.preventDefault()
+		event.stopPropagation()
+		if(window.confirm("Are you sure to delete this advert?"))
+			id = $(this).attr "data-id"
+			url = "/advertiser/destroy_ad/" + id
+			$id_form = $ "#form"
+			$id_form.attr("action", url).attr "method", "post"
+			$id_form.html "<input type='hidden' name='"+csrf_param+"' value='"+csrf_token+"' />"
+			$id_form.submit()
 	$("#create_ad_now_button").click ->
 		$("#ad_count_num_div").addClass "nodisplay"
 		$("#create_ad_div").removeClass "nodisplay"

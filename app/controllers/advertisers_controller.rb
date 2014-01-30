@@ -32,8 +32,12 @@ class AdvertisersController < ApplicationController
 		new_ad = Advert.new get_create_ad_params.merge!({user_id: session[:user_id]})
 		if new_ad.save
 			flash[:success] = true
+			if new_ad.type == 1
+				render text: :Ok
+			elsif new_ad.type == 2
+				redirect_to advertiser_design_ad_path new_ad.id
+			end
 		end
-		redirect_to advertiser_create_ad_path
 	end
 
 	def design_ad
@@ -85,6 +89,7 @@ class AdvertisersController < ApplicationController
 				end
 				@ad_det.images = @imgs_ids.join(";")
 				@ad_det.save
+				flash[:success] = true
 				redirect_to advertiser_create_ad_path
 			end
 		else
@@ -122,6 +127,22 @@ class AdvertisersController < ApplicationController
 					end
 				end
 				render layout: "no_menu"
+			end
+		end
+	end
+
+	def clone_ad
+		if request.post?
+
+		else
+			@action = 'clone_ad'
+			@styles = ['clone_ad']
+			@scripts = ['clone_ad']
+			@ad = Advert.find params[:id]
+			if @ad.user_id == session[:user_id]
+				render layout: "no_menu"
+			else
+
 			end
 		end
 	end
@@ -180,6 +201,15 @@ class AdvertisersController < ApplicationController
 			@get_design_ad_params[:image] = nil
 			flash[:preview_ad_details] = @get_design_ad_params
 			redirect_to advertiser_design_ad_path @params[:advert_id]
+		end
+	end
+
+	def destroy_ad
+		if session[:user_id] == Advert.find(params[:id]).user_id
+			@ad = Advert.find params[:id]
+			if @ad.destroy
+				redirect_to advertiser_create_ad_path
+			end
 		end
 	end
 
