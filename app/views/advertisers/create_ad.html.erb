@@ -36,7 +36,7 @@
 		</div>
 	</div>
 	<% if flash[:success] %>
-	<div class="green_div">Ad created successfully !</div>
+	<div class="green_div">Changes made successfully !</div>
 	<% end %>
 </div>
 <% if Advert.where(:user_id => session[:user_id]).count != 0 %>
