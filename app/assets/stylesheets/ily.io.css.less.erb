@@ -7,3 +7,97 @@
 #aum{
 	color: rgba(202,222,227,.3);
 }
+.elevated_button {
+	position: relative;
+	color: rgba(255,255,255,1);
+	text-decoration: none;
+	font-family: 'Yanone Kaffeesatz';
+	font-weight: 700;
+	font-size: 3em;
+	display: block;
+	padding: 4px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	margin: 100px auto;
+	width: 160px;
+	text-align: center;
+
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	-ms-transition: all .1s ease;
+	-o-transition: all .1s ease;
+	transition: all .1s ease;
+
+	&._blue{
+		background-color: rgb(41, 135, 189);
+		-webkit-box-shadow: 0px 9px 0px rgba(30,100,140,1), 0px 9px 25px rgba(0,0,0,.7);
+		-moz-box-shadow: 0px 9px 0px rgba(30,100,140,1), 0px 9px 25px rgba(0,0,0,.7);
+		box-shadow: 0px 9px 0px rgba(30,100,140,1), 0px 9px 25px rgba(0,0,0,.7);
+	}
+	&._red{
+		background-color: rgb(199, 27, 27);
+		-webkit-box-shadow: 0px 9px 0px rgba(150,20,20,1), 0px 9px 25px rgba(0,0,0,.7);
+		-moz-box-shadow: 0px 9px 0px rgba(150,20,20,1), 0px 9px 25px rgba(0,0,0,.7);
+		box-shadow: 0px 9px 0px rgba(150,20,20,1), 0px 9px 25px rgba(0,0,0,.7);
+	}
+	&._green{
+		background-color: rgb(58, 174, 23);
+		-webkit-box-shadow: 0px 9px 0px rgba(50,150,20,1), 0px 9px 25px rgba(0,0,0,.7);
+		-moz-box-shadow: 0px 9px 0px rgba(50,150,20,1), 0px 9px 25px rgba(0,0,0,.7);
+		box-shadow: 0px 9px 0px rgba(50,150,20,1), 0px 9px 25px rgba(0,0,0,.7);
+	}
+	&._orange{
+		background-color: rgba(219,86,5,1);
+		-webkit-box-shadow: 0px 9px 0px rgba(219,30,5,1), 0px 9px 25px rgba(0,0,0,.7);
+		-moz-box-shadow: 0px 9px 0px rgba(219,30,5,1), 0px 9px 25px rgba(0,0,0,.7);
+		box-shadow: 0px 9px 0px rgba(219,30,5,1), 0px 9px 25px rgba(0,0,0,.7);
+	}
+	&._yellow{
+		background-color: rgb(185, 144, 52);
+		-webkit-box-shadow: 0px 9px 0px rgb(160, 127, 42), 0px 9px 25px rgba(0,0,0,.7);
+		-moz-box-shadow: 0px 9px 0px rgb(160, 127, 42), 0px 9px 25px rgba(0,0,0,.7);
+		box-shadow: 0px 9px 0px rgb(160, 127, 42), 0px 9px 25px rgba(0,0,0,.7);
+	}
+	&._cyan{
+		background-color: rgb(60, 155, 154);
+		-webkit-box-shadow: 0px 9px 0px rgb(49, 125, 124), 0px 9px 25px rgba(0,0,0,.7);
+		-moz-box-shadow: 0px 9px 0px rgb(49, 125, 124), 0px 9px 25px rgba(0,0,0,.7);
+		box-shadow: 0px 9px 0px rgb(49, 125, 124), 0px 9px 25px rgba(0,0,0,.7);
+	}
+}
+
+.elevated_button:active {
+	&._blue{
+		-webkit-box-shadow: 0px 3px 0px rgba(30,100,140,1), 0px 3px 6px rgba(0,0,0,.9);
+		-moz-box-shadow: 0px 3px 0px rgba(30,100,140,1), 0px 3px 6px rgba(0,0,0,.9);
+		box-shadow: 0px 3px 0px rgba(30,100,140,1), 0px 3px 6px rgba(0,0,0,.9);
+	}
+	&._red{
+		-webkit-box-shadow: 0px 3px 0px rgba(150,20,20,1), 0px 3px 6px rgba(0,0,0,.9);
+		-moz-box-shadow: 0px 3px 0px rgba(150,20,20,1), 0px 3px 6px rgba(0,0,0,.9);
+		box-shadow: 0px 3px 0px rgba(150,20,20,1), 0px 3px 6px rgba(0,0,0,.9);
+	}
+	&._orange{
+		-webkit-box-shadow: 0px 3px 0px rgba(219,30,5,1), 0px 3px 6px rgba(0,0,0,.9);
+		-moz-box-shadow: 0px 3px 0px rgba(219,30,5,1), 0px 3px 6px rgba(0,0,0,.9);
+		box-shadow: 0px 3px 0px rgba(219,30,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	}
+	&._green{
+		-webkit-box-shadow: 0px 3px 0px rgba(50,150,20,1), 0px 3px 6px rgba(0,0,0,.9);
+		-moz-box-shadow: 0px 3px 0px rgba(50,150,20,1), 0px 3px 6px rgba(0,0,0,.9);
+		box-shadow: 0px 3px 0px rgba(50,150,20,1), 0px 3px 6px rgba(0,0,0,.9);
+	}
+	&._yellow{
+		-webkit-box-shadow: 0px 3px 0px rgb(160, 127, 42), 0px 3px 6px rgba(0,0,0,.9);
+		-moz-box-shadow: 0px 3px 0px rgb(160, 127, 42), 0px 3px 6px rgba(0,0,0,.9);
+		box-shadow: 0px 3px 0px rgb(160, 127, 42), 0px 3px 6px rgba(0,0,0,.9);
+	}
+	&._cyan{
+		-webkit-box-shadow: 0px 3px 0px rgb(49, 125, 124), 0px 3px 6px rgba(0,0,0,.9);
+		-moz-box-shadow: 0px 3px 0px rgb(49, 125, 124), 0px 3px 6px rgba(0,0,0,.9);
+		box-shadow: 0px 3px 0px rgb(49, 125, 124), 0px 3px 6px rgba(0,0,0,.9);
+	}
+	position: relative;
+	top: 6px;
+}
