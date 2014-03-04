@@ -55,4 +55,5 @@ jQuery ->
 	$imgs.on 'load', ->
 		adjustImgHeight()
 		adjustImgMargin()
+
 	$("#goto_div > span").click (event) -> goto_image(event)

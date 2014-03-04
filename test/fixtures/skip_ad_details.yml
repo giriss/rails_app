@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  token: MyString
+  ad_key: MyString
+  start_time: 2014-03-02 21:26:25
+  end_time: 2014-03-02 21:26:25
+  attempt: 1
+
+two:
+  token: MyString
+  ad_key: MyString
+  start_time: 2014-03-02 21:26:25
+  end_time: 2014-03-02 21:26:25
+  attempt: 1

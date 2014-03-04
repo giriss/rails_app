@@ -38,11 +38,12 @@
 					            <img data-url="<%= root_path %>" src="<%= image_path("ily.io.png") %>">
 					        </div>
 					    </div>
-					    <div>
-
+					    <div class="red" id="countdown_div">
+							Please analyse the advert below for <span class="bold largest" id="countdown_span">30</span> seconds<br />
+							Then proceed to your link
 					    </div>
 						<div>
-							<button class="button" id="goto_site">Proceed to site &nbsp;&rightarrow;</button>
+							<button disabled class="button" id="goto_site">Proceed to site &nbsp;&rightarrow;</button>
 						</div>
 					</div>
 				</div>
@@ -55,14 +56,11 @@
 		</div>
         <div id="question_answer_outer_div">
             <div id="question_answer_inner_div">
-				<div class="heading green center" style="padding: 10px">Just answer this question and unlock your link !</div>
-				<div class="heading" id="question_div">What is the purpose of ILY.io ?</div>
-				<div class="ubuntu" id="answers_div">
-					<div class="answer_div"><a class="answer_a _blue elevated_button">1. One</a></div>
-					<div class="answer_div"><a class="answer_a _cyan elevated_button">2. Two</a></div>
-					<div class="answer_div"><a class="answer_a _blue elevated_button">3. Three</a></div>
-					<div class="answer_div"><a class="answer_a _cyan elevated_button">4. Four</a></div>
-					<div class="answer_div"><a class="answer_a _blue elevated_button">5. Five</a></div>
+				<div id="question_answer_inner_inner_div">
+					<div class="heading green center" style="padding: 0 0 10px 0">Just answer this question and unlock your link !</div>
+					<div class="heading" id="question_div">Unknown Error !</div>
+					<div class="ubuntu" id="answers_div">
+					</div>
 				</div>
             </div>
         </div>

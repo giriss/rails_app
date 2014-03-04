@@ -128,28 +128,32 @@ body{
 	right: 0;
 	background: rgba(255,255,255,.7);
 	#question_answer_inner_div{
-		overflow-y: auto;
+		overflow-y: hidden;
 		background: url(/assets/old_map.png);
 		margin: 50px;
 		box-shadow: 0 0 15px #000;
-		#question_div{
-			padding: 15px 50px;
-			border-bottom: solid 1px #1e648c;
-			border-top: solid 1px #1e648c;
-			background: rgba(30, 100, 140, 0.15);
-		}
-		#answers_div{
-			padding: 15px 50px;
+		> #question_answer_inner_inner_div{
+			margin: 10px 0;
 			overflow-y: auto;
-			.answer_div{
-				margin: 0 0 20px 0;
-				.answer_a{
-					font-family: "Ubuntu" !important;
-					font-size: 16px !important;
-					padding: 12px 18px !important;
-					width: auto !important;
-					margin: 0 !important;
-					display: inline-block;
+			#question_div{
+				padding: 15px 50px;
+				border-bottom: solid 1px #1e648c;
+				border-top: solid 1px #1e648c;
+				background: rgba(30, 100, 140, 0.15);
+			}
+			#answers_div{
+				padding: 15px 50px;
+				overflow-y: auto;
+				.answer_div{
+					margin: 0 0 20px 0;
+					.answer_a{
+						font-family: "Ubuntu" !important;
+						font-size: 16px !important;
+						padding: 12px 18px !important;
+						width: auto !important;
+						margin: 0 !important;
+						display: inline-block;
+					}
 				}
 			}
 		}

@@ -215,8 +215,8 @@ class AdvertisersController < ApplicationController
 
 	def campaign
 		@action = 'campaign'
-		@styles = []
-		@scripts = []
+		@styles = ['campaign']
+		@scripts = ['campaign']
 	end
 
 	def account

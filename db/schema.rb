@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140120195352) do
+ActiveRecord::Schema.define(version: 20140304122958) do
 
   create_table "advert_details", force: true do |t|
     t.integer  "advert_id"
@@ -88,6 +88,17 @@ ActiveRecord::Schema.define(version: 20140120195352) do
     t.string   "extension"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "skip_ad_details", force: true do |t|
+    t.string   "token"
+    t.string   "url_key"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "attempt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "campaign_id"
   end
 
   create_table "urls", force: true do |t|

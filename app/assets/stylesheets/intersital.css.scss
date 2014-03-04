@@ -173,7 +173,7 @@ header{
 	background-image: image-url("back.jpg");
 	> div{
 		color: rgba(30, 100, 140, 1);
-		text-shadow: 0 0 8px rgba(30, 100, 140, .8);
+		//text-shadow: 0 0 8px rgba(30, 100, 140, .8);
 		padding: 10px 0 12px 0;
 	//	background-color: rgba(235,235,255, 1);
 		background: rgba(255,255,255,.3);
@@ -195,6 +195,9 @@ header{
 			> div:nth-child(2){
 				width: 490px;
 				height: 50px;
+				text-align: center;
+				font-size: 15px;
+				font-family: "Ubuntu";
 			}
 			> div:nth-child(3){
 				width: 160px;
@@ -202,6 +205,9 @@ header{
 				text-align: right;
 				button#goto_site{
 					font-weight: 900;
+					&[disabled]{
+						opacity: .7;
+					}
 				}
 			}
 		}

@@ -1,9 +1,9 @@
 RailsSite::Application.routes.draw do
 
-  get "test/one"
-  get "test/two"
-  get "test/three"
-  get "test/four"
+	get "test/one"
+	get "test/two"
+	get "test/three"
+	get "test/four"
 	get "intersital/index"
 	namespace :deposits do
 		post "form_submit"
@@ -73,7 +73,9 @@ RailsSite::Application.routes.draw do
 
 	get   "intersital/generate/:id", to: "intersital#generate_ad", constraints:{ id: /[0-9]+/ }, as: :generate_intersital
 	get   "intersital/generate/preview/:id", to: "intersital#generate_ad_preview", constraints:{ id: /[0-9]+/ }, as: :generate_intersital_preview
-    get   ":key", to: "intersital#index", constraints:{ key: /[-~_.0-9A-Za-z]{4}/ }
+	post  "intersital/request_campaign", to: "intersital#request_campaign"
+	#get  "intersital/request_campaign", to: "intersital#request_campaign"
+	get   ":key", to: "intersital#index", constraints:{ key: /[-~_.0-9A-Za-z]{4}/ }
 
 	# The priority is based upon order of creation: first created -> highest priority.
 	# See how all your routes lay out with "rake routes".
