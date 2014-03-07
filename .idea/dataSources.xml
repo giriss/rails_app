@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="969094363">
+  <component name="DataSourceManagerImpl" format="xml" hash="4080986771">
     <data-source source="LOCAL" name="Rails ilyio: development" uuid="e5421cb5-51af-493f-a7f9-ce84a4359808">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
@@ -11,6 +11,12 @@
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails ilyio: production" uuid="7fa81173-c8fe-41cc-b59f-9b61c21f54df">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:ilyio_heroku_production</jdbc-url>
       <libraries />
     </data-source>
   </component>
