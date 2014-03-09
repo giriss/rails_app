@@ -41,10 +41,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ruby.json" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ruby.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clevercloud/ruby.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="34" selection-start="54" selection-end="66" vertical-scroll-proportion="0.0864" vertical-offset="0" max-vertical-offset="625">
+            <state line="3" column="34" selection-start="54" selection-end="66" vertical-scroll-proportion="-2.0769231" vertical-offset="0" max-vertical-offset="216">
               <folding />
             </state>
           </provider>
@@ -86,10 +86,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="welcome_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="welcome_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/welcome_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="20" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+            <state line="2" column="2" selection-start="51" selection-end="51" vertical-scroll-proportion="0.05529954" vertical-offset="0" max-vertical-offset="702">
               <folding />
             </state>
           </provider>
@@ -153,8 +153,8 @@
         <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/app/views/layouts/welcome.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/controllers/welcome_controller.rb" />
         <option value="$PROJECT_DIR$/clevercloud/ruby.json" />
+        <option value="$PROJECT_DIR$/app/controllers/welcome_controller.rb" />
       </list>
     </option>
   </component>
@@ -728,6 +728,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/clevercloud/ruby.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="34" selection-start="54" selection-end="66" vertical-scroll-proportion="-2.0769231" vertical-offset="0" max-vertical-offset="216">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/advertisers_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="238" column="38" selection-start="6784" selection-end="6784" vertical-scroll-proportion="0.0" vertical-offset="3924" max-vertical-offset="4662">
@@ -737,14 +744,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/welcome_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="20" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clevercloud/ruby.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="34" selection-start="54" selection-end="66" vertical-scroll-proportion="0.0864" vertical-offset="0" max-vertical-offset="625">
+        <state line="2" column="2" selection-start="51" selection-end="51" vertical-scroll-proportion="0.05529954" vertical-offset="0" max-vertical-offset="702">
           <folding />
         </state>
       </provider>
