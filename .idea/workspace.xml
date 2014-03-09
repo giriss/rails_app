@@ -32,19 +32,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="0" selection-start="1433" selection-end="1433" vertical-scroll-proportion="0.0" vertical-offset="573" max-vertical-offset="1224">
+            <state line="62" column="1" selection-start="1434" selection-end="1434" vertical-scroll-proportion="0.8341014" vertical-offset="573" max-vertical-offset="1224">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ruby.json" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ruby.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clevercloud/ruby.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="28" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0576" vertical-offset="0" max-vertical-offset="625">
+            <state line="2" column="28" selection-start="37" selection-end="37" vertical-scroll-proportion="-1.3846154" vertical-offset="0" max-vertical-offset="216">
               <folding />
             </state>
           </provider>
@@ -153,8 +153,8 @@
         <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/app/views/layouts/welcome.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/welcome_controller.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/clevercloud/ruby.json" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -741,16 +741,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
+    <entry file="file://$PROJECT_DIR$/clevercloud/ruby.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="0" selection-start="1433" selection-end="1433" vertical-scroll-proportion="0.0" vertical-offset="573" max-vertical-offset="1224">
+        <state line="2" column="28" selection-start="37" selection-end="37" vertical-scroll-proportion="-1.3846154" vertical-offset="0" max-vertical-offset="216">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clevercloud/ruby.json">
+    <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="28" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0576" vertical-offset="0" max-vertical-offset="625">
+        <state line="62" column="1" selection-start="1434" selection-end="1434" vertical-scroll-proportion="0.8341014" vertical-offset="573" max-vertical-offset="1224">
           <folding />
         </state>
       </provider>
