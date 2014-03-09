@@ -41,6 +41,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ruby.json" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/clevercloud/ruby.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="28" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0576" vertical-offset="0" max-vertical-offset="625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="advertisers.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/advertisers.html.erb">
           <provider selected="true" editor-type-id="text-editor">
@@ -77,19 +86,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="welcome_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="welcome_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/welcome_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="5" selection-start="155" selection-end="155" vertical-scroll-proportion="0.19354838" vertical-offset="0" max-vertical-offset="720">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="campaign.js.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/advertisers/campaign.js.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+            <state line="6" column="24" selection-start="148" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
               <folding />
             </state>
           </provider>
@@ -154,6 +154,7 @@
         <option value="$PROJECT_DIR$/app/views/layouts/welcome.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/welcome_controller.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/clevercloud/ruby.json" />
       </list>
     </option>
   </component>
@@ -234,25 +235,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ilyio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rails_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="clevercloud" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -483,11 +466,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/object.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="177" column="8" selection-start="6389" selection-end="6389" vertical-scroll-proportion="0.33333334" vertical-offset="3317" max-vertical-offset="15400" />
-      </provider>
-    </entry>
     <entry file="file:///var/lib/gems/1.9.1/gems/sass-3.2.13/lib/sass/plugin/rails.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="12" selection-start="1348" selection-end="1348" vertical-scroll-proportion="0.52167416" vertical-offset="391" max-vertical-offset="1060" />
@@ -749,13 +727,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="0" selection-start="1433" selection-end="1433" vertical-scroll-proportion="0.0" vertical-offset="573" max-vertical-offset="1224">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/welcome.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="11" selection-start="727" selection-end="727" vertical-scroll-proportion="-14.538462" vertical-offset="0" max-vertical-offset="612">
@@ -765,7 +736,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/welcome_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="5" selection-start="155" selection-end="155" vertical-scroll-proportion="0.19354838" vertical-offset="0" max-vertical-offset="720">
+        <state line="6" column="24" selection-start="148" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="0" selection-start="1433" selection-end="1433" vertical-scroll-proportion="0.0" vertical-offset="573" max-vertical-offset="1224">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clevercloud/ruby.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="28" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0576" vertical-offset="0" max-vertical-offset="625">
           <folding />
         </state>
       </provider>
