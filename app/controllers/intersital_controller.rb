@@ -39,7 +39,6 @@ class IntersitalController < ApplicationController
 	end
 
 	def request_campaign
-		advert = Advert.find(7)
 		if session[:skip_ad_token].nil?
 			ret = '{"error": "unknown error"}'
 		else
