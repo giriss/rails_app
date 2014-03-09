@@ -77,19 +77,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/intersital/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="75" selection-start="1968" selection-end="1968" vertical-scroll-proportion="-19.692308" vertical-offset="208" max-vertical-offset="846">
+            <state line="40" column="32" selection-start="1925" selection-end="1925" vertical-scroll-proportion="0.8366013" vertical-offset="208" max-vertical-offset="846">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="intersital_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="intersital_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/intersital_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="24" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.37931034" vertical-offset="478" max-vertical-offset="1170">
+            <state line="40" column="24" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.0" vertical-offset="478" max-vertical-offset="1170">
               <folding />
             </state>
           </provider>
@@ -154,8 +154,8 @@
         <option value="$PROJECT_DIR$/clevercloud/ruby.json" />
         <option value="$PROJECT_DIR$/app/controllers/welcome_controller.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/views/intersital/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/intersital_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/intersital/index.html.erb" />
       </list>
     </option>
   </component>
@@ -796,16 +796,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/intersital/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/intersital_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="75" selection-start="1968" selection-end="1968" vertical-scroll-proportion="-19.692308" vertical-offset="208" max-vertical-offset="846">
+        <state line="40" column="24" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.0" vertical-offset="478" max-vertical-offset="1170">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/intersital_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/intersital/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="24" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.37931034" vertical-offset="478" max-vertical-offset="1170">
+        <state line="40" column="32" selection-start="1925" selection-end="1925" vertical-scroll-proportion="0.8366013" vertical-offset="208" max-vertical-offset="846">
           <folding />
         </state>
       </provider>
