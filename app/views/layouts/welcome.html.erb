@@ -2,13 +2,28 @@
 <html>
 	<head>
 		<title>Sum.mn</title>
-
+		<%= stylesheet_link_tag "ily.io" %>
+		<%= stylesheet_link_tag    "welcome" %>
+		<link rel="icon" type="image/ico" href="<%= image_path "favicon.ico" %>"/>
+		<%= javascript_include_tag "jquery-1.9.0.min" %>
+	    <%= javascript_include_tag "apprise-v2" %>
+	    <%= stylesheet_link_tag "apprise-v2" %>
+		<%= javascript_include_tag "welcome" %>
+		<%= csrf_meta_tags %>
+		<%= javascript_tag do %>
+			<% if !flash[:error].nil? %>
+				window.error_any = true
+				window.error_desc = "<span class='ubuntu black large'>"+"<%= j flash[:error] %>".replace(/&lt;/g, "<").replace(/&gt;/g, ">")+"</span>"
+			<% else %>
+				window.error_any = false
+			<% end %>
+		<% end %>
 		
 	</head>
 
 	<body>
 
-hi
+	<%= yield %>
 
 	</body>
 </html>
