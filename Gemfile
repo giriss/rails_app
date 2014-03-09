@@ -4,13 +4,17 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', group: "development"
 
 # therubyracer
 gem 'therubyracer', :platforms => :ruby
 
 # Nokogiri
 gem 'nokogiri'
+
+group :production do
+	gem 'shelly-dependencies'
+end
 
 # Paypal merchant SDK
 gem 'paypal-sdk-merchant'
@@ -42,7 +46,7 @@ group :doc do
 end
 
 # PostgreSQL
-#gem 'pg'
+gem 'pg', group: "production"
 #gem 'rails_12factor', group: :production
 # LESS CSS
 gem 'less-rails'
