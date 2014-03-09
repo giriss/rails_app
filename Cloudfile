@@ -4,8 +4,6 @@ ilyio:
   monitoring_email: b2j@dr.com
   domains:
     - ilyio.shellyapp.com
-    - www.akhile.tk
-    - akhile.tk
   servers:
     app1:
       size: large
@@ -24,6 +22,8 @@ akh-rails-app:
   environment: production # RAILS_ENV
   domains:
     - akh-rails-app.shellyapp.com
+    - www.akhile.tk
+    - akhile.tk
   servers:
     app1:
       size: large
