@@ -4,6 +4,8 @@ ilyio:
   monitoring_email: b2j@dr.com
   domains:
     - ilyio.shellyapp.com
+    - www.akhile.tk
+    - akhile.tk
   servers:
     app1:
       size: large
