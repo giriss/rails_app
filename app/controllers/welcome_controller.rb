@@ -1,9 +1,10 @@
 class WelcomeController < ApplicationController
 
-  before_action :login_check, only: [:index]
+  #before_action :login_check, only: [:index]
 
   def index
   	@user = User.new
+	render :text => "Hi"
   end
 
   def learnMore
