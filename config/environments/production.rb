@@ -1,4 +1,12 @@
 RailsSite::Application.configure do
+
+	######## Shelly Cloud settings to redirect www.akhile.tk to akhile.tk ########
+	config.middleware.insert_before(::Rack::Runtime, ::Rack::Rewrite) do
+		r301 %r{.*}, 'http://akhile.tk$&', :if => Proc.new { |rack_env|
+			rack_env['SERVER_NAME'] == 'www.akhile.tk'
+		}
+	end
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
