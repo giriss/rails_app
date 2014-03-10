@@ -1,0 +1,206 @@
+@import url(http://fonts.googleapis.com/css?family=Architects+Daughter|Roboto+Slab:400,700|Trade+Winds|Ubuntu+Condensed|Cantora+One|Ubuntu+Mono|Ubuntu:400,700);
+* {
+  margin: 0;
+  padding: 0; }
+
+a {
+  color: #32960a;
+  font-style: italic; }
+
+body {
+  font: 400 14px/1.2 'Architects Daughter';
+  color: #1e648c;
+  background: url(/assets/back.jpg); }
+
+table {
+  border-collapse: collapse; }
+
+table, table tr, table td {
+  padding: none;
+  border: none;
+  border-spacing: 0;
+  margin: none; }
+
+.smallest {
+  font-size: 10px !important; }
+
+.smaller {
+  font-size: 12px !important; }
+
+.small {
+  font-size: 14px !important; }
+
+.normal_size {
+  font-size: 16px !important; }
+
+.large {
+  font-size: 18px !important; }
+
+.larger {
+  font-size: 20px !important; }
+
+.largest {
+  font-size: 22px !important; }
+
+.bold {
+  font-weight: 900 !important; }
+
+.red {
+  color: #961414 !important; }
+
+.green {
+  color: #329614 !important; }
+
+.blue {
+  color: #1e648c !important; }
+
+.black {
+  color: rgba(0, 0, 0, 0.8) !important; }
+
+.script {
+  font-family: "Ubuntu Mono"; }
+  .script .s_var {
+    color: #963214;
+    font-weight: 900; }
+  .script .s_num {
+    color: #329614;
+    font-weight: 900; }
+  .script .s_comment {
+    color: #646464; }
+
+.bold {
+  font-weight: 900; }
+
+.red {
+  color: #963214; }
+
+.green {
+  color: #329614; }
+
+.blue {
+  color: #1e648c; }
+
+.textInput {
+  width: 150px;
+  background: rgba(255, 255, 255, 0);
+  border: solid 1px rgba(30, 100, 140, 0.8);
+  font: 400 16px/1 "Ubuntu";
+  line-height: 1;
+  padding: 4px 5px;
+  color: #1e648c; }
+  .textInput:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(30, 100, 140, 0.8); }
+  .textInput[disabled] {
+    border: solid 1px rgba(100, 100, 100, 0.8);
+    background: gainsboro; }
+
+.center {
+  text-align: center; }
+
+.left {
+  float: left; }
+
+.ubuntu {
+  font: 400 12px/1 'Ubuntu'; }
+
+.button {
+  font: 400 16px/1 'Ubuntu';
+  line-height: 1;
+  background: #3c82b4;
+  padding: 5px;
+  color: white;
+  border: solid 1px #14466e;
+  cursor: pointer; }
+  .button:hover {
+    background: rgba(60, 130, 180, 0.9);
+    box-shadow: 0 0 10px 0 #1e648c;
+    -moz-box-shadow: 0 0 5px 0 #1e648c; }
+  .button:focus {
+    outline: none; }
+  .button[disabled] {
+    border: solid 1px #646464;
+    background: #b4b4b4;
+    color: #646464; }
+    .button[disabled]:hover {
+      box-shadow: none; }
+
+.heading {
+  font-family: "Trade Winds";
+  font-size: 1.5em; }
+
+.display {
+  display: block; }
+
+.nodisplay {
+  display: none; }
+
+#overlay {
+  background: rgba(20, 20, 20, 0.8); }
+
+header {
+  background-image: url(/assets/back.jpg);
+  /*
+  	>div:first-child{
+  		font: 400 2.5em/1 "Trade Winds";
+  	}
+  	>div:nth-child(2){
+  		font: 400 1.1em/1 "Berkshire Swash";
+  	}
+  	*/ }
+  header > div {
+    color: #1e648c;
+    padding: 10px 0 12px 0;
+    background: rgba(255, 255, 255, 0.3);
+    font-size: 0; }
+    header > div > div {
+      overflow: auto;
+      width: 800px;
+      margin: auto; }
+      header > div > div > div {
+        float: left; }
+      header > div > div > div:nth-child(1) {
+        width: 150px; }
+        header > div > div > div:nth-child(1) > div {
+          width: 150px; }
+      header > div > div > div:nth-child(2) {
+        width: 490px;
+        height: 50px;
+        text-align: center;
+        font-size: 15px;
+        font-family: "Ubuntu"; }
+      header > div > div > div:nth-child(3) {
+        width: 160px;
+        padding: 11px 0;
+        text-align: right; }
+        header > div > div > div:nth-child(3) button#goto_site {
+          font-weight: 900; }
+          header > div > div > div:nth-child(3) button#goto_site[disabled] {
+            opacity: .7; }
+
+.selected {
+  box-shadow: inset 0 0 10px #1e648c;
+  background: rgba(30, 100, 140, 0.6) !important;
+  color: white; }
+
+footer {
+  border-top: solid 1px rgba(202, 222, 227, 0.2);
+  margin: 0 0 0 0;
+  font: 400 14px/1.2 "Ubuntu";
+  color: rgba(202, 222, 227, 0.8);
+  padding: 0 10px; }
+
+aside#invisibles {
+  display: none; }
+
+@-moz-document url-prefix() {
+  .textInput {
+    font: 400 14px/1 "Ubuntu"; }
+
+  .button {
+    font: 400 14px/1 "Ubuntu";
+    padding: 3px;
+    height: 28px; }
+
+  #shorten_textarea {
+    font: 400 14px/1 'Ubuntu' !important; } }

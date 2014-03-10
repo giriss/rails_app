@@ -1,0 +1,9 @@
+.textInput {
+  width: 400px; }
+
+#content > div {
+  padding: 20px; }
+#content #design_ad_form_div table label {
+  font: 400 14px/1 "Ubuntu"; }
+#content #design_ad_form_div table tr td > div {
+  padding: 5px; }

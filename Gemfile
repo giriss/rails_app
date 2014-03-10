@@ -47,7 +47,7 @@ end
 
 # PostgreSQL
 gem 'pg', group: "production"
-#gem 'rails_12factor', group: :production
+gem 'rails_12factor', group: :production
 # LESS CSS
 gem 'less-rails'
 gem 'less-rails-bootstrap'

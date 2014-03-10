@@ -1,0 +1,33 @@
+#content #ad_div {
+  padding: 20px; }
+  #content #ad_div #ad_count_num_div {
+    font-size: 20px;
+    font-weight: 900; }
+  #content #ad_div #create_ad_div #create_ad_form_div {
+    margin: 10px 0 0 0; }
+    #content #ad_div #create_ad_div #create_ad_form_div table tr td div {
+      padding: 5px; }
+      #content #ad_div #create_ad_div #create_ad_form_div table tr td div input[type=text] {
+        width: 250px; }
+      #content #ad_div #create_ad_div #create_ad_form_div table tr td div select {
+        width: 262px; }
+#content #ads_list_div {
+  padding: 20px; }
+  #content #ads_list_div #ads_table_div {
+    margin: 10px 0 0 0; }
+    #content #ads_list_div #ads_table_div table tr:hover:not(:first-child) {
+      background: rgba(30, 100, 150, 0.2);
+      cursor: pointer; }
+    #content #ads_list_div #ads_table_div table tr td:nth-child(1) {
+      width: 50px; }
+    #content #ads_list_div #ads_table_div table tr td:nth-child(2) {
+      width: 225px; }
+    #content #ads_list_div #ads_table_div table tr td:nth-child(3) {
+      width: 120px; }
+    #content #ads_list_div #ads_table_div table tr td:nth-child(4) {
+      width: 315px; }
+    #content #ads_list_div #ads_table_div table tr td:nth-child(5) {
+      width: 50px; }
+      #content #ads_list_div #ads_table_div table tr td:nth-child(5) > div {
+        color: red;
+        font-weight: bold; }

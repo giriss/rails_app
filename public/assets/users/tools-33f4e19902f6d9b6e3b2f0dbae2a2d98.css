@@ -1,0 +1,77 @@
+hr {
+  border-color: rgba(30, 100, 140, 0.5);
+  margin: 5px 0; }
+
+.nodisplay {
+  display: none; }
+
+#content {
+  overflow: auto; }
+  #content #tool_list_div {
+    float: left;
+    width: 209px;
+    min-height: 200px;
+    padding: 20px 0 20px 10px; }
+    #content #tool_list_div .tools {
+      text-align: right;
+      font: 900 16px/1 "Ubuntu";
+      padding: 10px;
+      margin: 0 0 5px 0; }
+      #content #tool_list_div .tools:last-child {
+        margin: 0; }
+      #content #tool_list_div .tools:hover:not(.selected) {
+        cursor: pointer;
+        background: rgba(30, 100, 140, 0.25) !important; }
+  #content #tool_div {
+    float: left;
+    width: 540px;
+    min-height: 282px;
+    margin: 10px 20px 10px 0;
+    padding: 10px 0 10px 20px;
+    border-left: solid 1px #1e648c; }
+    #content #tool_div > div > div {
+      margin: 0 0 10px 0; }
+    #content #tool_div > div > div:last-child {
+      margin: 0; }
+    #content #tool_div > div .tool_desc {
+      font: 400 16px/1.2 "Ubuntu"; }
+      #content #tool_div > div .tool_desc .heading {
+        font: 900 18px/1 "Ubuntu";
+        color: #32960a; }
+      #content #tool_div > div .tool_desc > div.framed {
+        overflow: auto;
+        width: 520px;
+        padding: 10px;
+        background: rgba(30, 100, 140, 0.25); }
+      #content #tool_div > div .tool_desc .small-font {
+        font: 400 14px/1 'Ubuntu'; }
+      #content #tool_div > div .tool_desc table, #content #tool_div > div .tool_desc th, #content #tool_div > div .tool_desc td {
+        border: 1px solid rgba(30, 100, 140, 0.5); }
+      #content #tool_div > div .tool_desc table td {
+        padding: 5px; }
+    #content #tool_div > div #ms_tool_textarea, #content #tool_div > div #mls_tool_textarea {
+      font-size: 0; }
+      #content #tool_div > div #ms_tool_textarea > textarea, #content #tool_div > div #mls_tool_textarea > textarea {
+        min-height: 200px;
+        min-width: 400px;
+        max-width: 518px;
+        width: 518px;
+        padding: 10px;
+        background: rgba(30, 100, 140, 0);
+        border: solid 1px #1e648c;
+        font: 400 14px/1 "Ubuntu";
+        color: #1e648c; }
+        #content #tool_div > div #ms_tool_textarea > textarea:focus, #content #tool_div > div #mls_tool_textarea > textarea:focus {
+          outline: none;
+          box-shadow: 0 0 10px 0 #1e648c; }
+    #content #tool_div > div #ms_shrink, #content #tool_div > div #mls_shrink {
+      text-align: right; }
+    #content #tool_div > div #el_usage_div {
+      font: 400 16px/1.2 'Ubuntu'; }
+      #content #tool_div > div #el_usage_div > div {
+        margin: 0 0 5px 0; }
+        #content #tool_div > div #el_usage_div > div:last-child {
+          margin: 0; }
+        #content #tool_div > div #el_usage_div > div:nth-child(2), #content #tool_div > div #el_usage_div > div:nth-child(4), #content #tool_div > div #el_usage_div > div:nth-child(6), #content #tool_div > div #el_usage_div > div:nth-child(8) {
+          padding: 10px;
+          background: rgba(30, 100, 140, 0.25); }

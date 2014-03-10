@@ -1,0 +1,141 @@
+#content #brief_stats {
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 900;
+  font-family: "Ubuntu";
+  border-bottom: solid 1px #1e648c;
+  margin: auto;
+  background: rgba(30, 100, 140, 0.15); }
+  #content #brief_stats tr td {
+    width: 195px; }
+    #content #brief_stats tr td div {
+      margin: 0 10px 0 0;
+      font-size: 16px;
+      text-align: center; }
+      #content #brief_stats tr td div > div:first-child {
+        border-bottom: dotted 2px rgba(30, 100, 140, 0.5); }
+    #content #brief_stats tr td:last-child div {
+      margin: 0; }
+#content #shorten {
+  padding: 10px; }
+  #content #shorten > .heading {
+    margin: 0 0 5px 0; }
+  #content #shorten > div:nth-child(2) {
+    height: 48px;
+    overflow: hidden; }
+    #content #shorten > div:nth-child(2) > div#scrollable {
+      position: relative; }
+      #content #shorten > div:nth-child(2) > div#scrollable #shrink_div #shrink_form > div {
+        overflow: auto;
+        padding: 10px; }
+        #content #shorten > div:nth-child(2) > div#scrollable #shrink_div #shrink_form > div #shrink_target {
+          width: 500px;
+          margin: 0 10px 0 0; }
+        #content #shorten > div:nth-child(2) > div#scrollable #shrink_div #shrink_form > div #shrink_button {
+          width: 238px;
+          font: 400 16px/1 "Ubuntu" !important;
+          line-height: 1 !important; }
+      #content #shorten > div:nth-child(2) > div#scrollable #shorten_div {
+        padding: 8px;
+        overflow: auto; }
+        #content #shorten > div:nth-child(2) > div#scrollable #shorten_div #shorten_textarea {
+          padding: 5px;
+          height: 16px;
+          max-height: 16px;
+          float: left;
+          font: 400 16px/1 'Ubuntu'; }
+        #content #shorten > div:nth-child(2) > div#scrollable #shorten_div #try_another_div {
+          padding: 6px 10px;
+          font: 400 16px/1 'Ubuntu';
+          font-weight: bold;
+          cursor: pointer;
+          float: left; }
+#content #announcements {
+  overflow: hidden;
+  width: 780px;
+  padding: 10px;
+  border-top: solid 1px #1e648c;
+  border-bottom: solid 1px #1e648c;
+  background: rgba(30, 100, 140, 0.15); }
+  #content #announcements > marquee > div {
+    overflow: hidden; }
+    #content #announcements > marquee > div > div:nth-child(odd) {
+      color: #8c1e64; }
+    #content #announcements > marquee > div > div:nth-child(even) {
+      color: #32960a; }
+    #content #announcements > marquee > div > div > span {
+      font-size: 16px; }
+#content #links {
+  overflow: hidden;
+  margin: 10px;
+  font-family: "Ubuntu"; }
+  #content #links > div:first-child {
+    margin: 0 0 10px 0; }
+  #content #links > div:nth-child(2) {
+    overflow: hidden; }
+    #content #links > div:nth-child(2) div.tables {
+      float: left;
+      position: relative; }
+    #content #links > div:nth-child(2) #slideable {
+      position: relative;
+      left: 0;
+      overflow: auto; }
+      #content #links > div:nth-child(2) #slideable #get_started_video {
+        margin: 10px 229px;
+        border: solid 1px #646464;
+        /* box-shadow: 0 0 10px 0 rgba(100,100,100,1); */ }
+    #content #links > div:nth-child(2) tr:nth-child(odd) {
+      background: rgba(30, 100, 140, 0.2);
+      /* Old browsers */
+      background: -moz-linear-gradient(top, rgba(30, 100, 140, 0.2) 0%, rgba(30, 100, 140, 0) 30%, rgba(30, 100, 140, 0) 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(30, 100, 140, 0.2)), color-stop(30%, rgba(30, 100, 140, 0)), color-stop(100%, rgba(30, 100, 140, 0)));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, rgba(30, 100, 140, 0.2) 0%, rgba(30, 100, 140, 0) 30%, rgba(30, 100, 140, 0) 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, rgba(30, 100, 140, 0.2) 0%, rgba(30, 100, 140, 0) 30%, rgba(30, 100, 140, 0) 100%);
+      /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, rgba(30, 100, 140, 0.2) 0%, rgba(30, 100, 140, 0) 30%, rgba(30, 100, 140, 0) 100%);
+      /* IE10+ */
+      background: linear-gradient(to bottom, rgba(30, 100, 140, 0.2) 0%, rgba(30, 100, 140, 0) 30%, rgba(30, 100, 140, 0) 100%);
+      /* W3C */ }
+    #content #links > div:nth-child(2) tr:nth-child(even) {
+      background: rgba(30, 100, 140, 0.2);
+      /* Old browsers */
+      background: -moz-linear-gradient(top, rgba(30, 100, 140, 0.2) 0%, rgba(30, 100, 140, 0) 30%, rgba(30, 100, 140, 0) 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(30, 100, 140, 0.2)), color-stop(30%, rgba(30, 100, 140, 0)), color-stop(100%, rgba(30, 100, 140, 0)));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, rgba(30, 100, 140, 0.2) 0%, rgba(30, 100, 140, 0) 30%, rgba(30, 100, 140, 0) 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, rgba(30, 100, 140, 0.2) 0%, rgba(30, 100, 140, 0) 30%, rgba(30, 100, 140, 0) 100%);
+      /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, rgba(30, 100, 140, 0.2) 0%, rgba(30, 100, 140, 0) 30%, rgba(30, 100, 140, 0) 100%);
+      /* IE10+ */
+      background: linear-gradient(to bottom, rgba(30, 100, 140, 0.2) 0%, rgba(30, 100, 140, 0) 30%, rgba(30, 100, 140, 0) 100%);
+      /* W3C */ }
+    #content #links > div:nth-child(2) tr td {
+      border-bottom: solid 1px rgba(30, 100, 140, 0.8); }
+      #content #links > div:nth-child(2) tr td > div {
+        padding: 10px 0; }
+        #content #links > div:nth-child(2) tr td > div [type=checkbox] {
+          box-shadow: 2px 2px 5px 0 #1e648c; }
+        #content #links > div:nth-child(2) tr td > div a {
+          color: #1e648c;
+          font-style: normal;
+          text-decoration: none; }
+        #content #links > div:nth-child(2) tr td > div a:hover {
+          color: #50b478; }
+        #content #links > div:nth-child(2) tr td > div a.delete {
+          color: red;
+          text-decoration: none;
+          font-style: normal;
+          font-weight: 900; }
+    #content #links > div:nth-child(2) tr:first-child td {
+      border-top: solid 1px rgba(30, 100, 140, 0.8); }
+    #content #links > div:nth-child(2) tr:last-child td {
+      border-bottom: none; }
+  #content #links > #next_prev button:first-child {
+    margin: 10px; }
+  #content #links > #next_prev button:last-child {
+    margin: 10px 0; }
