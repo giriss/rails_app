@@ -35,7 +35,7 @@ RailsSite::Application.routes.draw do
 	root "welcome#index"
 
 	get   "welcome/index"
-	get   ":who/learn_more", to: "welcome#learnMore", as: :welcome_learnMore, constraints: {who: /publisher|advertiser|pub|adv/}
+	get   ":who/learn_more", to: "welcome#learn_more", as: :welcome_learn_more, constraints: {who: /publisher|advertiser|pub|adv/}
 
 	namespace :url_action do
 		post "shrink"

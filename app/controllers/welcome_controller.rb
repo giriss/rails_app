@@ -1,12 +1,11 @@
 class WelcomeController < ApplicationController
-
   before_action :login_check, only: [:index]
-
+  before_action :redirect_to_https, only: [:index]
   def index
   	@user = User.new
   end
 
-  def learnMore
+  def learn_more
   	@who = params[:who]
   	if @who == "publisher" || @who == "pub"
 
