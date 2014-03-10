@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
 	before_action :login_check, only: [:home, :tools, :add_google_analytics, :destroy_google_analytics]
+	before_action :redirect_to_http, only: [:home]
 
 	def home
 		# @ip = request.remote_ip      #Gets the ip of the visitor which allows to get location

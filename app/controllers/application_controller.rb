@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
 		redirect_to "https://" + request.host + request.fullpath unless (request.ssl? || request.local?)
 		#redirect_to protocol: "https://" unless (request.ssl? || request.local?)
 	end
+	def redirect_to_http
+		redirect_to "http://" + request.host + request.fullpath unless !request.ssl?
+		#redirect_to protocol: "http://" unless !request.ssl?
+	end
 end
