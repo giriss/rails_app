@@ -65,4 +65,4 @@ gem 'rack-rewrite'   # for redirecting www.akhile.tk to akhile.tk
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-#ruby "1.9.3"
+ruby "1.9.3"
