@@ -98,8 +98,8 @@
 				<span class="small-font"><%= User.find(session[:user_id]).get_api_key %></span>
 			</div>
 			<br />
-			<b class="heading">ily.io allows 3 ways to send API request.</b><br />
-			<b>Method 1, Direct link</b><br />
+			<b class="larger red">ily.io allows 3 ways to send API request.</b><br />
+			<b class="green">Method 1, Direct link</b><br />
 			You can use the API by directly accessing the following URL.<br />
 			[<b class="green">Note:</b> The parameters should be in the same sequence]
 			<div class="small-font framed">
@@ -108,14 +108,14 @@
 				http://ily.io/api/user_id/<%= session[:user_id] %>/api_key/<%= User.find(session[:user_id]).get_api_key %>/url/www.google.com<br />
 				will add www.google.com to your shrink list.
 			</div><br />
-			<b>Method 2, GET request</b><br />
+			<b class="green">Method 2, GET request</b><br />
 			Another way is to send a simple GET request to the following URL using <b>user_id</b>, <b>api_key</b> and <b>url</b> as parameters.
 			<div class="framed">
 				http://ily.io/api/get</b><br /><br />
 				<b>Example,</b> GET: {user_id: <%= session[:user_id] %>, api_key: foobar, url: google.com} will result in<br />
 				http://ily.io/api/get?user_id=<%= session[:user_id] %>&amp;api_key=foobar&amp;url=google.com
 			</div><br />
-			<b>Method 3, POST request</b><br />
+			<b class="green">Method 3, POST request</b><br />
 			Finally you may also use a POST request to the following URL using <b>user_id</b>, <b>api_key</b> and <b>url</b> as parameters.
 			<div class="framed">
 				http://ily.io/api/post
