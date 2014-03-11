@@ -37,5 +37,10 @@ module RailsSite
 				false
 			end
 		end
+
+		config.assets.compress = true
+		config.assets.js_compressor = :uglifier
+		config.assets.css_compressor = :yui
+
 	end
 end
