@@ -7,6 +7,23 @@ RailsSite::Application.configure do
 		}
 	end
 
+
+	config.assets.precompile << Proc.new do |path|
+		if path =~ /\.(css|js)\z/
+			full_path = Rails.application.assets.resolve(path).to_path
+			app_assets_path = Rails.root.join('app', 'assets').to_path
+			if full_path.starts_with? app_assets_path
+				puts "including asset: " + full_path
+				true
+			else
+				puts "excluding asset: " + full_path
+				false
+			end
+		else
+			false
+		end
+	end
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -32,10 +49,9 @@ RailsSite::Application.configure do
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
-  # config.assets.css_compressor = :sass
+  config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
 
   # Generate digests for assets URLs.
   config.assets.digest = true
