@@ -18,12 +18,22 @@ test:
   pool: 5
   timeout: 5000
 
+#production:
+#  adapter: postgresql
+#  encoding: unicode
+#  database: ilyio_heroku_production
+#  pool: 5
+#  password:
+
 production:
   adapter: postgresql
   encoding: unicode
-  database: ilyio_heroku_production
   pool: 5
-  password:
+  database: btl9dpii6tr3ksl5
+  username: ufjb3m4cr196cn3u
+  password: f3aef4d5db434eee8a00c112fb652dd1
+  host: btl9dpii6tr3ksl5.postgresql.clvrcld.net
+  port: 5432
 
 #production:
 #   adapter: sqlite3

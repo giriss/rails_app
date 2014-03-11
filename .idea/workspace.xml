@@ -77,10 +77,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/intersital/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="54" selection-start="1947" selection-end="1947" vertical-scroll-proportion="0.86632824" vertical-offset="208" max-vertical-offset="846">
+            <state line="40" column="54" selection-start="1947" selection-end="1947" vertical-scroll-proportion="-19.692308" vertical-offset="208" max-vertical-offset="846">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.yml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/database.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="0" selection-start="819" selection-end="819" vertical-scroll-proportion="0.85714287" vertical-offset="90" max-vertical-offset="864">
               <folding />
             </state>
           </provider>
@@ -142,7 +151,6 @@
         <option value="$PROJECT_DIR$/clevercloud/ruby.json" />
         <option value="$PROJECT_DIR$/app/controllers/intersital_controller.rb" />
         <option value="$PROJECT_DIR$/Cloudfile" />
-        <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/app/views/users/tools.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/advertisers.html.erb" />
@@ -158,6 +166,7 @@
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/views/intersital/index.html.erb" />
+        <option value="$PROJECT_DIR$/config/database.yml" />
       </list>
     </option>
   </component>
@@ -252,24 +261,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ilyio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rails_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="environments" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -661,11 +652,6 @@
         <state line="20" column="0" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/tools.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="100" column="28" selection-start="4378" selection-end="4378" vertical-scroll-proportion="-8.576923" vertical-offset="1577" max-vertical-offset="3924" />
@@ -781,7 +767,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/intersital/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="54" selection-start="1947" selection-end="1947" vertical-scroll-proportion="0.86632824" vertical-offset="208" max-vertical-offset="846">
+        <state line="40" column="54" selection-start="1947" selection-end="1947" vertical-scroll-proportion="-19.692308" vertical-offset="208" max-vertical-offset="846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="819" selection-end="819" vertical-scroll-proportion="0.85714287" vertical-offset="90" max-vertical-offset="864">
           <folding />
         </state>
       </provider>

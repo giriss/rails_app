@@ -16,7 +16,9 @@
     <data-source source="LOCAL" name="Rails ilyio: production" uuid="7fa81173-c8fe-41cc-b59f-9b61c21f54df">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:ilyio_heroku_production</jdbc-url>
+      <jdbc-url>jdbc:postgresql://btl9dpii6tr3ksl5.postgresql.clvrcld.net:5432/btl9dpii6tr3ksl5</jdbc-url>
+      <user-name>ufjb3m4cr196cn3u</user-name>
+      <user-password>dfccdf99dfcbdfcfdfccdf9edfcedf9fdfcedfc8df9edf99df9edfcfdfcfdfcfdf92dfcbdf9adf9adfc9df9bdf9bdf98dfccdfc8df9cdf9fdf98dfcedfcedf9b</user-password>
       <libraries />
     </data-source>
   </component>
