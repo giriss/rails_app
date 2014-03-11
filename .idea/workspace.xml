@@ -104,19 +104,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/intersital/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="54" selection-start="1947" selection-end="1947" vertical-scroll-proportion="0.911032" vertical-offset="208" max-vertical-offset="846">
+            <state line="24" column="14" selection-start="1257" selection-end="1257" vertical-scroll-proportion="-8.615385" vertical-offset="208" max-vertical-offset="846">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="application.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/application.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="70" selection-start="422" selection-end="422" vertical-scroll-proportion="0.0" vertical-offset="191" max-vertical-offset="936">
+            <state line="43" column="11" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.91014975" vertical-offset="227" max-vertical-offset="954">
               <folding />
             </state>
           </provider>
@@ -174,8 +174,8 @@
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/welcome_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-        <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/views/intersital/index.html.erb" />
+        <option value="$PROJECT_DIR$/config/application.rb" />
       </list>
     </option>
   </component>
@@ -786,16 +786,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/intersital/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="70" selection-start="422" selection-end="422" vertical-scroll-proportion="0.0" vertical-offset="191" max-vertical-offset="936">
+        <state line="24" column="14" selection-start="1257" selection-end="1257" vertical-scroll-proportion="-8.615385" vertical-offset="208" max-vertical-offset="846">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/intersital/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="54" selection-start="1947" selection-end="1947" vertical-scroll-proportion="0.911032" vertical-offset="208" max-vertical-offset="846">
+        <state line="43" column="11" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.91014975" vertical-offset="227" max-vertical-offset="954">
           <folding />
         </state>
       </provider>

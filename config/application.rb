@@ -22,6 +22,11 @@ module RailsSite
 		# config.assets.digest = true
 
 		# The lines below, compiles all assets (y)
+
+		config.assets.compress = true
+		config.assets.js_compressor = :uglifier
+		config.assets.css_compressor = :yui
+
 		config.assets.precompile << Proc.new do |path|
 			if path =~ /\.(css|js)\z/
 				full_path = Rails.application.assets.resolve(path).to_path
@@ -37,10 +42,6 @@ module RailsSite
 				false
 			end
 		end
-
-		config.assets.compress = true
-		config.assets.js_compressor = :uglifier
-		config.assets.css_compressor = :yui
 
 	end
 end
