@@ -19,7 +19,7 @@ end
 class User < ActiveRecord::Base
 	has_many :url
 
-	after_validation :digest_password
+	after_create :digest_password
 	validates :full_name, :email, :password, presence: true
 	validates :full_name, length: { in: 5..50 }
 	validates :email, uniqueness: true, email: true
