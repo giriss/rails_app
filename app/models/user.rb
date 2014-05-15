@@ -37,6 +37,6 @@ class User < ActiveRecord::Base
 
 	private
 		def digest_password
-			self.password = Digest::MD5.hexdigest self.password
+			update password: Digest::MD5.hexdigest(self.password)
 		end
 end
