@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140304122958) do
+ActiveRecord::Schema.define(version: 20140515213146) do
 
   create_table "advert_details", force: true do |t|
     t.integer  "advert_id"
@@ -124,6 +124,7 @@ ActiveRecord::Schema.define(version: 20140304122958) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "api_key"
   end
 
 end

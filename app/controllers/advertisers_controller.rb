@@ -228,16 +228,10 @@ class AdvertisersController < ApplicationController
 	private
 
 		def login_check
-			if session[:user_id].nil? || session[:api_key].nil?
+			if session[:user_id].nil?
 				redirect_to root_path
 			else
-				if session[:api_key] != User.find(session[:user_id]).get_api_key
-					session.delete(:user_id)
-					session.delete(:api_key)
-					redirect_to root_path
-				else
-			        @name = User.find(session[:user_id]).full_name
-				end
+		        @name = User.find(session[:user_id]).full_name
 			end
 		end
 

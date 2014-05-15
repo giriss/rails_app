@@ -22,7 +22,6 @@ class UsersController < ApplicationController
 			if @db_pass == @password
 				@user = User.find_by(email: @email)
 				session[:user_id] = @user.id
-				session[:api_key] = @user.get_api_key
 			else
 				@error = true
 				flash[:error] = "Wrong password inserted<br />Check if caps lock is on and try again"
@@ -40,7 +39,7 @@ class UsersController < ApplicationController
 	end
 
 	def logout
-		reset_session
+		session.delete(:user_id)
 		redirect_to root_path
 	end
 
@@ -51,7 +50,6 @@ class UsersController < ApplicationController
 			flash[:error] = @user.errors.full_messages.join("<br />")
 		else
 			session[:user_id] = @user.id
-			session[:api_key] = @user.get_api_key
 		end
 		redirect_to root_path # not user_home_path since there might be errors
 	end
@@ -117,16 +115,10 @@ class UsersController < ApplicationController
 	private
 
 		def login_check
-			if session[:user_id].nil? || session[:api_key].nil?
+			if session[:user_id].nil?
 				redirect_to root_path
 			else
-				if session[:api_key] != User.find(session[:user_id]).get_api_key
-					session.delete(:user_id)
-					session.delete(:api_key)
-					redirect_to root_path
-				else
-					@name = User.find(session[:user_id]).full_name
-				end
+				@name = User.find(session[:user_id]).full_name
 			end
 		end
 

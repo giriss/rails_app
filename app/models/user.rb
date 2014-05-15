@@ -18,19 +18,21 @@ end
 
 class User < ActiveRecord::Base
 	has_many :url
-	after_validation :digest_password
 
+	after_validation :digest_password
 	validates :full_name, :email, :password, presence: true
 	validates :full_name, length: { in: 5..50 }
 	validates :email, uniqueness: true, email: true
-	validates :password, length: { in: 6..20 }, password: true
+	### Create validation for password ###
 
 	def get_api_key
-		user_id = self.id.to_s
-		user_key = Base66.encode user_id
-		api_key_1 = Digest::MD5.hexdigest user_id + user_key
-		api_key_2 = Digest::MD5.hexdigest user_key + user_id
-		api_key = api_key_1 + api_key_2
+		if api_key.nil?
+			api_key_ = Digest::MD5.hexdigest "USER_ID=#{id}&TIMESTAMP=#{Time.now.to_s}&RAND_NUM=#{Random.new.rand(1000)}"
+			update api_key: api_key_
+		else
+			api_key_ = api_key
+		end
+		api_key_
 	end
 
 	private

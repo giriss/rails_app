@@ -20,13 +20,8 @@ class WelcomeController < ApplicationController
   private
 
     def login_check
-      if !session[:user_id].nil? || !session[:api_key].nil?
-        if session[:api_key] != User.find(session[:user_id]).get_api_key
-          session.delete(:user_id)
-          session.delete(:api_key)
-        else
-          redirect_to user_home_path
-        end
+      unless session[:user_id].nil?
+        redirect_to user_home_path
       end
     end
 
