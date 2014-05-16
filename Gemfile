@@ -52,8 +52,8 @@ end
 gem 'pg', group: "production"
 gem 'rails_12factor', group: :production
 # LESS CSS
-gem 'less-rails'
-gem 'less-rails-bootstrap'
+#gem 'less-rails'
+#gem 'less-rails-bootstrap'
 
 gem 'rack-rewrite'   # for redirecting www.akhile.tk to akhile.tk
 # Use ActiveModel has_secure_password
