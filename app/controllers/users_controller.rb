@@ -4,10 +4,14 @@ class UsersController < ApplicationController
 	before_action :redirect_to_http, only: [:home]
 
 	def home
-		# @ip = request.remote_ip      #Gets the ip of the visitor which allows to get location
-		@action = 'home'
-		@styles = ['home']
-		@scripts = ['home']
+		#@ip = request.remote_ip      #Gets the ip of the visitor which allows to get location
+		@layout_details = {
+			controller: params[:controller],
+			action: params[:action],
+			other_styles: [],
+			other_scripts: [],
+			title: 'ily.io'
+		}
 		@new_urls = get_urls
 		@announcements = Announcement.where for: %q{p}    # for: "p" || :for => "p"
 	end
@@ -80,21 +84,33 @@ class UsersController < ApplicationController
 	end
 
 	def tools
-		@action = 'tools'
-		@styles = ['tools']
-		@scripts = ['tools']
+		@layout_details = {
+			controller: params[:controller],
+			action: params[:action],
+			other_styles: [],
+			other_scripts: [],
+			title: 'ily.io'
+		}
 	end
 
 	def withdraw
-		@action = 'withdraw'
-		@styles = []
-		@scripts = []
+		@layout_details = {
+			controller: params[:controller],
+			action: params[:action],
+			other_styles: [],
+			other_scripts: [],
+			title: 'ily.io'
+		}
 	end
 
 	def account
-		@action = 'account'
-		@styles = []
-		@scripts = []
+		@layout_details = {
+			controller: params[:controller],
+			action: params[:action],
+			other_styles: [],
+			other_scripts: [],
+			title: 'ily.io'
+		}
 	end
 
 	def new

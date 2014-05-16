@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <td><div class="choices<%= @layout_details[:action] == "home" ? " selected" : "" %>" data-url="<%= user_home_path %>">Dashboard</div></td>
+        <td><div class="choices<%= @layout_details[:action] == "referal" ? " selected" : "" %>" data-url="<%= u_referals_path %>">Referrals</div></td>
+        <td><div class="choices<%= @layout_details[:action] == "tools" ? " selected" : "" %>" data-url="<%= u_tools_path %>">Tools</div></td>
+        <td><div class="choices<%= @layout_details[:action] == "withdraw" ? " selected" : "" %>" data-url="<%= u_withdraw_path %>">Withdraw</div></td>
+        <td><div class="choices<%= @layout_details[:action] == "account" ? " selected" : "" %>" data-url="<%= u_account_path %>">Account</div></td>
+        <td>
+            <div id="user_det_panel">
+                Hello, <strong><%= @name %></strong> ! (<b><a id="logout" href="<%= logout_users_path %>" data-method="post">logout</a></b>)
+            </div>
+        </td>
+    </tr>
+</table>

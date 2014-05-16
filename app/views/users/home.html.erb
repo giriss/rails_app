@@ -67,71 +67,61 @@
 
 <div id="links">
 	<div class="heading">Manage your links</div>
-	<% if @new_urls.empty? %>
-		<div id="links_list">
-			<div>
-				<table>
-					<tr>
-						<td width="30px"><div><strong>&nbsp;</strong></div></td>
-						<td width="50px"><div><strong>#</strong></div></td>
-						<td width="190px"><div><strong>short url</strong></div></td>
-						<td width="240px"><div><strong>target link</strong></div></td>
-						<td width="100px"><div><strong># of views</strong></div></td>
-						<td width="100px"><div><strong>net earning</strong></div></td>
-						<td width="70px"><div><strong>&nbsp;</strong></div></td>
-					</tr>
-				</table>
-				<div id="slideable">
-					<strong>You have not shrink any url yet...</strong>
-					<video width="320" height="240" controls>
-						<source src="assets/learn_simple_flash.m4v" type="video/mp4" />
-						<source src="assets/learn_simple_flash.webm" type="video/webm" />
-						<source src="assets/learn_simple_flash.ogv" type="video/ogg" />
-						Your browser does not support the video tag.
-					</video>
-				</div>
-			</div>
-		</div>
-	<% else %>
-		<div id="links_list">
-			<div>
-				<table>
-					<tr>
-						<td width="30px"><div><strong>&nbsp;</strong></div></td>
-						<td width="50px"><div><strong>#</strong></div></td>
-						<td width="190px"><div><strong>short url</strong></div></td>
-						<td width="240px"><div><strong>target link</strong></div></td>
-						<td width="100px"><div><strong># of views</strong></div></td>
-						<td width="100px"><div><strong>net earning</strong></div></td>
-						<td width="70px"><div><strong>&nbsp;</strong></div></td>
-					</tr>
-				</table>
-				<div id="slideable">
-					<% count = 0 %>
-					<% @new_urls.each do |page| %>
-						<div id="<% if count == 0 %>first_table<% end %>" class="tables">
-							<table>
-								<% page.each do |url| %>
-									<% count += 1 %>
-									<tr data-urlid="<%= url.id %>">
-										<td width="30px"><div>&nbsp;<input name="url_id" value="<%= url.id %>" type="checkbox" /></div></td>
-										<td width="50px"><div><%= count %>.</div></td>
-										<td width="190px"><div><a target="_blank" href="/<%= url.key %>">http://ily.io/<%= url.key %></a></div></td>
-										<td width="240px"><div><a target="_blank" href="<%= url.target %>"><%= url.target %></a></div></td>
-										<td width="100px"><div><%= url.views %></div></td>
-										<td width="100px"><div>$0.00</div></td>
-										<td width="70px"><div><a class="delete" href="<%= url_action_destroy_path(url.id) %>" data-number="<%= count %>" data-urlid="<%= url.id %>">delete</a></div></td>
-									</tr>
-								<% end %>
-							</table>
-						</div>
-					<% end %>
-				</div>
-			</div>
-		</div>
-	<% end %>
-		<div id="next_prev">
-			<button id="prev_button" class="button">Previous page</button>
-			<button id="next_button" class="button">Next page</button>
-		</div>
+    <div id="links_list">
+        <div>
+            <table>
+                <tr>
+                    <td width="30px"><div><strong>&nbsp;</strong></div></td>
+                    <td width="50px"><div><strong>#</strong></div></td>
+                    <td width="190px"><div><strong>short url</strong></div></td>
+                    <td width="240px"><div><strong>target link</strong></div></td>
+                    <td width="100px"><div><strong># of views</strong></div></td>
+                    <td width="100px"><div><strong>net earning</strong></div></td>
+                    <td width="70px"><div><strong>&nbsp;</strong></div></td>
+                </tr>
+            </table>
+            <div id="slideable">
+                <% unless @new_urls.empty? %>
+                    <% count = 0 %>
+                    <% @new_urls.each do |page| %>
+                        <div id="<% if count == 0 %>first_table<% end %>" class="tables">
+                            <table>
+                                <% page.each do |url| %>
+                                    <% count += 1 %>
+                                    <tr data-urlid="<%= url.id %>">
+                                        <td width="30px"><div>&nbsp;<input name="url_id" value="<%= url.id %>" type="checkbox" /></div></td>
+                                        <td width="50px"><div><%= count %>.</div></td>
+                                        <td width="190px"><div><a target="_blank" href="/<%= url.key %>">http://ily.io/<%= url.key %></a></div></td>
+                                        <td width="240px"><div><a target="_blank" href="<%= url.target %>"><%= url.target %></a></div></td>
+                                        <td width="100px"><div><%= url.views %></div></td>
+                                        <td width="100px"><div>$0.00</div></td>
+                                        <td width="70px"><div><a class="delete" href="<%= url_action_destroy_path(url.id) %>" data-number="<%= count %>" data-urlid="<%= url.id %>">delete</a></div></td>
+                                    </tr>
+                                <% end %>
+                            </table>
+                        </div>
+                    <% end %>
+                <% end %>
+                <div class="<%= @new_urls.empty? ? nil : "nodisplay" %>" id="inside_slideable_when_first_time">
+                    <div style="padding: 0 10px">
+                        <strong>You have not shrink any url yet.??</strong><br />
+                        <strong> - Watch the video to get started...</strong>
+                    </div>
+                    <div>
+                        <video id="get_started_video" width="320" height="240" controls>
+                            <source src="" type="video/mp4" />
+                            <source src="" type="video/webm" />
+                            <source src="" type="video/ogg" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="next_prev">
+        <button id="prev_button" class="button">Previous page</button>
+        <button id="next_button" class="button">Next page</button>
+    </div>
 </div>

@@ -1,5 +1,8 @@
 function adjust_width(){
 	if(window.NUM_URLS > 1){
+
+		$("#inside_slideable_when_first_time").addClass('nodisplay');
+
 		var left = parseInt($("#slideable").css("left").split("px")[0]);
 		var max_left = parseInt(-(window.NUM_PAGES-1) * 780);
 
@@ -14,12 +17,13 @@ function adjust_width(){
 			$("#next_prev").css({"display":"block"});
 		}
 	}else if(window.NUM_URLS == 1){
+		$("#inside_slideable_when_first_time").addClass('nodisplay');
 		$("#slideable").prev().css({"display": "block"});
 		$("#slideable").parent().parent().next().css({"display": "none"})
 	}else{
-		$("#slideable").html($("#inside_slideable_when_first_time").html());
+		$("#inside_slideable_when_first_time").removeClass('nodisplay');
 		$("#slideable").prev().css({"display": "none"});
-		$("#slideable").parent().parent().next().css({"display": "none"}) // similar to $("#next_prev").css...
+		$("#slideable").parent().parent().next().css({"display": "none"}); // similar to $("#next_prev").css...
 	}
 
 }
@@ -140,6 +144,7 @@ $( document ).ready(function(){
 					data: {"authenticity_token": csrf_token},
 					success: function(html){
 						$("#slideable").html(html);
+						adjust_width();
 						window.NUM_PAGES = $(".tables").size();
 						window.NUM_URLS = $("#slideable table tr").size();
 						adjust_width();

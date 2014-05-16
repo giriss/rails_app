@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <td><div class="choices<%= @layout_details[:action] == "index" ? " selected" : "" %>" data-url="<%= advertiser_path %>">Dashboard</div></td>
+        <td><div class="choices<%= @layout_details[:action] == "wallet" ? " selected" : "" %>" data-url="<%= advertiser_wallet_path %>">Wallet</div></td>
+        <td><div class="choices<%= @layout_details[:action] == "create_ad" ? " selected" : "" %>" data-url="<%= advertiser_create_ad_path %>">Create Ad</div></td>
+        <td><div class="choices<%= @layout_details[:action] == "campaign" ? " selected" : "" %>" data-url="<%= advertiser_campaign_path %>">Campaign</div></td>
+        <td><div class="choices<%= @layout_details[:action] == "account" ? " selected" : "" %>" data-url="<%= advertiser_account_path %>">Account</div></td>
+        <td>
+            <div id="user_det_panel">
+                Hello, <strong><%= @name %></strong> ! (<b><a id="logout" href="<%= logout_users_path %>" data-method="post">logout</a></b>)
+            </div>
+        </td>
+    </tr>
+</table>

@@ -1,82 +1,51 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Dashboard</title>
+		<title><%= @layout_details[:title].nil? ? 'ily.io' : @layout_details[:title] %></title>
 		<%= stylesheet_link_tag "ily.io" %>
-		<%= stylesheet_link_tag "users" %>
-	    <% @styles.each do |style| %>
-	        <%= stylesheet_link_tag "users/#{style}" %>
-	    <% end %>
-		<%= javascript_include_tag "jquery-1.9.0.min" %>
+		<%= javascript_include_tag "jquery-1.11.1.min" %>
 	    <%= javascript_include_tag "apprise-v2" %>
 	    <%= stylesheet_link_tag "apprise-v2" %>
 		<%= javascript_include_tag "jquery.zclip" %>
-		<%= javascript_include_tag "users" %>
-		<% @scripts.each do |script| %>
-	        <%= javascript_include_tag "users/#{script}" %>
-		<% end %>
+		<%= javascript_include_tag "ily.io" %>
+        <% unless @layout_details.nil? %>
+            <%= @layout_details[:controller].nil? ? nil : stylesheet_link_tag("#{@layout_details[:controller]}") %>
+            <%= @layout_details[:action].nil? ? nil : stylesheet_link_tag("#{@layout_details[:controller]}/#{@layout_details[:action]}") %>
+            <% @layout_details[:other_styles].each do |style| %>
+                <%= stylesheet_link_tag style %>
+            <% end %>
+            <%= @layout_details[:controller].nil? ? nil : javascript_include_tag("#{@layout_details[:controller]}") %>
+            <%= @layout_details[:action].nil? ? nil : javascript_include_tag("#{@layout_details[:controller]}/#{@layout_details[:action]}") %>
+            <% @layout_details[:other_scripts].each do |script| %>
+                <%= javascript_include_tag script %>
+            <% end %>
+        <% end %>
 	    <%= javascript_tag do %>
-	        <% if flash[:alerts].nil? %>
+	        <% if flash[:alerts].nil? && flash[:errors].nil? %>
 	            window.alert_any = false
 	        <% else %>
 	            window.alert_any = true
-	            window.alert_desc = "<%= j h flash[:alerts] %>"
+	            window.alert_desc = "<%= j h flash[:alerts].nil? ? flash[:errors] : flash[:errors] %>"
 	        <% end %>
 	    <% end %>
 		<link rel="icon" type="image/ico" href="<%= image_path "favicon.ico" %>"/>
-
 		<%= csrf_meta_tags %>
 	</head>
-
 	<body>
 		<header>
 			<img src="<%= image_path("ily.io.png") %>">
 		</header>
-
 		<div id="body">
-
 			<form id="form"></form> <!-- needed to logout -->
-
 			<div id="menu">
-			    <table>
-			        <tr>
-			            <td><div class="choices<%= @action == "home" ? " selected" : "" %>" data-url="<%= user_home_path %>">Dashboard</div></td>
-			            <td><div class="choices<%= @action == "referal" ? " selected" : "" %>" data-url="<%= u_referals_path %>">Referrals</div></td>
-			            <td><div class="choices<%= @action == "tools" ? " selected" : "" %>" data-url="<%= u_tools_path %>">Tools</div></td>
-			            <td><div class="choices<%= @action == "withdraw" ? " selected" : "" %>" data-url="<%= u_withdraw_path %>">Withdraw</div></td>
-			            <td><div class="choices<%= @action == "account" ? " selected" : "" %>" data-url="<%= u_account_path %>">Account</div></td>
-			            <td>
-			                <div id="user_det_panel">
-			                    Hello, <strong><%= @name %></strong> ! (<b><a id="logout" href="<%= logout_users_path %>" data-method="post">logout</a></b>)
-			                </div>
-			            </td>
-			        </tr>
-			    </table>
+			    <%= render "partials/#{@layout_details[:controller]}_navbar" %>
 			</div>
-
 			<div id="content">
 				<%= yield %>
 			</div>
-
 			<aside id="invisibles">
-			    <div id="inside_slideable_when_first_time">
-			        <div style="padding: 0 10px">
-			            <strong>You have not shrink any url yet.??</strong><br />
-			            <strong> - Watch the video to get started...</strong>
-			        </div>
-			        <div>
-			            <video id="get_started_video" width="320" height="240" controls>
-			                <source src="assets/learn_simple_flash.m4v" type="video/mp4" />
-			                <source src="assets/learn_simple_flash.webm" type="video/webm" />
-			                <source src="assets/learn_simple_flash.ogv" type="video/ogg" />
-			                Your browser does not support the video tag.
-			            </video>
-			        </div>
-			    </div>
 			</aside>
-
 		</div>
-		
 		<footer>
 			<div>
 				<div><i>ily.io &copy; <%= Time.now.year %></i>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Made with <span id="heart">&hearts;</span> in Mauritius, Mah&eacute;bourg... :*<span id="jai_sri_krsna">&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;जय श्री कृष्ण</span></div>

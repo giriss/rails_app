@@ -3,15 +3,23 @@ class AdvertisersController < ApplicationController
 	before_action :login_check
 
 	def index
-		@action = 'index'
-		@styles = ['index']
-		@scripts = ['index']
+		@layout_details = {
+			controller: params[:controller],
+			action: params[:action],
+			other_styles: [],
+			other_scripts: [],
+			title: 'ily.io'
+		}
 	end
 
 	def wallet
-		@action = 'wallet'
-		@styles = ['wallet']
-		@scripts = ['wallet']
+		@layout_details = {
+			controller: params[:controller],
+			action: params[:action],
+			other_styles: [],
+			other_scripts: [],
+			title: 'ily.io'
+		}
 		@wallet_total = 0.0
 		@page_number = params[:page_number].nil? ? 1 : params[:page_number]
 		deposits = Deposit.where user_id: session[:user_id]
@@ -22,9 +30,13 @@ class AdvertisersController < ApplicationController
 	end
 
 	def create_ad
-		@action = 'create_ad'
-		@styles = ['create_ad']
-		@scripts = ['create_ad']
+		@layout_details = {
+			controller: params[:controller],
+			action: params[:action],
+			other_styles: [],
+			other_scripts: [],
+			title: 'ily.io'
+		}
 		@ads = Advert.where user_id: session[:user_id]
 	end
 
@@ -93,9 +105,13 @@ class AdvertisersController < ApplicationController
 				redirect_to advertiser_create_ad_path
 			end
 		else
-			@action = 'design_ad'
-			@styles = ['design_ad']
-			@scripts = ['design_ad']
+			@layout_details = {
+				controller: params[:controller],
+				action: params[:action],
+				other_styles: [],
+				other_scripts: [],
+				title: 'ily.io'
+			}
 			if flash[:preview_ad_id].nil?
 				@ad_id = params[:id]
 				@ad = Advert.find(@ad_id)
@@ -135,9 +151,13 @@ class AdvertisersController < ApplicationController
 		if request.post?
 
 		else
-			@action = 'clone_ad'
-			@styles = ['clone_ad']
-			@scripts = ['clone_ad']
+			@layout_details = {
+				controller: params[:controller],
+				action: params[:action],
+				other_styles: [],
+				other_scripts: [],
+				title: 'ily.io'
+			}
 			@ad = Advert.find params[:id]
 			if @ad.user_id == session[:user_id]
 				render layout: "no_menu"
@@ -148,7 +168,13 @@ class AdvertisersController < ApplicationController
 	end
 
 	def create_ad_preview
-		@action = "design_ad_preview"
+		@layout_details = {
+			controller: params[:controller],
+			action: params[:action],
+			other_styles: [],
+			other_scripts: [],
+			title: 'ily.io'
+		}
 		@params = get_design_ad_params
 		@ad = Advert.find(@params[:advert_id])
 		if @ad.user_id != session[:user_id]
@@ -214,15 +240,23 @@ class AdvertisersController < ApplicationController
 	end
 
 	def campaign
-		@action = 'campaign'
-		@styles = ['campaign']
-		@scripts = ['campaign']
+		@layout_details = {
+			controller: params[:controller],
+			action: params[:action],
+			other_styles: [],
+			other_scripts: [],
+			title: 'ily.io'
+		}
 	end
 
 	def account
-		@action = 'account'
-		@styles = []
-		@scripts = []
+		@layout_details = {
+			controller: params[:controller],
+			action: params[:action],
+			other_styles: [],
+			other_scripts: [],
+			title: 'ily.io'
+		}
 	end
 
 	private

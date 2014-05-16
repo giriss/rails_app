@@ -4,7 +4,7 @@
     <data-source source="LOCAL" name="Rails ilyio: development" uuid="e5421cb5-51af-493f-a7f9-ce84a4359808">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\Other\rails_app\db\development.sqlite3</jdbc-url>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails ilyio: test" uuid="01995ad9-681f-4f49-9f5f-eaca6d064e88">
