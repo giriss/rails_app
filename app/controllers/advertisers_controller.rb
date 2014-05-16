@@ -66,11 +66,14 @@ class AdvertisersController < ApplicationController
 				end
 				@ad.name = @params[:name]
 				@ad.question = @params[:question]
-				@ad.right_option = @params[:right_option]
-				@ad.wrong_option1 = @params[:wrong_option1]
-				@ad.wrong_option2 = @params[:wrong_option2]
-				@ad.wrong_option3 = @params[:wrong_option3]
-				@ad.wrong_option4 = @params[:wrong_option4]
+				@ad.answers = [
+					@params[:right_option],
+					@params[:wrong_option1],
+					@params[:wrong_option2],
+					@params[:wrong_option3],
+					@params[:wrong_option4]
+				].compact
+				@ad.answers.delete('')
 				@ad.save
 				@ad_det.ad_title = @params[:ad_title]
 				@ad_det.website = @params[:website]
@@ -79,8 +82,7 @@ class AdvertisersController < ApplicationController
 				unless @params[:image].nil?
 					@images = @params[:image].values
 					@images.each do |image|
-						new_image = Image.new user_id: session[:user_id], extension: File.extname(image.original_filename)
-						new_image.save
+						new_image = Image.create user_id: session[:user_id], extension: File.extname(image.original_filename)
 						file_name = "#{new_image.id}_#{session[:user_id]}#{File.extname(image.original_filename)}"
 						File.open(Rails.root.join('public', 'images', 'uploads', file_name), 'wb') do |file|
 							file.write(image.read)
@@ -99,7 +101,7 @@ class AdvertisersController < ApplicationController
 				if @imgs_ids.length > 6
 					@imgs_ids = @imgs_ids[0, 5]
 				end
-				@ad_det.images = @imgs_ids.join(";")
+				@ad_det.images = @imgs_ids
 				@ad_det.save
 				flash[:success] = true
 				redirect_to advertiser_create_ad_path
@@ -120,7 +122,7 @@ class AdvertisersController < ApplicationController
 				else
 					@ad_det = AdvertDetail.new
 					@ad_det = AdvertDetail.find_by advert_id: @ad_id
-					if !@ad_det.nil?
+					unless @ad_det.nil?
 						images = @ad_det.get_images_array
 						@images = []
 						(0..5).each do |i|
@@ -185,14 +187,6 @@ class AdvertisersController < ApplicationController
 			else
 				@ad_det = PreviewAdvertDetail.find_by(advert_id: @params[:advert_id])
 			end
-#			@ad.name = @params[:name]
-#			@ad.question = @params[:question]
-#			@ad.right_option = @params[:right_option]
-#			@ad.wrong_option1 = @params[:wrong_option1]
-#			@ad.wrong_option2 = @params[:wrong_option2]
-#			@ad.wrong_option3 = @params[:wrong_option3]
-#			@ad.wrong_option4 = @params[:wrong_option4]
-#			@ad.save
 			@ad_det.ad_title = @params[:ad_title]
 			@ad_det.website = @params[:website]
 			@ad_det.description = @params[:description]
@@ -220,7 +214,7 @@ class AdvertisersController < ApplicationController
 			if @imgs_ids.length > 6
 				@imgs_ids = @imgs_ids[0, 5]
 			end
-			@ad_det.images = @imgs_ids.join(";")
+			@ad_det.images = @imgs_ids
 			@ad_det.save
 			flash[:preview_ad_id] = @ad_det.id
 			@get_design_ad_params = get_design_ad_params

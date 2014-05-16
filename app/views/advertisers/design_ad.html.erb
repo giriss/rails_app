@@ -108,7 +108,7 @@
 				<tr>
 					<td><div><%= f.label :wrong_option2, "Wrong option 2" %></div></td>
 					<td><div><%= f.text_field :wrong_option2, value: @preview ? @params[:wrong_option2] : "", class: "textInput" %></div></td>
-					<td></td>
+					<td><div class="red smaller ubuntu">(optional)</div></td>
 				</tr>
 				<tr>
 					<td><div><%= f.label :wrong_option3, "Wrong option 3" %></div></td>
@@ -229,27 +229,27 @@
 				</tr>
 				<tr>
 					<td><div><%= f.label :right_option %></div></td>
-					<td><div><%= f.text_field :right_option, value: @preview ? @params[:right_option] : @ad.right_option, class: "textInput" %></div></td>
+					<td><div><%= f.text_field :right_option, value: @preview ? @params[:right_option] : @ad.answers[0], class: "textInput" %></div></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td><div><%= f.label :wrong_option1, "Wrong option 1" %></div></td>
-					<td><div><%= f.text_field :wrong_option1, value: @preview ? @params[:wrong_option1] : @ad.wrong_option1, class: "textInput" %></div></td>
+					<td><div><%= f.text_field :wrong_option1, value: @preview ? @params[:wrong_option1] : @ad.answers[1], class: "textInput" %></div></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td><div><%= f.label :wrong_option2, "Wrong option 2" %></div></td>
-					<td><div><%= f.text_field :wrong_option2, value: @preview ? @params[:wrong_option2] : @ad.wrong_option2, class: "textInput" %></div></td>
-					<td></td>
+					<td><div><%= f.text_field :wrong_option2, value: @preview ? @params[:wrong_option2] : @ad.answers[2], class: "textInput" %></div></td>
+					<td><div class="red smaller ubuntu">(optional)</div></td>
 				</tr>
 				<tr>
 					<td><div><%= f.label :wrong_option3, "Wrong option 3" %></div></td>
-					<td><div><%= f.text_field :wrong_option3, value: @preview ? @params[:wrong_option3] : @ad.wrong_option3, class: "textInput" %></div></td>
+					<td><div><%= f.text_field :wrong_option3, value: @preview ? @params[:wrong_option3] : @ad.answers[3], class: "textInput" %></div></td>
 					<td><div class="red smaller ubuntu">(optional)</div></td>
 				</tr>
 				<tr>
 					<td><div><%= f.label :wrong_option4, "Wrong option 4" %></div></td>
-					<td><div><%= f.text_field :wrong_option4, value: @preview ? @params[:wrong_option4] : @ad.wrong_option4, class: "textInput" %></div></td>
+					<td><div><%= f.text_field :wrong_option4, value: @preview ? @params[:wrong_option4] : @ad.answers[4], class: "textInput" %></div></td>
 					<td><div class="red smaller ubuntu">(optional)</div></td>
 				</tr>
 				<tr>

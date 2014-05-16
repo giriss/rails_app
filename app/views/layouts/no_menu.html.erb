@@ -1,78 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><%= @action.capitalize.split('_').join(' ') %></title>
-		<%= stylesheet_link_tag "ily.io" %>
-	<%= stylesheet_link_tag    "advertisers" %>
-	<% @styles.each do |style| %>
-		<%= stylesheet_link_tag "advertisers/#{style}" %>
-	<% end %>
-	<%= javascript_include_tag "jquery-1.9.0.min" %>
-	<%= javascript_include_tag "apprise-v2" %>
-	<%= stylesheet_link_tag "apprise-v2" %>
-	<%= javascript_include_tag "jquery.zclip" %>
-	<%= javascript_include_tag "advertisers" %>
-	<% @scripts.each do |script| %>
-		<%= javascript_include_tag "advertisers/#{script}" %>
-	<% end %>
-	<%= javascript_tag do %>
-		<% if flash[:alerts].nil? %>
-			window.alert_any = false;
-		<% else %>
-			window.alert_any = true;
-			window.alert_desc = "<%= j h flash[:alerts] %>";
-		<% end %>
-		<% unless flash[:preview_ad_id].nil? %>
-			window.preview_link = "<%= generate_intersital_preview_path params[:id] %>";
-		<% end %>
-	<% end %>
-	<link rel="icon" type="image/ico" href="<%= image_path "favicon.ico" %>"/>
-
-	<%= csrf_meta_tags %>
+    <title><%= @layout_details[:title].nil? ? 'ily.io' : @layout_details[:title] %></title>
+    <%= stylesheet_link_tag "ily.io" %>
+    <%= javascript_include_tag "jquery-1.11.1.min" %>
+    <%= javascript_include_tag "apprise-v2" %>
+    <%= stylesheet_link_tag "apprise-v2" %>
+    <%= javascript_include_tag "jquery.zclip" %>
+    <%= javascript_include_tag "ily.io" %>
+    <% unless @layout_details.nil? %>
+        <%= @layout_details[:controller].nil? ? nil : stylesheet_link_tag("#{@layout_details[:controller]}") %>
+        <%= @layout_details[:action].nil? ? nil : stylesheet_link_tag("#{@layout_details[:controller]}/#{@layout_details[:action]}") %>
+        <% @layout_details[:other_styles].each do |style| %>
+            <%= stylesheet_link_tag style %>
+        <% end %>
+        <%= @layout_details[:controller].nil? ? nil : javascript_include_tag("#{@layout_details[:controller]}") %>
+        <%= @layout_details[:action].nil? ? nil : javascript_include_tag("#{@layout_details[:controller]}/#{@layout_details[:action]}") %>
+        <% @layout_details[:other_scripts].each do |script| %>
+            <%= javascript_include_tag script %>
+        <% end %>
+    <% end %>
+    <%= javascript_tag do %>
+        <% if flash[:alerts].nil? && flash[:errors].nil? %>
+            window.alert_any = false
+        <% else %>
+            window.alert_any = true
+            window.alert_desc = "<%= j h flash[:alerts].nil? ? flash[:errors] : flash[:errors] %>"
+        <% end %>
+        <% unless flash[:preview_ad_id].nil? %>
+            window.preview_link = "<%= generate_intersital_preview_path params[:id] %>";
+        <% end %>
+    <% end %>
+    <link rel="icon" type="image/ico" href="<%= image_path "favicon.ico" %>"/>
+    <%= csrf_meta_tags %>
 </head>
-
 <body>
 <header>
-	<img src="<%= image_path("ily.io.png") %>">
+    <img src="<%= image_path("ily.io.png") %>">
 </header>
 <div id="body">
-	<form id="form"></form> <!-- needed to logout -->
-
-	<div id="content">
-		<%= yield %>
-	</div>
+    <form id="form"></form> <!-- needed to logout -->
+    <div id="menu">
+        <%= render "partials/#{@layout_details[:controller]}_navbar" %>
+    </div>
+    <div id="content">
+        <%= yield %>
+    </div>
+    <aside id="invisibles">
+    </aside>
 </div>
-
-<aside id="invisibles">
-</aside>
-
 <footer>
-	<div>
-		<div><i>ily.io &copy; <%= Time.now.year %></i>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Made with <span id="heart">&hearts;</span> in Mauritius, Mah&eacute;bourg... :*<span id="jai_sri_krsna">&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;जय श्री कृष्ण</span></div>
-		<hr />
-		<div>
-			<table>
-				<tr>
-					<td><a href="">{ Publisher Rates }</a></td>
-					<td><a href="">{ About us }</a></td>
-				</tr>
-				<tr>
-					<td><a href="">{ Advertiser Rates }</a></td>
-					<td><a href="">{ terms &amp; policies}</a></td>
-				</tr>
-				<tr>
-					<td><%= link_to"{ Publisher:Learn more }", welcome_learn_more_path(:pub) %></td>
-					<td><a href="">{ help }</a></td>
-				</tr>
-				<tr>
-					<td><%= link_to "{ Advertiser:Learn more }", welcome_learn_more_path(:adv) %></td>
-					<td><a href="">{ like us on fb }</a></td>
-				</tr>
-			</table>
-		</div>
-	</div>
+    <div>
+        <div><i>ily.io &copy; <%= Time.now.year %></i>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Made with <span id="heart">&hearts;</span> in Mauritius, Mah&eacute;bourg... :*<span id="jai_sri_krsna">&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;जय श्री कृष्ण</span></div>
+        <hr />
+        <div>
+            <table>
+                <tr>
+                    <td><a href="">{ Publisher Rates }</a></td>
+                    <td><a href="">{ About us }</a></td>
+                </tr>
+                <tr>
+                    <td><a href="">{ Advertiser Rates }</a></td>
+                    <td><a href="">{ terms &amp; policies}</a></td>
+                </tr>
+                <tr>
+                    <td><%= link_to"{ Publisher:Learn more }", welcome_learn_more_path(:pub) %></td>
+                    <td><a href="">{ help }</a></td>
+                </tr>
+                <tr>
+                    <td><%= link_to "{ Advertiser:Learn more }", welcome_learn_more_path(:adv) %></td>
+                    <td><a href="">{ like us on fb }</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </footer>
-
 <% unless flash[:preview_ad_id].nil? %>
 <div style="display:none" id="preview_div">
 <div><img src="<%= image_path "16.GIF" %>"><iframe id="ad_iframe"></iframe></div>

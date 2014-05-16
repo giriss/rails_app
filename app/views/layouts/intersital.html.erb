@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	    <title>Dashboard</title>
-	    <%= stylesheet_link_tag "ily.io" %>
-	    <%= stylesheet_link_tag "intersital" %>
-	    <% @styles.each do |style| %>
-	        <%= stylesheet_link_tag "intersital/#{style}" %>
-	    <% end %>
-	    <%= javascript_include_tag "jquery-1.11.1.min" %>
-	    <%= javascript_include_tag "apprise-v2" %>
-	    <%= stylesheet_link_tag "apprise-v2" %>
-	    <%= javascript_include_tag "jquery.zclip" %>
-	    <%= javascript_include_tag "intersital" %>
-	    <% @scripts.each do |script| %>
-	        <%= javascript_include_tag "intersital/#{script}" %>
-	    <% end %>
-	    <%= javascript_tag do %>
-	        <% if flash[:alerts].nil? %>
-	            window.alert_any = false
-	        <% else %>
-	            window.alert_any = true
-	            window.alert_desc = "<%= j h flash[:alerts] %>"
-	        <% end %>
-	    <% end %>
-	    <link rel="icon" type="image/ico" href="<%= image_path "favicon.ico" %>"/>
-
-	    <%= csrf_meta_tags %>
+        <title><%= @layout_details[:title].nil? ? 'ily.io' : @layout_details[:title] %></title>
+        <%= stylesheet_link_tag "ily.io" %>
+        <%= javascript_include_tag "jquery-1.11.1.min" %>
+        <%= javascript_include_tag "apprise-v2" %>
+        <%= stylesheet_link_tag "apprise-v2" %>
+        <%= javascript_include_tag "jquery.zclip" %>
+        <%= javascript_include_tag "ily.io" %>
+        <% unless @layout_details.nil? %>
+            <%= @layout_details[:controller].nil? ? nil : stylesheet_link_tag("#{@layout_details[:controller]}") %>
+            <%= @layout_details[:action].nil? ? nil : stylesheet_link_tag("#{@layout_details[:controller]}/#{@layout_details[:action]}") %>
+            <% @layout_details[:other_styles].each do |style| %>
+                <%= stylesheet_link_tag style %>
+            <% end %>
+            <%= @layout_details[:controller].nil? ? nil : javascript_include_tag("#{@layout_details[:controller]}") %>
+            <%= @layout_details[:action].nil? ? nil : javascript_include_tag("#{@layout_details[:controller]}/#{@layout_details[:action]}") %>
+            <% @layout_details[:other_scripts].each do |script| %>
+                <%= javascript_include_tag script %>
+            <% end %>
+        <% end %>
+        <%= javascript_tag do %>
+            <% if flash[:alerts].nil? && flash[:errors].nil? %>
+                window.alert_any = false
+            <% else %>
+                window.alert_any = true
+                window.alert_desc = "<%= j h flash[:alerts].nil? ? flash[:errors] : flash[:errors] %>"
+            <% end %>
+        <% end %>
+        <link rel="icon" type="image/ico" href="<%= image_path "favicon.ico" %>"/>
+        <%= csrf_meta_tags %>
 	</head>
 
 	<body>

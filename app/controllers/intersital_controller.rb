@@ -1,8 +1,12 @@
 class IntersitalController < ApplicationController
 	def index
-		@action = 'index'
-		@styles = ['index']
-		@scripts = ['index']
+		@layout_details = {
+			controller: params[:controller],
+			action: params[:action],
+			other_styles: [],
+			other_scripts: [],
+			title: 'ily.io'
+		}
 		if session[:skip_ad_token].nil?
 			new_skip_ad = SkipAdDetail.new url_key: params[:key], start_time: Time.now.to_datetime, end_time: (Time.now + 30).to_datetime
 			new_skip_ad.save
@@ -17,9 +21,13 @@ class IntersitalController < ApplicationController
 	end
 
 	def generate_ad
-		@action = 'generate_ad'
-		@styles = ['generate_ad']
-		@scripts = ['generate_ad']
+		@layout_details = {
+			controller: params[:controller],
+			action: params[:action],
+			other_styles: ['intersital/generate_ad'],
+			other_scripts: ['intersital/generate_ad'],
+			title: 'ily.io'
+		}
 		advert_id = params[:id]
 		#@advert = Advert.find advert_id
 		@advert_detail = AdvertDetail.find_by advert_id: advert_id
@@ -28,9 +36,13 @@ class IntersitalController < ApplicationController
 	end
 
 	def generate_ad_preview
-		@action = 'generate_ad'
-		@styles = ['generate_ad']
-		@scripts = ['generate_ad']
+		@layout_details = {
+			controller: params[:controller],
+			action: params[:action],
+			other_styles: ['intersital/generate_ad'],
+			other_scripts: ['intersital/generate_ad'],
+			title: 'ily.io'
+		}
 		advert_id = params[:id]
 		#@advert = Advert.find advert_id
 		@advert_detail = PreviewAdvertDetail.find_by advert_id: advert_id

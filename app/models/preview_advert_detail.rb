@@ -1,6 +1,7 @@
 class PreviewAdvertDetail < ActiveRecord::Base
+	serialize :images, Array
 	def get_images_array
-		self.images.split(";").map do |image_id|
+		images.map do |image_id|
 			image = Image.find image_id
 			"#{image_id}_#{image.user_id}#{image.extension}"
 		end
